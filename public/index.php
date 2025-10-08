@@ -9,28 +9,40 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                <span class="brain">🧠</span>
-                <h1>Brainrot Labs</h1>
+            <div class="logo-container">
+                <img src="/assets/images/build-a-brainrot-logo.png" alt="Build a Brainrot" class="main-logo">
             </div>
             <p class="tagline">You don't just scroll brainrots — you build them.</p>
         </header>
 
         <main>
             <div class="hero">
-                <h2 class="glitch">Build Your Brainrot!</h2>
-                <p class="subtitle">Create viral meme characters, songs, and trends</p>
-                <button class="cta-button" id="makeButton">Make My Brainrot!</button>
+                <h2 class="hero-title">CREATE VIRAL MEMES!</h2>
+                <p class="subtitle">Make characters, songs, and trends that stick in everyone's head</p>
+                <button class="cta-button" id="makeButton">⚡ START BUILDING ⚡</button>
             </div>
 
-            <div class="mascot">
-                <div class="rotto">👟 🧠 👟</div>
-                <p class="mascot-text">Meet Rotto, your chaos guide</p>
+            <div class="features">
+                <div class="feature-box">
+                    <span class="feature-icon">🎨</span>
+                    <h3>Pick Your Vibe</h3>
+                    <p>Skibidi? Rizzler? You choose!</p>
+                </div>
+                <div class="feature-box">
+                    <span class="feature-icon">🎵</span>
+                    <h3>Create Chants</h3>
+                    <p>Tralalero tralala! Yoinky sploinky!</p>
+                </div>
+                <div class="feature-box">
+                    <span class="feature-icon">⭐</span>
+                    <h3>Go Viral</h3>
+                    <p>Share your brainrot with the world!</p>
+                </div>
             </div>
         </main>
 
         <footer>
-            <p>© 2025 Brainrot Labs - A Serious Scientific Enterprise™</p>
+            <p>© 2025 Brainrot Labs - A Serious Scientific Enterprise™ by Aurora and Ebony - Some Rights Reserved</p>
         </footer>
     </div>
 

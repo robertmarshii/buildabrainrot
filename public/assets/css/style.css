@@ -6,15 +6,49 @@
 
 body {
     font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
-    background: linear-gradient(135deg, #FFB6D9 0%, #B4E4FF 50%, #FFF89A 100%);
+    /* Paint splatter background inspired by logo */
+    background:
+        radial-gradient(circle at 20% 30%, #FF4444 0%, transparent 20%),
+        radial-gradient(circle at 80% 20%, #FF8C00 0%, transparent 20%),
+        radial-gradient(circle at 50% 60%, #FFD700 0%, transparent 25%),
+        radial-gradient(circle at 10% 80%, #00CED1 0%, transparent 20%),
+        radial-gradient(circle at 90% 70%, #32CD32 0%, transparent 20%),
+        radial-gradient(circle at 60% 90%, #FF1493 0%, transparent 20%),
+        linear-gradient(135deg, #FF6B9D 0%, #FFD700 25%, #00CED1 50%, #FF8C00 75%, #32CD32 100%);
+    background-size: 100% 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Scattered doodles effect */
+body::before {
+    content: '⚡ ⭐ 🌸 ⚡ ⭐ 🌸 ⚡ ⭐';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    opacity: 0.15;
+    pointer-events: none;
+    letter-spacing: 5rem;
+    line-height: 8rem;
+    animation: float 20s infinite linear;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
@@ -23,16 +57,192 @@ header {
     padding: 2rem 0;
 }
 
-.logo {
+.logo-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.brain {
+.main-logo {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.tagline {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow:
+        3px 3px 0 #FFD700,
+        -2px -2px 0 #00CED1,
+        4px 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+/* Hero Section */
+main {
+    margin-top: 2rem;
+}
+
+.hero {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    padding: 3rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border: 8px solid #000;
+    position: relative;
+}
+
+.hero::before {
+    content: '⚡';
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    font-size: 3rem;
+    animation: bounce 1s infinite;
+}
+
+.hero::after {
+    content: '⭐';
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    font-size: 3rem;
+    animation: spin 4s linear infinite;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #FFD700;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow:
+        -4px -4px 0 #000,
+        4px -4px 0 #000,
+        -4px 4px 0 #000,
+        4px 4px 0 #000,
+        0 0 20px rgba(255, 215, 0, 0.5);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+    color: #000;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 1.5rem 3rem;
+    border: 6px solid #000;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow:
+        0 8px 0 #333,
+        0 12px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 0 #333,
+        0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button:active {
+    transform: translateY(4px);
+    box-shadow:
+        0 4px 0 #333,
+        0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 6px solid #000;
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+.feature-box:nth-child(1) {
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.feature-box:nth-child(2) {
+    background: linear-gradient(135deg, rgba(180, 228, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.feature-box:nth-child(3) {
+    background: linear-gradient(135deg, rgba(255, 248, 154, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.feature-icon {
     font-size: 4rem;
-    animation: spin 3s linear infinite;
+    display: block;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.feature-box h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 rgba(255, 215, 0, 0.5);
+}
+
+.feature-box p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes spin {
@@ -40,124 +250,45 @@ header {
     100% { transform: rotate(360deg); }
 }
 
-h1 {
-    font-size: 3.5rem;
-    color: #FF6B9D;
-    text-shadow:
-        3px 3px 0 #FFE5EC,
-        6px 6px 0 #FFC2D4;
-    letter-spacing: 0.1em;
-}
-
-.tagline {
-    font-size: 1.5rem;
-    color: #6B4CE8;
-    margin-top: 1rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 0 #D4BBFF;
-}
-
-/* Hero Section */
-main {
-    margin-top: 3rem;
-}
-
-.hero {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 30px;
-    padding: 3rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 5px solid #FF6B9D;
-}
-
-.glitch {
-    font-size: 3rem;
-    color: #FF1493;
-    margin-bottom: 1rem;
-    animation: glitch 2s infinite;
-}
-
-@keyframes glitch {
-    0%, 100% { transform: translate(0); }
-    25% { transform: translate(-2px, 2px); }
-    50% { transform: translate(2px, -2px); }
-    75% { transform: translate(-2px, -2px); }
-}
-
-.subtitle {
-    font-size: 1.3rem;
-    color: #4A4A4A;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    background: linear-gradient(135deg, #FF6B9D 0%, #FFB6D9 100%);
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 1.5rem 3rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.5);
-    transition: all 0.3s ease;
-    font-family: inherit;
-}
-
-.cta-button:hover {
-    transform: scale(1.1) rotate(-2deg);
-    box-shadow: 0 12px 30px rgba(255, 107, 157, 0.7);
-}
-
-.cta-button:active {
-    transform: scale(0.95);
-}
-
-/* Mascot */
-.mascot {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.rotto {
-    font-size: 5rem;
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.mascot-text {
-    font-size: 1.2rem;
-    color: #6B4CE8;
-    margin-top: 1rem;
-    font-weight: bold;
-}
-
 /* Footer */
 footer {
     text-align: center;
     margin-top: 4rem;
     padding: 2rem;
-    color: #4A4A4A;
-    font-size: 0.9rem;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    h1 {
+    .main-logo {
+        max-width: 90%;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-title {
         font-size: 2rem;
     }
 
-    .glitch {
-        font-size: 2rem;
+    .subtitle {
+        font-size: 1.1rem;
     }
 
     .cta-button {
         font-size: 1.5rem;
         padding: 1rem 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-box h3 {
+        font-size: 1.5rem;
     }
 }

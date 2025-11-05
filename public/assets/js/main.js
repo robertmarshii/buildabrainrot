@@ -21,7 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Add click handler to the button
     const makeButton = document.getElementById('makeButton');
     makeButton.addEventListener('click', () => {
-        alert('🧠 Brainrot Builder coming soon! Stay chaotic! 🎨');
+        // Redirect to character builder
+        window.location.href = '/character-builder.php';
         console.log('User clicked: Make My Brainrot!');
     });
 

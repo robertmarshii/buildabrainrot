@@ -139,22 +139,8 @@ class CharacterCanvas {
   _isPointInAccessory(x, y, accessory) {
     if (!accessory || !accessory.image) return false;
 
-    // Get dimensions - try naturalWidth first (works for all images including SVG)
-    // Then try regular width, then fall back to metadata dimensions
-    let width = accessory.image.naturalWidth || accessory.image.width;
-    let height = accessory.image.naturalHeight || accessory.image.height;
-
-    // If still no dimensions, use metadata
-    if ((!width || !height) && accessory.metadata && accessory.metadata.dimensions) {
-      width = accessory.metadata.dimensions.width;
-      height = accessory.metadata.dimensions.height;
-    }
-
-    // Default fallback if all else fails
-    if (!width || !height) {
-      width = 100;
-      height = 100;
-    }
+    // Get reliable dimensions using helper function
+    const { width, height } = this._getImageDimensions(accessory.image, accessory.metadata);
 
     const hw = width / 2;
     const hh = height / 2;
@@ -388,6 +374,30 @@ class CharacterCanvas {
   }
 
   /**
+   * Get image dimensions (works for PNG and SVG)
+   * @private
+   */
+  _getImageDimensions(image, metadata) {
+    // Try naturalWidth/naturalHeight first (works for all images including SVG)
+    let width = image.naturalWidth || image.width;
+    let height = image.naturalHeight || image.height;
+
+    // If still no dimensions, use metadata
+    if ((!width || !height) && metadata && metadata.dimensions) {
+      width = metadata.dimensions.width;
+      height = metadata.dimensions.height;
+    }
+
+    // Default fallback
+    if (!width || !height) {
+      width = 512;
+      height = 512;
+    }
+
+    return { width, height };
+  }
+
+  /**
    * Draw body with color tint
    *
    * @private
@@ -396,16 +406,19 @@ class CharacterCanvas {
     const body = this.character.body;
     if (!body || !body.image) return;
 
+    // Get reliable dimensions
+    const { width, height } = this._getImageDimensions(body.image, body.metadata);
+
     // If grayscale body, apply color tint
     if (this.character.bodyColor !== '#808080' && body.metadata.colorizable) {
       // Create offscreen canvas for tinting
       const offscreen = document.createElement('canvas');
-      offscreen.width = body.image.width;
-      offscreen.height = body.image.height;
+      offscreen.width = width;
+      offscreen.height = height;
       const offCtx = offscreen.getContext('2d');
 
       // Draw original image
-      offCtx.drawImage(body.image, 0, 0);
+      offCtx.drawImage(body.image, 0, 0, width, height);
 
       // Apply color tint
       offCtx.globalCompositeOperation = 'multiply';
@@ -414,7 +427,7 @@ class CharacterCanvas {
 
       // Restore alpha
       offCtx.globalCompositeOperation = 'destination-in';
-      offCtx.drawImage(body.image, 0, 0);
+      offCtx.drawImage(body.image, 0, 0, width, height);
 
       // Draw to main canvas (centered)
       const x = (this.width - offscreen.width) / 2;
@@ -422,9 +435,9 @@ class CharacterCanvas {
       this.ctx.drawImage(offscreen, x, y);
     } else {
       // Draw without tinting (centered)
-      const x = (this.width - body.image.width) / 2;
-      const y = (this.height - body.image.height) / 2;
-      this.ctx.drawImage(body.image, x, y);
+      const x = (this.width - width) / 2;
+      const y = (this.height - height) / 2;
+      this.ctx.drawImage(body.image, x, y, width, height);
     }
   }
 
@@ -436,6 +449,9 @@ class CharacterCanvas {
    */
   _drawAccessory(accessory) {
     if (!accessory || !accessory.image) return;
+
+    // Get reliable dimensions
+    const { width, height } = this._getImageDimensions(accessory.image, accessory.metadata);
 
     this.ctx.save();
 
@@ -453,9 +469,9 @@ class CharacterCanvas {
     }
 
     // Draw centered on position
-    const x = -accessory.image.width / 2;
-    const y = -accessory.image.height / 2;
-    this.ctx.drawImage(accessory.image, x, y);
+    const x = -width / 2;
+    const y = -height / 2;
+    this.ctx.drawImage(accessory.image, x, y, width, height);
 
     this.ctx.restore();
   }
@@ -469,6 +485,9 @@ class CharacterCanvas {
    */
   _drawFaceFeature(feature, type) {
     if (!feature || !feature.image) return;
+
+    // Get reliable dimensions
+    const { width, height } = this._getImageDimensions(feature.image, feature.metadata);
 
     // Get attachment point from body if available
     let position = { x: this.width / 2, y: this.height / 2 };
@@ -485,9 +504,9 @@ class CharacterCanvas {
     }
 
     // Draw centered on position
-    const x = position.x - feature.image.width / 2;
-    const y = position.y - feature.image.height / 2;
-    this.ctx.drawImage(feature.image, x, y);
+    const x = position.x - width / 2;
+    const y = position.y - height / 2;
+    this.ctx.drawImage(feature.image, x, y, width, height);
   }
 
   /**

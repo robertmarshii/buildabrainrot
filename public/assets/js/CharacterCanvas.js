@@ -30,6 +30,121 @@ class CharacterCanvas {
 
     this.assetManager = window.assetManager;
     this.rendering = false;
+
+    // Drag state
+    this.dragging = {
+      active: false,
+      accessoryIndex: -1,
+      startX: 0,
+      startY: 0,
+      offsetX: 0,
+      offsetY: 0
+    };
+
+    // Setup drag event listeners
+    this._setupDragListeners();
+  }
+
+  /**
+   * Setup mouse/touch event listeners for dragging
+   * @private
+   */
+  _setupDragListeners() {
+    // Mouse events
+    this.canvas.addEventListener('mousedown', (e) => this._onDragStart(e));
+    this.canvas.addEventListener('mousemove', (e) => this._onDragMove(e));
+    this.canvas.addEventListener('mouseup', (e) => this._onDragEnd(e));
+    this.canvas.addEventListener('mouseleave', (e) => this._onDragEnd(e));
+
+    // Touch events
+    this.canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      this._onDragStart(touch);
+    });
+    this.canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      this._onDragMove(touch);
+    });
+    this.canvas.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      this._onDragEnd(e);
+    });
+
+    // Add cursor style
+    this.canvas.style.cursor = 'grab';
+  }
+
+  /**
+   * Handle drag start
+   * @private
+   */
+  _onDragStart(e) {
+    const rect = this.canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Check if clicking on an accessory (iterate backwards to check top items first)
+    for (let i = this.character.accessories.length - 1; i >= 0; i--) {
+      const acc = this.character.accessories[i];
+      if (this._isPointInAccessory(x, y, acc)) {
+        this.dragging.active = true;
+        this.dragging.accessoryIndex = i;
+        this.dragging.startX = x;
+        this.dragging.startY = y;
+        this.dragging.offsetX = x - acc.position.x;
+        this.dragging.offsetY = y - acc.position.y;
+        this.canvas.style.cursor = 'grabbing';
+        break;
+      }
+    }
+  }
+
+  /**
+   * Handle drag move
+   * @private
+   */
+  _onDragMove(e) {
+    if (!this.dragging.active) return;
+
+    const rect = this.canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const acc = this.character.accessories[this.dragging.accessoryIndex];
+    if (acc) {
+      acc.position.x = x - this.dragging.offsetX;
+      acc.position.y = y - this.dragging.offsetY;
+      this.render();
+    }
+  }
+
+  /**
+   * Handle drag end
+   * @private
+   */
+  _onDragEnd(e) {
+    if (this.dragging.active) {
+      this.dragging.active = false;
+      this.dragging.accessoryIndex = -1;
+      this.canvas.style.cursor = 'grab';
+    }
+  }
+
+  /**
+   * Check if point is inside accessory bounds
+   * @private
+   */
+  _isPointInAccessory(x, y, accessory) {
+    if (!accessory || !accessory.image) return false;
+
+    const hw = accessory.image.width / 2;
+    const hh = accessory.image.height / 2;
+    const px = accessory.position.x;
+    const py = accessory.position.y;
+
+    return x >= px - hw && x <= px + hw && y >= py - hh && y <= py + hh;
   }
 
   /**

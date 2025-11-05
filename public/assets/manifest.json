@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "updated": "2025-11-05",
   "audio": {
     "music": [
@@ -222,6 +222,48 @@
           "source": "Bing Image Creator",
           "dateAdded": "2025-11-05",
           "fileSize": 32100
+        },
+        {
+          "id": "char-body-dog",
+          "name": "Doggo Friend",
+          "file": "images/characters/bodies/char-body-dog.png",
+          "category": "character-body",
+          "type": "animal",
+          "dimensions": {"width": 512, "height": 512},
+          "colorizable": true,
+          "defaultColor": "#808080",
+          "attachmentPoints": {
+            "head": {"x": 256, "y": 110},
+            "feet": {"x": 256, "y": 455},
+            "hand": {"x": 345, "y": 270}
+          },
+          "tags": ["animal", "dog", "cute", "loyal"],
+          "ageAppropriate": true,
+          "license": "AI-generated",
+          "source": "Bing Image Creator",
+          "dateAdded": "2025-11-05",
+          "fileSize": 41200
+        },
+        {
+          "id": "char-body-pickle",
+          "name": "Pickle Rick",
+          "file": "images/characters/bodies/char-body-pickle.png",
+          "category": "character-body",
+          "type": "food",
+          "dimensions": {"width": 512, "height": 512},
+          "colorizable": true,
+          "defaultColor": "#4A7C59",
+          "attachmentPoints": {
+            "head": {"x": 256, "y": 90},
+            "feet": {"x": 256, "y": 470},
+            "hand": {"x": 350, "y": 290}
+          },
+          "tags": ["food", "pickle", "green", "funny", "meme"],
+          "ageAppropriate": true,
+          "license": "AI-generated",
+          "source": "Bing Image Creator",
+          "dateAdded": "2025-11-05",
+          "fileSize": 35600
         }
       ],
       "accessories": [
@@ -286,17 +328,17 @@
         "fileSize": 285000
       },
       {
-        "id": "bg-rainbow",
-        "name": "Rainbow Gradient",
-        "file": "images/backgrounds/bg-rainbow.png",
+        "id": "bg-classroom",
+        "name": "Classroom",
+        "file": "images/backgrounds/bg-classroom.png",
         "category": "background",
         "dimensions": {"width": 1920, "height": 1080},
-        "tags": ["colorful", "gradient", "simple", "vibrant"],
+        "tags": ["school", "classroom", "learning", "indoor"],
         "ageAppropriate": true,
-        "license": "Generated",
-        "source": "CSS Gradient",
+        "license": "AI-generated",
+        "source": "Bing Image Creator",
         "dateAdded": "2025-11-05",
-        "fileSize": 125000
+        "fileSize": 280000
       },
       {
         "id": "bg-space",
@@ -373,7 +415,7 @@
     ],
     "assetCounts": {
       "audio": 7,
-      "images": 14,
+      "images": 16,
       "animations": 0
     },
     "audioBreakdown": {
@@ -384,7 +426,7 @@
       "voices": 2
     },
     "imageBreakdown": {
-      "characterBodies": 3,
+      "characterBodies": 5,
       "accessories": 3,
       "faces": 0,
       "backgrounds": 3,

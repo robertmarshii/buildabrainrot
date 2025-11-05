@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-11-05",
+  "audio": {
+    "music": [],
+    "sfx": {
+      "reactions": [],
+      "animals": [],
+      "silly": []
+    },
+    "voices": []
+  },
+  "images": {
+    "characters": {
+      "bodies": [],
+      "accessories": [],
+      "faces": [],
+      "effects": []
+    },
+    "backgrounds": [],
+    "stickers": []
+  },
+  "animations": [],
+  "metadata": {
+    "totalAssets": 0,
+    "categories": [
+      "audio.music",
+      "audio.sfx.reactions",
+      "audio.sfx.animals",
+      "audio.sfx.silly",
+      "audio.voices",
+      "images.characters.bodies",
+      "images.characters.accessories",
+      "images.characters.faces",
+      "images.characters.effects",
+      "images.backgrounds",
+      "images.stickers",
+      "animations"
+    ],
+    "assetCounts": {
+      "audio": 0,
+      "images": 0,
+      "animations": 0
+    }
+  }
+}

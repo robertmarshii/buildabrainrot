@@ -1,0 +1,15 @@
+PLACEHOLDER: This file represents where a real PNG image would be placed.
+
+Real file: char-body-shark.png
+Specifications:
+- Format: PNG with transparency
+- Dimensions: 512x512px
+- Character centered, ~400px height
+- Neutral gray base color for tinting
+- File size: < 200KB
+
+To replace with real asset:
+1. Generate/download character image
+2. Optimize with TinyPNG
+3. Rename to match naming convention
+4. Replace this .txt file with actual .png

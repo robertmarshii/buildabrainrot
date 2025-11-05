@@ -1,0 +1,8 @@
+PLACEHOLDER: Background image would be placed here.
+
+Real file: bg-toilet.png
+Specifications:
+- Format: PNG or JPG
+- Dimensions: 1920x1080px (landscape)
+- Vibrant colors matching brainrot aesthetic
+- File size: < 300KB

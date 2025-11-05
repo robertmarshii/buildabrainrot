@@ -439,13 +439,18 @@
 
         // Next step
         function nextStep() {
+            // Validate that a body is selected
+            if (!characterCanvas.character.body) {
+                alert('Please select a character body first!');
+                return;
+            }
+
             // Save character data to sessionStorage
             const characterData = characterCanvas.getCharacterData();
             sessionStorage.setItem('character-data', JSON.stringify(characterData));
 
-            // Navigate to scene builder (will be created in Task 07)
-            alert('Character saved! Scene builder coming in next task.');
-            // window.location.href = '/scene-builder.php';
+            // Navigate to scene builder
+            window.location.href = '/scene-builder.php';
         }
 
         // Initialize on page load

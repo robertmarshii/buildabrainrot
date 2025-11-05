@@ -1,0 +1,457 @@
+/**
+ * VIEW PAGE STYLES
+ *
+ * Styling for the brainrot view/playback page
+ * Full-screen immersive experience with controls overlay
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Common screen styles */
+.loading-screen,
+.error-screen,
+.view-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Loading Screen */
+.loading-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.loading-content h1 {
+  margin: 0 0 20px 0;
+  font-size: 2em;
+  color: #667eea;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background: #eee;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s;
+  border-radius: 15px;
+}
+
+#loading-status {
+  font-size: 1.1em;
+  color: #666;
+  margin: 10px 0;
+}
+
+#loading-percentage {
+  font-size: 2em;
+  font-weight: bold;
+  color: #667eea;
+  margin: 10px 0;
+}
+
+/* Error Screen */
+.error-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.error-content h1 {
+  margin: 0 0 20px 0;
+  font-size: 3em;
+}
+
+.error-content p {
+  font-size: 1.2em;
+  color: #666;
+  margin: 20px 0;
+}
+
+.btn-primary {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: all 0.2s;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* View Screen */
+.view-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+#brainrot-canvas {
+  border: 4px solid white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#brainrot-canvas:hover {
+  transform: scale(1.01);
+}
+
+/* Audio Controls */
+.audio-controls {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+
+.control-btn:hover {
+  transform: scale(1.2);
+}
+
+.playback-bar {
+  width: 300px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.playback-progress {
+  height: 100%;
+  background: #667eea;
+  transition: width 0.1s linear;
+  border-radius: 4px;
+}
+
+#playback-time {
+  font-weight: bold;
+  color: #333;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Action Buttons */
+.action-buttons {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-action {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  background: #f0f0f0;
+}
+
+.btn-action:active {
+  transform: translateY(0);
+}
+
+/* Branding */
+.branding {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.branding a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.branding a:hover {
+  opacity: 1;
+}
+
+/* Play Overlay (for mobile autoplay block) */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.btn-play-large {
+  font-size: 48px;
+  padding: 30px 60px;
+  border: none;
+  background: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+}
+
+.btn-play-large:hover {
+  transform: scale(1.1);
+}
+
+/* Share Modal */
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 {
+  margin: 0 0 20px 0;
+  color: #667eea;
+  text-align: center;
+}
+
+.share-url {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.share-url input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.btn-copy {
+  padding: 12px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-copy:hover {
+  background: #5566dd;
+  transform: translateY(-2px);
+}
+
+.share-hint {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  margin: 15px 0;
+}
+
+.btn-close {
+  width: 100%;
+  padding: 12px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: all 0.2s;
+}
+
+.btn-close:hover {
+  background: #e0e0e0;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  #brainrot-canvas {
+    max-width: 95vw;
+    height: auto !important;
+    border-width: 2px;
+  }
+
+  .audio-controls {
+    bottom: 100px;
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+
+  .playback-bar {
+    width: 150px;
+  }
+
+  #playback-time {
+    font-size: 0.9em;
+  }
+
+  .control-btn {
+    font-size: 1.2em;
+  }
+
+  .action-buttons {
+    bottom: 20px;
+    width: 90%;
+    gap: 10px;
+  }
+
+  .btn-action {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 120px;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .branding {
+    top: 10px;
+    left: 10px;
+  }
+
+  .branding a {
+    font-size: 12px;
+  }
+
+  .btn-play-large {
+    font-size: 36px;
+    padding: 20px 40px;
+  }
+
+  .modal-content {
+    padding: 30px 20px;
+  }
+
+  .share-url {
+    flex-direction: column;
+  }
+
+  .share-url input {
+    font-size: 12px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .audio-controls {
+    bottom: 80px;
+    padding: 8px 15px;
+  }
+
+  .action-buttons {
+    bottom: 10px;
+  }
+
+  .branding {
+    top: 5px;
+    left: 5px;
+  }
+
+  .branding a {
+    font-size: 11px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-action {
+    flex: none;
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Banana body -->
+  <path d="M 256 50 Q 300 100 300 200 Q 300 400 256 450 Q 212 400 212 200 Q 212 100 256 50 Z" fill="#FFE135" stroke="#000" stroke-width="4"/>
+  <ellipse cx="256" cy="200" rx="30" ry="40" fill="#FFD700"/>
+
+  <!-- Eyes -->
+  <circle cx="230" cy="180" r="15" fill="#000"/>
+  <circle cx="282" cy="180" r="15" fill="#000"/>
+  <circle cx="235" cy="175" r="5" fill="#fff"/>
+  <circle cx="287" cy="175" r="5" fill="#fff"/>
+
+  <!-- Mouth -->
+  <path d="M 220 220 Q 256 240 292 220" stroke="#000" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

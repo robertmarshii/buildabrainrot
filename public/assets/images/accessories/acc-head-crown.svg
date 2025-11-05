@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crown base -->
+  <path d="M 40 150 L 60 70 L 90 110 L 128 60 L 166 110 L 196 70 L 216 150 Z" fill="#FFD700" stroke="#FFA500" stroke-width="3"/>
+  <rect x="40" y="150" width="176" height="30" rx="5" fill="#FFD700" stroke="#FFA500" stroke-width="3"/>
+
+  <!-- Jewels -->
+  <circle cx="70" cy="100" r="8" fill="#FF1493"/>
+  <circle cx="128" cy="80" r="10" fill="#FF1493"/>
+  <circle cx="186" cy="100" r="8" fill="#FF1493"/>
+
+  <!-- More jewels on base -->
+  <circle cx="80" cy="165" r="6" fill="#FF1493"/>
+  <circle cx="128" cy="165" r="7" fill="#00CED1"/>
+  <circle cx="176" cy="165" r="6" fill="#FF1493"/>
+
+  <!-- Shine effects -->
+  <path d="M 65 95 L 70 100 L 65 105" stroke="#FFE4E1" stroke-width="2" fill="none"/>
+  <path d="M 123 75 L 128 80 L 123 85" stroke="#FFE4E1" stroke-width="2" fill="none"/>
+</svg>

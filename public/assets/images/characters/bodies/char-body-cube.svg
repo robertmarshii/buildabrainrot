@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 3D Cube effect -->
+  <!-- Front face -->
+  <rect x="156" y="156" width="200" height="200" fill="#6495ED" stroke="#000" stroke-width="4"/>
+
+  <!-- Top face -->
+  <path d="M 156 156 L 256 106 L 456 106 L 356 156 Z" fill="#87CEEB" stroke="#000" stroke-width="4"/>
+
+  <!-- Right face -->
+  <path d="M 356 156 L 456 106 L 456 306 L 356 356 Z" fill="#4169E1" stroke="#000" stroke-width="4"/>
+
+  <!-- Eyes on front face -->
+  <circle cx="220" cy="220" r="20" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="292" cy="220" r="20" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="225" cy="220" r="12" fill="#000"/>
+  <circle cx="297" cy="220" r="12" fill="#000"/>
+
+  <!-- Smile -->
+  <path d="M 200 280 Q 256 310 312 280" stroke="#000" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

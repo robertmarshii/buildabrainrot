@@ -50,20 +50,22 @@ body {
   z-index: 1;
 }
 
-.hero-mascot {
+.logo-container {
   margin-bottom: 30px;
-  animation: bounce 2s ease-in-out infinite;
+  text-align: center;
 }
 
-.mascot-emoji {
-  font-size: 120px;
-  display: inline-block;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+.main-logo {
+  max-width: 400px;
+  width: 90%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+  animation: logoFloat 3s ease-in-out infinite;
 }
 
-@keyframes bounce {
+@keyframes logoFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
 .hero-title {

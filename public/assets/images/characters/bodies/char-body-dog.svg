@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dog body -->
+  <ellipse cx="256" cy="320" rx="110" ry="140" fill="#D2691E" stroke="#000" stroke-width="4"/>
+
+  <!-- Dog head -->
+  <ellipse cx="256" cy="170" rx="95" ry="80" fill="#D2691E" stroke="#000" stroke-width="4"/>
+
+  <!-- Snout -->
+  <ellipse cx="256" cy="200" rx="60" ry="45" fill="#F4A460" stroke="#000" stroke-width="4"/>
+
+  <!-- Ears -->
+  <ellipse cx="180" cy="150" rx="35" ry="70" fill="#A0522D" stroke="#000" stroke-width="4" transform="rotate(-20 180 150)"/>
+  <ellipse cx="332" cy="150" rx="35" ry="70" fill="#A0522D" stroke="#000" stroke-width="4" transform="rotate(20 332 150)"/>
+
+  <!-- Eyes -->
+  <circle cx="230" cy="155" r="16" fill="#000"/>
+  <circle cx="282" cy="155" r="16" fill="#000"/>
+  <circle cx="235" cy="150" r="5" fill="#fff"/>
+  <circle cx="287" cy="150" r="5" fill="#fff"/>
+
+  <!-- Nose -->
+  <ellipse cx="256" cy="195" rx="15" ry="12" fill="#000"/>
+
+  <!-- Mouth -->
+  <path d="M 256 207 Q 240 220 230 215 M 256 207 Q 272 220 282 215" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

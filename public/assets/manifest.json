@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "updated": "2025-11-05",
   "audio": {
     "music": [
@@ -184,7 +184,7 @@
         {
           "id": "char-body-cat",
           "name": "Cool Cat",
-          "file": "images/characters/bodies/char-body-cat.png",
+          "file": "images/characters/bodies/char-body-cat.svg",
           "category": "character-body",
           "type": "animal",
           "dimensions": {"width": 512, "height": 512},
@@ -205,7 +205,7 @@
         {
           "id": "char-body-banana",
           "name": "Banana Buddy",
-          "file": "images/characters/bodies/char-body-banana.png",
+          "file": "images/characters/bodies/char-body-banana.svg",
           "category": "character-body",
           "type": "food",
           "dimensions": {"width": 512, "height": 512},
@@ -226,7 +226,7 @@
         {
           "id": "char-body-dog",
           "name": "Doggo Friend",
-          "file": "images/characters/bodies/char-body-dog.png",
+          "file": "images/characters/bodies/char-body-dog.svg",
           "category": "character-body",
           "type": "animal",
           "dimensions": {"width": 512, "height": 512},
@@ -247,7 +247,7 @@
         {
           "id": "char-body-pickle",
           "name": "Pickle Rick",
-          "file": "images/characters/bodies/char-body-pickle.png",
+          "file": "images/characters/bodies/char-body-pickle.svg",
           "category": "character-body",
           "type": "food",
           "dimensions": {"width": 512, "height": 512},
@@ -264,13 +264,34 @@
           "source": "Bing Image Creator",
           "dateAdded": "2025-11-05",
           "fileSize": 35600
+        },
+        {
+          "id": "char-body-cube",
+          "name": "Cool Cube",
+          "file": "images/characters/bodies/char-body-cube.svg",
+          "category": "character-body",
+          "type": "object",
+          "dimensions": {"width": 512, "height": 512},
+          "colorizable": true,
+          "defaultColor": "#6495ED",
+          "attachmentPoints": {
+            "head": {"x": 256, "y": 106},
+            "feet": {"x": 256, "y": 356},
+            "hand": {"x": 356, "y": 256}
+          },
+          "tags": ["geometric", "3d", "cool", "simple"],
+          "ageAppropriate": true,
+          "license": "Generated",
+          "source": "Custom SVG",
+          "dateAdded": "2025-11-05",
+          "fileSize": 2800
         }
       ],
       "accessories": [
         {
           "id": "acc-head-sunglasses",
           "name": "Cool Sunglasses",
-          "file": "images/accessories/acc-head-sunglasses.png",
+          "file": "images/accessories/acc-head-sunglasses.svg",
           "category": "accessory-head",
           "attachPoint": "head",
           "dimensions": {"width": 150, "height": 60},
@@ -284,7 +305,7 @@
         {
           "id": "acc-head-crown",
           "name": "Golden Crown",
-          "file": "images/accessories/acc-head-crown.png",
+          "file": "images/accessories/acc-head-crown.svg",
           "category": "accessory-head",
           "attachPoint": "head",
           "dimensions": {"width": 120, "height": 100},
@@ -294,6 +315,20 @@
           "source": "Bing Image Creator",
           "dateAdded": "2025-11-05",
           "fileSize": 15600
+        },
+        {
+          "id": "acc-head-hat",
+          "name": "Brown Hat",
+          "file": "images/accessories/acc-head-hat.svg",
+          "category": "accessory-head",
+          "attachPoint": "head",
+          "dimensions": {"width": 256, "height": 256},
+          "tags": ["hat", "cowboy", "western", "cool"],
+          "ageAppropriate": true,
+          "license": "Generated",
+          "source": "Custom SVG",
+          "dateAdded": "2025-11-05",
+          "fileSize": 1800
         },
         {
           "id": "acc-feet-sneakers",
@@ -398,7 +433,7 @@
   },
   "animations": [],
   "metadata": {
-    "totalAssets": 21,
+    "totalAssets": 23,
     "categories": [
       "audio.music",
       "audio.sfx.reactions",
@@ -415,7 +450,7 @@
     ],
     "assetCounts": {
       "audio": 7,
-      "images": 16,
+      "images": 18,
       "animations": 0
     },
     "audioBreakdown": {
@@ -426,8 +461,8 @@
       "voices": 2
     },
     "imageBreakdown": {
-      "characterBodies": 5,
-      "accessories": 3,
+      "characterBodies": 6,
+      "accessories": 4,
       "faces": 0,
       "backgrounds": 3,
       "stickers": 3

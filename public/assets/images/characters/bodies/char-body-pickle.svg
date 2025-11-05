@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pickle body -->
+  <path d="M 256 50 Q 310 80 310 250 Q 310 420 256 460 Q 202 420 202 250 Q 202 80 256 50 Z" fill="#90EE90" stroke="#228B22" stroke-width="4"/>
+
+  <!-- Pickle bumps -->
+  <circle cx="230" cy="120" r="12" fill="#7CCD7C"/>
+  <circle cx="280" cy="140" r="14" fill="#7CCD7C"/>
+  <circle cx="240" cy="180" r="10" fill="#7CCD7C"/>
+  <circle cx="275" cy="210" r="13" fill="#7CCD7C"/>
+  <circle cx="235" cy="250" r="11" fill="#7CCD7C"/>
+  <circle cx="280" cy="290" r="12" fill="#7CCD7C"/>
+  <circle cx="245" cy="330" r="10" fill="#7CCD7C"/>
+  <circle cx="270" cy="370" r="13" fill="#7CCD7C"/>
+
+  <!-- Eyes -->
+  <circle cx="230" cy="200" r="18" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="282" cy="200" r="18" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="235" cy="200" r="10" fill="#000"/>
+  <circle cx="287" cy="200" r="10" fill="#000"/>
+
+  <!-- Grin -->
+  <path d="M 210 240 Q 256 270 302 240" stroke="#000" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

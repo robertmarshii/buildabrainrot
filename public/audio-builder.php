@@ -214,6 +214,196 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
+
+        /* Share Modal */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.85);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-modal.active {
+            display: flex;
+        }
+
+        .share-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .share-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2.5em;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            line-height: 1;
+        }
+
+        .share-close:hover {
+            color: #333;
+        }
+
+        .share-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .share-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .share-url-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .share-url-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: monospace;
+            background: #f5f5f5;
+        }
+
+        .btn-copy {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-copy:hover {
+            background: #5566dd;
+            transform: translateY(-2px);
+        }
+
+        .btn-copy.copied {
+            background: #4caf50;
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .share-button {
+            padding: 20px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        }
+
+        .share-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .share-button .icon {
+            font-size: 2.5em;
+        }
+
+        .share-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-view {
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+        }
+
+        .btn-view:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(102,126,234,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .share-content {
+                padding: 30px 20px;
+            }
+
+            .share-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .share-url-box {
+                flex-direction: column;
+            }
+
+            .share-url-input {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -450,21 +640,128 @@
 
                 // Encode
                 const encoded = BrainrotEncoder.encode(completeBrainrot);
-                const shareUrl = BrainrotEncoder.getShareUrl(completeBrainrot);
+                const shareUrl = window.location.origin + '/b/' + encoded;
 
-                // Show share dialog
-                alert('Brainrot created! Share URL:\n' + shareUrl);
-
-                // Redirect to view page
-                window.location.href = '/b/' + encoded;
+                // Show share modal
+                showShareModal(shareUrl, encoded);
             } catch (error) {
                 console.error('Failed to finish:', error);
                 alert('Failed to create brainrot. Please try again.');
             }
         }
 
+        // Show share modal
+        function showShareModal(shareUrl, encoded) {
+            const modal = document.getElementById('share-modal');
+            const urlInput = document.getElementById('share-url');
+
+            urlInput.value = shareUrl;
+            modal.classList.add('active');
+
+            // Store for social sharing
+            window.currentShareUrl = shareUrl;
+            window.currentEncoded = encoded;
+        }
+
+        // Close share modal
+        function closeShareModal() {
+            document.getElementById('share-modal').classList.remove('active');
+        }
+
+        // Copy link to clipboard
+        async function copyShareLink() {
+            const urlInput = document.getElementById('share-url');
+            const copyBtn = document.getElementById('copy-btn');
+
+            try {
+                await navigator.clipboard.writeText(urlInput.value);
+                copyBtn.textContent = '✓ Copied!';
+                copyBtn.classList.add('copied');
+
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 Copy Link';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                urlInput.select();
+                document.execCommand('copy');
+                copyBtn.textContent = '✓ Copied!';
+            }
+        }
+
+        // Social media sharing functions
+        function shareToTwitter() {
+            const text = encodeURIComponent('Check out my brainrot creation! 🧠🔥');
+            const url = encodeURIComponent(window.currentShareUrl);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
+        function shareToFacebook() {
+            const url = encodeURIComponent(window.currentShareUrl);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareToWhatsApp() {
+            const text = encodeURIComponent('Check out my brainrot! ' + window.currentShareUrl);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function shareToEmail() {
+            const subject = encodeURIComponent('Check out my brainrot!');
+            const body = encodeURIComponent(`I made this silly brainrot character:\n\n${window.currentShareUrl}\n\nMake your own at buildabrainrot.com!`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        function viewBrainrot() {
+            window.location.href = '/b/' + window.currentEncoded;
+        }
+
         // Initialize on load
         document.addEventListener('DOMContentLoaded', init);
     </script>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="share-modal">
+        <div class="share-content">
+            <button class="share-close" onclick="closeShareModal()">×</button>
+
+            <h2 class="share-title">🎉 Your Brainrot is Ready!</h2>
+            <p class="share-subtitle">Share it with your friends!</p>
+
+            <div class="share-url-box">
+                <input type="text" id="share-url" class="share-url-input" readonly>
+                <button id="copy-btn" class="btn-copy" onclick="copyShareLink()">📋 Copy Link</button>
+            </div>
+
+            <div class="share-options">
+                <button class="share-button" onclick="shareToTwitter()">
+                    <div class="icon">🐦</div>
+                    <div>Twitter</div>
+                </button>
+
+                <button class="share-button" onclick="shareToFacebook()">
+                    <div class="icon">📘</div>
+                    <div>Facebook</div>
+                </button>
+
+                <button class="share-button" onclick="shareToWhatsApp()">
+                    <div class="icon">💬</div>
+                    <div>WhatsApp</div>
+                </button>
+
+                <button class="share-button" onclick="shareToEmail()">
+                    <div class="icon">📧</div>
+                    <div>Email</div>
+                </button>
+            </div>
+
+            <div class="share-actions">
+                <button class="btn-view" onclick="viewBrainrot()">
+                    ▶️ View My Brainrot
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

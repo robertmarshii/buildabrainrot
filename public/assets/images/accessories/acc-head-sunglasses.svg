@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="128" viewBox="0 0 256 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left lens -->
+  <rect x="20" y="30" width="80" height="60" rx="10" fill="#333" stroke="#000" stroke-width="3"/>
+  <rect x="25" y="35" width="70" height="50" rx="8" fill="#1a1a1a" opacity="0.9"/>
+
+  <!-- Bridge -->
+  <rect x="100" y="55" width="56" height="10" rx="5" fill="#333" stroke="#000" stroke-width="2"/>
+
+  <!-- Right lens -->
+  <rect x="156" y="30" width="80" height="60" rx="10" fill="#333" stroke="#000" stroke-width="3"/>
+  <rect x="161" y="35" width="70" height="50" rx="8" fill="#1a1a1a" opacity="0.9"/>
+
+  <!-- Left arm -->
+  <line x1="20" y1="60" x2="5" y2="60" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Right arm -->
+  <line x1="236" y1="60" x2="251" y2="60" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Glare effects -->
+  <rect x="30" y="40" width="15" height="8" rx="2" fill="#fff" opacity="0.4"/>
+  <rect x="166" y="40" width="15" height="8" rx="2" fill="#fff" opacity="0.4"/>
+</svg>

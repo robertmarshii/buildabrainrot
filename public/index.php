@@ -29,8 +29,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-mascot" id="rotto-mascot">
-                <div class="mascot-emoji">🧠</div>
+            <div class="logo-container">
+                <img src="/assets/images/build-a-brainrot-logo.png" alt="Build a Brainrot" class="main-logo">
             </div>
 
             <h1 class="hero-title">
@@ -187,8 +187,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Build a Brainrot. All rights reserved.</p>
-            <p class="footer-attribution">A Serious Scientific Enterprise™</p>
+            <p>&copy; 2025 Brainrot Labs - A Serious Scientific Enterprise™ by Aurora and Ebony - Some Rights Reserved</p>
         </div>
     </footer>
 

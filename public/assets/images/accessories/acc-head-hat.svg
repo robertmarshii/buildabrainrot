@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hat brim -->
+  <ellipse cx="128" cy="150" rx="100" ry="20" fill="#8B4513" stroke="#654321" stroke-width="3"/>
+
+  <!-- Hat crown -->
+  <path d="M 70 150 Q 70 70 128 60 Q 186 70 186 150 Z" fill="#A0522D" stroke="#654321" stroke-width="3"/>
+
+  <!-- Hat band -->
+  <ellipse cx="128" cy="135" rx="60" ry="10" fill="#654321"/>
+
+  <!-- Hat crease -->
+  <path d="M 128 60 Q 128 100 128 150" stroke="#654321" stroke-width="2" opacity="0.5"/>
+</svg>

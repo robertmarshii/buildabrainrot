@@ -2,13 +2,160 @@
   "version": "1.0.0",
   "updated": "2025-11-05",
   "audio": {
-    "music": [],
+    "music": [
+      {
+        "id": "music-skibidi-beat-01",
+        "name": "Glitchy Chaos Beat",
+        "file": "audio/music/music-skibidi-beat-01.mp3",
+        "category": "music",
+        "vibe": "skibidi",
+        "duration": 20.0,
+        "bpm": 140,
+        "key": "C minor",
+        "loop": true,
+        "tags": ["electronic", "chaotic", "energetic", "meme"],
+        "mood": ["excited", "chaotic"],
+        "ageAppropriate": true,
+        "license": "CC0",
+        "source": "Incompetech / Pixabay",
+        "sourceUrl": "https://pixabay.com/music/",
+        "attribution": "",
+        "dateAdded": "2025-11-05",
+        "fileSize": 320000
+      },
+      {
+        "id": "music-chill-lofi-01",
+        "name": "Chill Lo-Fi Beat",
+        "file": "audio/music/music-chill-lofi-01.mp3",
+        "category": "music",
+        "vibe": "chill",
+        "duration": 30.0,
+        "bpm": 85,
+        "key": "G major",
+        "loop": true,
+        "tags": ["lofi", "calm", "relaxing"],
+        "mood": ["calm", "happy"],
+        "ageAppropriate": true,
+        "license": "CC0",
+        "source": "Pixabay",
+        "sourceUrl": "https://pixabay.com/music/",
+        "dateAdded": "2025-11-05",
+        "fileSize": 480000
+      }
+    ],
     "sfx": {
-      "reactions": [],
-      "animals": [],
-      "silly": []
+      "reactions": [
+        {
+          "id": "sfx-reaction-vine-boom",
+          "name": "Vine Boom",
+          "file": "audio/sfx/reactions/sfx-reaction-vine-boom.mp3",
+          "category": "sfx-reaction",
+          "duration": 1.2,
+          "tags": ["meme", "dramatic", "popular", "impact"],
+          "useCase": ["emphasis", "punchline", "reveal"],
+          "popularityRank": 1,
+          "ageAppropriate": true,
+          "license": "CC0",
+          "source": "Freesound",
+          "sourceUrl": "https://freesound.org/",
+          "dateAdded": "2025-11-05",
+          "fileSize": 19200
+        },
+        {
+          "id": "sfx-reaction-airhorn",
+          "name": "Airhorn",
+          "file": "audio/sfx/reactions/sfx-reaction-airhorn.mp3",
+          "category": "sfx-reaction",
+          "duration": 1.5,
+          "tags": ["loud", "meme", "popular", "attention"],
+          "useCase": ["announcement", "hype", "emphasis"],
+          "popularityRank": 2,
+          "ageAppropriate": true,
+          "license": "CC0",
+          "source": "Freesound",
+          "dateAdded": "2025-11-05",
+          "fileSize": 24000
+        }
+      ],
+      "animals": [
+        {
+          "id": "sfx-animal-dog-bark",
+          "name": "Dog Bark",
+          "file": "audio/sfx/animals/sfx-animal-dog-bark.mp3",
+          "category": "sfx-animal",
+          "duration": 0.8,
+          "tags": ["animal", "dog", "bark"],
+          "useCase": ["animal-sound", "reaction"],
+          "ageAppropriate": true,
+          "license": "CC0",
+          "source": "Freesound",
+          "dateAdded": "2025-11-05",
+          "fileSize": 12800
+        }
+      ],
+      "silly": [
+        {
+          "id": "sfx-silly-boing",
+          "name": "Boing",
+          "file": "audio/sfx/silly/sfx-silly-boing.mp3",
+          "category": "sfx-silly",
+          "duration": 0.6,
+          "tags": ["cartoon", "bounce", "silly", "spring"],
+          "useCase": ["bounce", "jump", "movement"],
+          "ageAppropriate": true,
+          "license": "CC0",
+          "source": "Freesound",
+          "dateAdded": "2025-11-05",
+          "fileSize": 9600
+        },
+        {
+          "id": "sfx-silly-honk",
+          "name": "Honk",
+          "file": "audio/sfx/silly/sfx-silly-honk.mp3",
+          "category": "sfx-silly",
+          "duration": 0.5,
+          "tags": ["cartoon", "honk", "silly", "clown"],
+          "useCase": ["funny", "silly-moment"],
+          "ageAppropriate": true,
+          "license": "CC0",
+          "source": "Freesound",
+          "dateAdded": "2025-11-05",
+          "fileSize": 8000
+        }
+      ]
     },
-    "voices": []
+    "voices": [
+      {
+        "id": "voice-sheesh",
+        "name": "Sheesh!",
+        "file": "audio/voices/voice-sheesh.mp3",
+        "category": "voice",
+        "duration": 1.0,
+        "text": "Sheesh!",
+        "voiceType": "robot",
+        "tags": ["gen-z", "slang", "popular", "reaction"],
+        "ageAppropriate": true,
+        "license": "Generated",
+        "source": "Text-to-Speech",
+        "dateAdded": "2025-11-05",
+        "fileSize": 16000
+      },
+      {
+        "id": "voice-nocap",
+        "name": "No Cap!",
+        "file": "audio/voices/voice-nocap.mp3",
+        "category": "voice",
+        "duration": 0.8,
+        "text": "No cap!",
+        "voiceType": "robot",
+        "tags": ["gen-z", "slang", "popular"],
+        "ageAppropriate": true,
+        "license": "Generated",
+        "source": "Text-to-Speech",
+        "dateAdded": "2025-11-05",
+        "fileSize": 12800
+      }
+    ]
   },
   "images": {
     "characters": {
@@ -236,7 +383,7 @@
   },
   "animations": [],
   "metadata": {
-    "totalAssets": 14,
+    "totalAssets": 21,
     "categories": [
       "audio.music",
       "audio.sfx.reactions",
@@ -252,9 +399,16 @@
       "animations"
     ],
     "assetCounts": {
-      "audio": 0,
+      "audio": 7,
       "images": 14,
       "animations": 0
+    },
+    "audioBreakdown": {
+      "music": 2,
+      "sfxReactions": 2,
+      "sfxAnimals": 1,
+      "sfxSilly": 2,
+      "voices": 2
     },
     "imageBreakdown": {
       "characterBodies": 3,
@@ -265,6 +419,6 @@
     },
     "lastUpdated": "2025-11-05",
     "status": "starter-pack",
-    "notes": "Minimal viable asset set for development. Full library to be populated in parallel with Tasks 4-10."
+    "notes": "Minimal viable asset set for development (21 total). Full library to be populated in parallel with Tasks 4-10. Audio: 2 music, 5 SFX, 2 voices. Images: 14 assets."
   }
 }

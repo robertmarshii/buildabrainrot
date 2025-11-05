@@ -139,8 +139,25 @@ class CharacterCanvas {
   _isPointInAccessory(x, y, accessory) {
     if (!accessory || !accessory.image) return false;
 
-    const hw = accessory.image.width / 2;
-    const hh = accessory.image.height / 2;
+    // Get dimensions - try naturalWidth first (works for all images including SVG)
+    // Then try regular width, then fall back to metadata dimensions
+    let width = accessory.image.naturalWidth || accessory.image.width;
+    let height = accessory.image.naturalHeight || accessory.image.height;
+
+    // If still no dimensions, use metadata
+    if ((!width || !height) && accessory.metadata && accessory.metadata.dimensions) {
+      width = accessory.metadata.dimensions.width;
+      height = accessory.metadata.dimensions.height;
+    }
+
+    // Default fallback if all else fails
+    if (!width || !height) {
+      width = 100;
+      height = 100;
+    }
+
+    const hw = width / 2;
+    const hh = height / 2;
     const px = accessory.position.x;
     const py = accessory.position.y;
 

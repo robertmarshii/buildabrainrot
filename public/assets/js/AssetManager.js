@@ -290,7 +290,7 @@ class AssetManager {
         // Determine type by file extension
         if (asset.file.match(/\.(mp3|ogg|wav)$/)) {
           result = await this.loadAudio(id);
-        } else if (asset.file.match(/\.(png|jpg|jpeg|gif|webp)$/)) {
+        } else if (asset.file.match(/\.(png|jpg|jpeg|gif|webp|svg)$/)) {
           result = await this.loadImage(id);
         } else {
           throw new Error(`Unknown asset type: ${asset.file}`);

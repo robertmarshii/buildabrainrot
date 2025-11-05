@@ -228,7 +228,7 @@
         {
           "id": "acc-head-sunglasses",
           "name": "Cool Sunglasses",
-          "file": "images/characters/accessories/acc-head-sunglasses.png",
+          "file": "images/accessories/acc-head-sunglasses.png",
           "category": "accessory-head",
           "attachPoint": "head",
           "dimensions": {"width": 150, "height": 60},
@@ -242,7 +242,7 @@
         {
           "id": "acc-head-crown",
           "name": "Golden Crown",
-          "file": "images/characters/accessories/acc-head-crown.png",
+          "file": "images/accessories/acc-head-crown.png",
           "category": "accessory-head",
           "attachPoint": "head",
           "dimensions": {"width": 120, "height": 100},
@@ -256,7 +256,7 @@
         {
           "id": "acc-feet-sneakers",
           "name": "Red Sneakers",
-          "file": "images/characters/accessories/acc-feet-sneakers.png",
+          "file": "images/accessories/acc-feet-sneakers.png",
           "category": "accessory-feet",
           "attachPoint": "feet",
           "dimensions": {"width": 180, "height": 80},
@@ -268,34 +268,7 @@
           "fileSize": 18200
         }
       ],
-      "faces": [
-        {
-          "id": "face-eyes-googly",
-          "name": "Googly Eyes",
-          "file": "images/characters/faces/face-eyes-googly.png",
-          "category": "face-eyes",
-          "dimensions": {"width": 128, "height": 64},
-          "tags": ["silly", "derp", "popular"],
-          "ageAppropriate": true,
-          "license": "AI-generated",
-          "source": "Bing Image Creator",
-          "dateAdded": "2025-11-05",
-          "fileSize": 8500
-        },
-        {
-          "id": "face-mouth-silly",
-          "name": "Silly Grin",
-          "file": "images/characters/faces/face-mouth-silly.png",
-          "category": "face-mouth",
-          "dimensions": {"width": 128, "height": 64},
-          "tags": ["happy", "goofy", "smile"],
-          "ageAppropriate": true,
-          "license": "AI-generated",
-          "source": "Bing Image Creator",
-          "dateAdded": "2025-11-05",
-          "fileSize": 7200
-        }
-      ],
+      "faces": [],
       "effects": []
     },
     "backgrounds": [
@@ -413,7 +386,7 @@
     "imageBreakdown": {
       "characterBodies": 3,
       "accessories": 3,
-      "faces": 2,
+      "faces": 0,
       "backgrounds": 3,
       "stickers": 3
     },

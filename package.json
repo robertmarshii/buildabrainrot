@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Build a Brainrot - Create and share silly brainrot characters",
   "scripts": {
+    "create-placeholders": "node scripts/create-placeholders.js",
     "generate-images": "node --dns-result-order=ipv4first scripts/generate-images.js",
     "generate-audio": "node --dns-result-order=ipv4first scripts/generate-audio.js",
     "generate-all": "npm run generate-images && npm run generate-audio",

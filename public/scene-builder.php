@@ -510,9 +510,8 @@
             const completeData = sceneCanvas.getCompleteData();
             sessionStorage.setItem('complete-brainrot', JSON.stringify(completeData));
 
-            // Navigate to audio builder (will be created in Task 08)
-            alert('Scene saved! Audio mixer coming in next task.');
-            // window.location.href = '/audio-builder.php';
+            // Navigate to audio builder
+            window.location.href = '/audio-builder.php';
         }
 
         // Initialize on page load

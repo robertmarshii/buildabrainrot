@@ -1,0 +1,42 @@
+# Environment variables (contains API keys)
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated assets (temporary, large files)
+public/assets/images/**/*.png
+public/assets/images/**/*.jpg
+public/assets/audio/**/*.mp3
+!public/assets/images/.gitkeep
+!public/assets/audio/.gitkeep
+
+# Keep manifest and docs
+!public/assets/manifest.json
+!public/assets/README.md
+
+# Cache and temp files
+.cache/
+tmp/
+*.tmp
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/

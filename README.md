@@ -1,83 +1,261 @@
-# buildabrainrot
+# 🧠 Build a Brainrot
 
-🧠 Concept: Build a Brainrot
+> Create and share your own silly brainrot characters! A kid-friendly web application for ages 7+.
 
-A fun, interactive site that helps kids (and creators in general) create their own viral meme characters, songs, or trends.
+**You don't just scroll brainrots — you BUILD them! 🔥**
 
-Core idea:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://php.net)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-“You don’t just scroll brainrots — you build them.”
+## 🎨 Features
 
-🌐 Website Structure Ideas
-1. Homepage
+- **Character Builder** - Create custom characters with bodies, colors, accessories, and faces
+- **Scene Composer** - Add backgrounds, stickers, and text bubbles
+- **Audio Mixer** - Pick background music and add sound effects
+- **Instant Sharing** - Get a shareable URL to show friends
+- **Download** - Save your creation as an image
+- **Remix** - Edit and customize existing brainrots
+- **100% Kid-Safe** - No chat, no personal info, COPPA compliant
 
-Cartoon chaos design — bubbly, overstimulating, colorful.
+## 🚀 Quick Start
 
-Big button: “Make My Brainrot!”
+### Using Docker (Recommended)
 
-Random animation / sound each time someone visits (e.g. “Blargh the dancing frog says hi!”)
+```bash
+# Clone the repository
+git clone https://github.com/your-username/buildabrainrot.git
+cd buildabrainrot
 
-2. Brainrot Builder Tool
+# Start the application
+docker-compose up -d
 
-Interactive step-by-step creation flow, like a meme generator but themed around the “brainrot formula”:
+# Access at http://localhost:7777
+```
 
-Steps:
+### Manual Setup
 
-Pick your vibe (Italian / Skibidi / Rizzler / Goofy / Hyperpop / Random)
+**Requirements:**
+- PHP 7.4 or higher
+- Apache with mod_rewrite
+- PostgreSQL (optional, for future database features)
+- Node.js and npm (for asset generation)
 
-Add your character (e.g. “Shark in sneakers”, “Banana in a suit”, “Sad microwave”)
+**Installation:**
 
-Choose your chant / phrase (auto-generate nonsense like tralalero tralala, bing bong blop, yoinky sploinky)
+```bash
+# 1. Clone repository
+git clone https://github.com/your-username/buildabrainrot.git
+cd buildabrainrot
 
-Select soundtrack / beat (license free sounds, or let users pick from a few loops)
+# 2. Install dependencies
+npm install
 
-Preview animation + sound
+# 3. Generate placeholder assets
+npm run generate-placeholders
 
-Download or share your brainrot
+# 4. Configure web server
+# Point document root to /public
+# Enable mod_rewrite and .htaccess
 
-You could even have an AI mode later that generates the full video meme or audio clip.
+# 5. Access application
+# http://localhost/
+```
 
-3. Brainrot Library
+## 📖 How It Works
 
-A page showcasing the best community creations — ranked by views or chaos level.
-You could let people “💀” (as in “I’m dead”) or “🧠🔥” (as in “brainrot achieved”) the ones they love most.
+### User Flow
 
-4. Learn the Science of Brainrots (funny explainer)
+```
+1. Homepage → 2. Character Builder → 3. Scene Builder → 4. Audio Mixer → 5. Share!
+```
 
-A tongue-in-cheek section that explains:
+### Architecture
 
-What makes something stick in your head
+```
+buildabrainrot/
+├── public/                    # Web root
+│   ├── index.php             # Homepage
+│   ├── character-builder.php # Step 1: Character creation
+│   ├── scene-builder.php     # Step 2: Scene composition
+│   ├── audio-builder.php     # Step 3: Audio mixing
+│   ├── view-brainrot.php     # Shared brainrot viewer
+│   ├── assets/
+│   │   ├── css/              # Stylesheets
+│   │   ├── js/               # JavaScript modules
+│   │   ├── images/           # Image assets
+│   │   ├── audio/            # Audio assets
+│   │   └── manifest.json     # Asset metadata
+│   └── api/                  # API endpoints
+├── scripts/                   # Build and utility scripts
+├── test/                      # Test files
+├── docs/                      # Documentation
+└── docker-compose.yml         # Docker configuration
+```
 
-Why silly repetition works
+## 🎯 Core Concepts
 
-Why absurdity + rhythm = viral power
-You could write it in a kid-friendly, meme-academic tone.
+### Asset System
 
-🎨 Visual Style
+All assets are defined in `public/assets/manifest.json`:
 
-Chunky bubble letters
+```json
+{
+  "version": "1.0",
+  "categories": {
+    "characters": [...],
+    "accessories": [...],
+    "backgrounds": [...],
+    "stickers": [...],
+    "music": [...],
+    "sfx": [...]
+  }
+}
+```
 
-Cartoonish mascot (maybe “Rotto” the mascot brain with eyes and sneakers?)
+Assets are lazy-loaded and cached for performance.
 
-Pastel chaos meets Gen Alpha TikTok aesthetics
+### URL Encoding
 
-Maybe a fake “Brainrot Labs” logo like it’s a serious scientific enterprise
+Brainrots are encoded into shareable URLs using:
+- Base64 encoding with URL-safe characters
+- Optional gzip compression (via pako.js)
+- Security validation to prevent XSS
 
-⚙️ Tech Stack Ideas
+Example URL: `https://buildabrainrot.com/b/c_H4sIAAAAAAAA...`
 
-If you build this:
+### Rendering Pipeline
 
-stack: php and vanilla js with postgresql db
+1. **CharacterCanvas** - Renders character with accessories and face
+2. **SceneCanvas** - Extends CharacterCanvas, adds background, stickers, text
+3. **AudioMixer** - Manages music and SFX playback
+4. **BrainrotViewer** - Reconstructs and plays shared brainrots
 
-Optional AI stuff: Use text2img/audio generation to make custom characters or sounds
+## 🛠️ Development
 
-💡 Future Expansion
+### Adding New Assets
 
-“Brainrot Battle” — kids submit brainrots, the crowd votes which is the ultimate.
+```bash
+# 1. Add image file to public/assets/images/{category}/
+# 2. Add audio file to public/assets/audio/{category}/
+# 3. Update public/assets/manifest.json
 
-“Brainrotify” — converts your drawing or voice into a full meme.
+# Example manifest entry:
+{
+  "id": "char-body-new-character",
+  "name": "New Character",
+  "category": "characters",
+  "subcategory": "bodies",
+  "file": "/assets/images/characters/bodies/new-character.png",
+  "colorizable": true
+}
+```
 
-“Brainrot School” — parody educational section teaching “The 10 Laws of Virality”.
+### Running Tests
 
-Would you like me to help you sketch the homepage design + tagline ideas next (so you can start building the landing page)?
-Or do you want to focus first on the “Brainrot Builder” concept — like how the generation steps and UI would work?
+```bash
+# Unit tests
+npm test
+
+# Integration tests
+open test/integration-test.html
+
+# Viewer tests
+open test/test-viewer.html
+
+# Asset manager tests
+open test/test-asset-manager.html
+
+# Encoder tests
+open test/test-encoder.html
+```
+
+### Code Style
+
+- **PHP**: Follow PSR-12 coding standards
+- **JavaScript**: ES6+ with JSDoc comments
+- **CSS**: Mobile-first, BEM naming convention
+- **Comments**: Required for all public methods
+
+## 📊 Analytics
+
+Privacy-friendly analytics track:
+- Page views
+- Creation completions
+- Share/download actions
+- Error occurrences
+
+**No personal data is collected.** Anonymous session IDs only.
+
+## 🔒 Security
+
+- XSS prevention via input sanitization
+- CSRF protection
+- Rate limiting on API endpoints
+- Secure headers (X-Frame-Options, CSP, etc.)
+- No user-uploaded content (Phase 1)
+- Kid-safe content moderation
+
+## 🎮 Browser Support
+
+- ✅ Chrome/Edge (latest 2 versions)
+- ✅ Firefox (latest 2 versions)
+- ✅ Safari (latest 2 versions)
+- ✅ iOS Safari (latest)
+- ✅ Android Chrome (latest)
+
+## 📱 Mobile Support
+
+- Responsive design (mobile-first)
+- Touch-friendly controls (60px+ targets)
+- Optimized asset loading
+- iOS audio handling
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+
+### Development Workflow
+
+```bash
+# 1. Create feature branch
+git checkout -b feature/your-feature
+
+# 2. Make changes and test
+npm test
+
+# 3. Commit with clear message
+git commit -m "Add: new feature description"
+
+# 4. Push and create PR
+git push origin feature/your-feature
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built for kids ages 7+ with safety and fun in mind
+- Inspired by Gen Alpha internet culture
+- "Brainrot Labs" - A Serious Scientific Enterprise™
+
+## 📞 Contact
+
+- **Issues**: [GitHub Issues](https://github.com/your-username/buildabrainrot/issues)
+- **Email**: contact@buildabrainrot.com
+- **Website**: https://buildabrainrot.com
+
+## 🎉 Fun Facts
+
+- Contains easter eggs! Try the Konami code on the homepage
+- Every brainrot is unique - billions of possible combinations
+- Over 23 placeholder assets ready to use
+- Fully functional offline (with Service Worker)
+
+---
+
+**Made with 🧠 by Brainrot Labs**
+
+*Remember: You don't just scroll brainrots — you BUILD them!*

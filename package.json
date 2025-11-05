@@ -4,6 +4,8 @@
   "description": "Build a Brainrot - Create and share silly brainrot characters",
   "scripts": {
     "generate-images": "node --dns-result-order=ipv4first scripts/generate-images.js",
+    "generate-audio": "node --dns-result-order=ipv4first scripts/generate-audio.js",
+    "generate-all": "npm run generate-images && npm run generate-audio",
     "generate-batch": "node --dns-result-order=ipv4first scripts/generate-images.js --batch",
     "validate-assets": "bash scripts/validate-assets.sh"
   },

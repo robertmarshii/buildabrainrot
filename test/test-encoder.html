@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Encoder Tests</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #4ec9b0;
+            border-bottom: 2px solid #4ec9b0;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #569cd6;
+        }
+
+        .test-output {
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ce9178;
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #dcdcaa;
+            font-size: 14px;
+        }
+
+        .stat-card .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4ec9b0;
+        }
+
+        #console-output {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Brainrot Encoder Test Suite</h1>
+
+        <div class="info">
+            <h3>Test Environment</h3>
+            <p><strong>Browser:</strong> <span id="browser-info"></span></p>
+            <p><strong>Pako.js loaded:</strong> <span id="pako-status"></span></p>
+            <p><strong>Compression available:</strong> <span id="compression-status"></span></p>
+        </div>
+
+        <div>
+            <button id="run-tests-btn">▶ Run All Tests</button>
+            <button id="clear-btn">Clear Output</button>
+            <button id="test-example-btn">Test Example Brainrot</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Tests Passed</h3>
+                <div class="value" id="passed-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Tests Failed</h3>
+                <div class="value" id="failed-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Total Tests</h3>
+                <div class="value" id="total-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Success Rate</h3>
+                <div class="value" id="success-rate">0%</div>
+            </div>
+        </div>
+
+        <div class="test-output">
+            <div id="console-output">Click "Run All Tests" to start testing...</div>
+        </div>
+    </div>
+
+    <!-- Load dependencies -->
+    <script src="../public/assets/js/pako.min.js"></script>
+    <script src="../public/assets/js/BrainrotEncoder.js"></script>
+    <script src="../public/assets/js/BrainrotValidator.js"></script>
+    <script src="../public/assets/js/BrainrotUtils.js"></script>
+    <script src="test-encoder.js"></script>
+
+    <script>
+        // Update environment info
+        document.getElementById('browser-info').textContent = navigator.userAgent.split(' ').slice(-2).join(' ');
+        document.getElementById('pako-status').textContent = typeof pako !== 'undefined' ? '✓ Yes' : '✗ No';
+        document.getElementById('compression-status').textContent = typeof pako !== 'undefined' ? '✓ Available' : '✗ Not Available (URLs will be longer)';
+
+        // Capture console output
+        const output = document.getElementById('console-output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+
+        let logBuffer = [];
+
+        function captureToOutput(message, type = 'log') {
+            logBuffer.push({ message, type });
+            updateOutput();
+        }
+
+        function updateOutput() {
+            output.innerHTML = logBuffer.map(({ message, type }) => {
+                let color = '#0f0';
+                if (type === 'error') color = '#f00';
+                if (type === 'warn') color = '#ff0';
+
+                return `<span style="color: ${color}">${message}</span>`;
+            }).join('\n');
+
+            output.scrollTop = output.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            captureToOutput(args.join(' '), 'log');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            captureToOutput(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            captureToOutput(args.join(' '), 'warn');
+        };
+
+        // Run tests button
+        document.getElementById('run-tests-btn').addEventListener('click', async function() {
+            this.disabled = true;
+            logBuffer = [];
+            updateOutput();
+
+            // Recreate test runner
+            const newRunner = new TestRunner();
+
+            // Copy all tests from the global runner
+            newRunner.tests = runner.tests;
+
+            await newRunner.run();
+
+            // Update stats
+            document.getElementById('passed-count').textContent = newRunner.passed;
+            document.getElementById('failed-count').textContent = newRunner.failed;
+            document.getElementById('total-count').textContent = newRunner.tests.length;
+
+            const successRate = newRunner.tests.length > 0
+                ? Math.round((newRunner.passed / newRunner.tests.length) * 100)
+                : 0;
+            document.getElementById('success-rate').textContent = successRate + '%';
+
+            this.disabled = false;
+        });
+
+        // Clear button
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            logBuffer = [];
+            updateOutput();
+            output.innerHTML = 'Output cleared.';
+        });
+
+        // Test example button
+        document.getElementById('test-example-btn').addEventListener('click', function() {
+            logBuffer = [];
+
+            console.log('Creating example brainrot...');
+
+            const exampleData = {
+                version: "1.0",
+                character: {
+                    body: "char-body-shark",
+                    color: "#4A90E2"
+                },
+                scene: {
+                    background: "bg-toilet"
+                },
+                audio: {
+                    music: { id: "music-skibidi-beat-01", volume: 0.8 },
+                    sfx: []
+                }
+            };
+
+            console.log('Original data:', JSON.stringify(exampleData, null, 2));
+
+            const encoded = BrainrotEncoder.encode(exampleData);
+            console.log('\nEncoded:', encoded);
+            console.log('Encoded length:', encoded.length);
+
+            const url = BrainrotEncoder.getShareUrl(exampleData);
+            console.log('\nShareable URL:', url);
+            console.log('URL length:', url.length);
+
+            const decoded = BrainrotEncoder.decode(encoded);
+            console.log('\nDecoded data:', JSON.stringify(decoded, null, 2));
+
+            const match = JSON.stringify(decoded) === JSON.stringify(exampleData);
+            console.log('\nData integrity:', match ? '✓ Perfect match!' : '✗ Data mismatch!');
+
+            const stats = BrainrotUtils.getUrlStats(exampleData);
+            console.log('\nURL Stats:');
+            console.log('  Original JSON size:', stats.originalSize, 'bytes');
+            console.log('  Encoded size:', stats.encodedSize, 'bytes');
+            console.log('  Compression ratio:', stats.compressionRatio);
+            console.log('  Twitter safe:', stats.twitterSafe ? '✓' : '✗');
+            console.log('  Social media safe:', stats.socialMediaSafe ? '✓' : '✗');
+        });
+    </script>
+</body>
+</html>

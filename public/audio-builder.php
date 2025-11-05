@@ -651,16 +651,51 @@
         }
 
         // Show share modal
-        function showShareModal(shareUrl, encoded) {
+        async function showShareModal(shareUrl, encoded) {
             const modal = document.getElementById('share-modal');
             const urlInput = document.getElementById('share-url');
 
+            // Show modal immediately with original URL
             urlInput.value = shareUrl;
             modal.classList.add('active');
 
             // Store for social sharing
             window.currentShareUrl = shareUrl;
             window.currentEncoded = encoded;
+
+            // Try to shorten the URL in the background
+            try {
+                const shortUrl = await shortenUrl(shareUrl);
+                if (shortUrl) {
+                    urlInput.value = shortUrl;
+                    window.currentShareUrl = shortUrl;
+                }
+            } catch (error) {
+                console.warn('URL shortening failed, using original URL:', error);
+                // Keep original URL on failure
+            }
+        }
+
+        // Shorten URL using is.gd API (free, no auth required)
+        async function shortenUrl(longUrl) {
+            try {
+                const response = await fetch(`https://is.gd/create.php?format=json&url=${encodeURIComponent(longUrl)}`);
+
+                if (!response.ok) {
+                    throw new Error('URL shortening service unavailable');
+                }
+
+                const data = await response.json();
+
+                if (data.shorturl) {
+                    return data.shorturl;
+                }
+
+                throw new Error('Failed to create short URL');
+            } catch (error) {
+                console.error('URL shortening error:', error);
+                return null; // Return null on error, caller will use original URL
+            }
         }
 
         // Close share modal

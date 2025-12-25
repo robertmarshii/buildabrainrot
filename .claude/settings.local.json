@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "Bash(docker-compose up:*)",
-      "Bash(docker-compose:*)"
+      "Bash(docker-compose:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(chmod:*)",
+      "Bash(./create-silent-audio.sh:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker run:*)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:archive.org)",
+      "WebFetch(domain:soundbible.com)",
+      "WebFetch(domain:incompetech.com)"
     ],
     "deny": [],
     "ask": []

@@ -471,13 +471,23 @@
             try {
                 loadingUI.show({ title: 'Loading Audio Mixer...' });
 
+                // Clear cache if needed (for development)
+                // assetManager.clearCache();
+
                 await assetManager.init();
+
+                // Debug: Log loaded SFX assets
+                const sfxAssets = assetManager.getAssetsByCategory('sfx');
+                console.log('✓ Loaded SFX assets:', sfxAssets.length, sfxAssets.map(s => s.id));
 
                 audioMixer = new AudioMixer();
                 audioMixer.onTimeUpdate = updateTimeline;
 
                 await loadMusicGrid();
                 await loadSFXGrid();
+
+                // Setup timeline drag and drop
+                setupTimelineDragDrop();
 
                 loadingUI.hide();
             } catch (error) {
@@ -597,13 +607,61 @@
             // Remove old SFX markers
             document.querySelectorAll('.timeline-sfx').forEach(el => el.remove());
 
-            // Add SFX markers
-            audioMixer.sfxQueue.forEach(sfx => {
+            // Add SFX markers with drag support
+            audioMixer.sfxQueue.forEach((sfx, index) => {
                 const marker = document.createElement('div');
                 marker.className = 'timeline-sfx';
                 marker.textContent = getSFXIcon(sfx.id);
                 marker.style.left = ((sfx.time / audioMixer.duration) * 100) + '%';
+                marker.dataset.index = index;
+                marker.title = `${sfx.metadata.name} @ ${sfx.time.toFixed(1)}s - Drag to reposition`;
+
+                // Make draggable
+                marker.draggable = true;
+                marker.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('sfxIndex', index);
+                    marker.style.opacity = '0.5';
+                });
+                marker.addEventListener('dragend', (e) => {
+                    marker.style.opacity = '1';
+                });
+
                 ruler.appendChild(marker);
+            });
+        }
+
+        // Setup timeline drop zone
+        function setupTimelineDragDrop() {
+            const ruler = document.getElementById('timeline-ruler');
+
+            ruler.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+            });
+
+            ruler.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const sfxIndex = parseInt(e.dataTransfer.getData('sfxIndex'));
+
+                if (sfxIndex >= 0 && sfxIndex < audioMixer.sfxQueue.length) {
+                    // Calculate new time based on drop position
+                    const rect = ruler.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const percentage = x / rect.width;
+                    const newTime = Math.max(0, Math.min(audioMixer.duration, percentage * audioMixer.duration));
+
+                    // Update SFX time
+                    audioMixer.sfxQueue[sfxIndex].time = newTime;
+                    audioMixer.sfxQueue[sfxIndex].played = false; // Reset played flag
+
+                    // Re-sort by time
+                    audioMixer.sfxQueue.sort((a, b) => a.time - b.time);
+
+                    // Update UI
+                    updateSFXList();
+                    updateTimelineVisual();
+                }
             });
         }
 

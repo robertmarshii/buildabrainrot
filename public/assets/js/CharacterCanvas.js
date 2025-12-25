@@ -202,24 +202,47 @@ class CharacterCanvas {
       let finalPosition = position;
       if (!finalPosition && this.character.body && this.character.body.metadata) {
         const attachmentPoints = this.character.body.metadata.attachmentPoints;
+        const bodyMetadata = this.character.body.metadata;
+
         if (attachmentPoints) {
+          let attachPoint = null;
+
           // Try to match accessory type with attachment point
           if (accessoryId.includes('head')) {
-            finalPosition = attachmentPoints.head;
+            attachPoint = attachmentPoints.head;
           } else if (accessoryId.includes('feet')) {
-            finalPosition = attachmentPoints.feet;
+            attachPoint = attachmentPoints.feet;
           } else if (accessoryId.includes('hand')) {
-            finalPosition = attachmentPoints.hand;
+            attachPoint = attachmentPoints.hand;
+          }
+
+          if (attachPoint) {
+            // In CharacterCanvas, body is centered on canvas
+            // Attachment points are body-image coordinates, convert to canvas coordinates
+            const canvasCenterX = this.width / 2;
+            const canvasCenterY = this.height / 2;
+            const bodyDims = bodyMetadata.dimensions || { width: 512, height: 512 };
+            const bodyCenterX = bodyDims.width / 2;
+            const bodyCenterY = bodyDims.height / 2;
+
+            // Calculate offset from body center, then add to canvas center
+            finalPosition = {
+              x: canvasCenterX + (attachPoint.x - bodyCenterX),
+              y: canvasCenterY + (attachPoint.y - bodyCenterY)
+            };
           }
         }
       }
 
-      // Default to center if no position
+      // Default to canvas center if no position
       if (!finalPosition) {
         finalPosition = {
           x: this.width / 2,
           y: this.height / 2
         };
+      } else if (position) {
+        // If position was provided, create a copy to avoid shared references
+        finalPosition = { ...position };
       }
 
       const accessory = {
@@ -528,12 +551,19 @@ class CharacterCanvas {
    * @returns {Object} Character data in BrainrotData format
    */
   getCharacterData() {
+    // Convert canvas-absolute positions to body-center-relative for SceneCanvas
+    const canvasCenterX = this.width / 2;
+    const canvasCenterY = this.height / 2;
+
     return {
       body: this.character.body?.id || null,
       color: this.character.bodyColor,
       accessories: this.character.accessories.map(acc => ({
         id: acc.id,
-        position: acc.position,
+        position: {
+          x: acc.position.x - canvasCenterX,  // Convert to body-center-relative
+          y: acc.position.y - canvasCenterY
+        },
         scale: acc.scale,
         rotation: acc.rotation
       })),
@@ -562,8 +592,17 @@ class CharacterCanvas {
     }
 
     if (characterData.accessories) {
+      const canvasCenterX = this.width / 2;
+      const canvasCenterY = this.height / 2;
+
       for (const acc of characterData.accessories) {
-        await this.addAccessory(acc.id, acc.position, acc.scale, acc.rotation);
+        // Convert body-center-relative positions back to canvas-absolute
+        const canvasPosition = acc.position ? {
+          x: acc.position.x + canvasCenterX,
+          y: acc.position.y + canvasCenterY
+        } : undefined;
+
+        await this.addAccessory(acc.id, canvasPosition, acc.scale, acc.rotation);
       }
     }
 

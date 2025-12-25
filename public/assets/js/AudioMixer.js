@@ -79,16 +79,32 @@ class AudioMixer {
    */
   async addSFX(sfxId, time) {
     try {
-      const audio = await this.assetManager.loadAudio(sfxId);
-      const asset = this.assetManager.findAsset(sfxId);
+      // Try to find asset directly from getAssetsByCategory first
+      const availableSfx = this.assetManager.getAssetsByCategory('sfx');
+      let asset = availableSfx.find(s => s.id === sfxId);
 
-      // Clone audio for multiple instances
-      const clone = audio.cloneNode();
-      clone.volume = 1.0;
+      // Fallback to findAsset method
+      if (!asset) {
+        asset = this.assetManager.findAsset(sfxId);
+      }
+
+      if (!asset) {
+        console.error('SFX asset not found:', sfxId);
+        console.log('Available SFX IDs:', availableSfx.map(s => s.id));
+        console.log('Full SFX assets:', availableSfx);
+        throw new Error(`SFX asset not found: ${sfxId}`);
+      }
+
+      // Create new Audio element for this SFX instance
+      // Don't clone - create fresh instance to ensure it loads properly
+      const sfxAudio = new Audio();
+      sfxAudio.src = this.assetManager.baseUrl + asset.file;
+      sfxAudio.volume = 1.0;
+      sfxAudio.preload = 'auto';
 
       this.sfxQueue.push({
         id: sfxId,
-        audio: clone,
+        audio: sfxAudio,
         time: time,
         duration: asset.duration || 1,
         played: false,

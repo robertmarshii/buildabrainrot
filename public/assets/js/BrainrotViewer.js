@@ -151,7 +151,7 @@ class BrainrotViewer {
     // Load music
     if (this.brainrotData.audio?.music) {
       await this.mixer.setMusic(this.brainrotData.audio.music.id);
-      this.mixer.setVolume(this.brainrotData.audio.music.volume || 0.8);
+      this.mixer.setMusicVolume(this.brainrotData.audio.music.volume || 0.8);
     }
 
     // Load SFX
@@ -305,10 +305,10 @@ class BrainrotViewer {
     this.isMuted = !this.isMuted;
 
     if (this.isMuted) {
-      this.mixer.setVolume(0);
+      this.mixer.setMusicVolume(0);
       document.getElementById('btn-mute').textContent = '🔇';
     } else {
-      this.mixer.setVolume(0.8);
+      this.mixer.setMusicVolume(0.8);
       document.getElementById('btn-mute').textContent = '🔊';
     }
   }

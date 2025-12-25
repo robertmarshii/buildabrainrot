@@ -38,6 +38,8 @@
             border-radius: 10px;
             margin: 0 auto;
             display: block;
+            max-width: 100%;
+            height: auto;
         }
 
         .section-title {

@@ -7,13 +7,19 @@
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
+        /* Override container for scene builder */
+        .container {
+            max-width: 100%;
+            padding: 1rem;
+        }
+
         .builder-container {
             display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            gap: 20px;
-            max-width: 1600px;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 15px;
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
         }
 
         .builder-sidebar {
@@ -304,7 +310,11 @@
                 // Load character from previous step
                 const characterData = sessionStorage.getItem('character-data');
                 if (characterData) {
-                    await sceneCanvas.loadCharacterData(JSON.parse(characterData));
+                    const parsed = JSON.parse(characterData);
+                    console.log('Loading character data:', parsed);
+                    console.log('Accessories to load:', parsed.accessories);
+                    await sceneCanvas.loadCharacterData(parsed);
+                    console.log('Character loaded. Accessories in canvas:', sceneCanvas.character.accessories);
                 }
 
                 // Load UI
@@ -452,7 +462,9 @@
                 return;
             }
 
-            sceneCanvas.addText(text, selectedTextStyle);
+            const textObj = sceneCanvas.addText(text, selectedTextStyle);
+            console.log('Text added:', textObj);
+            console.log('Total texts in scene:', sceneCanvas.scene.texts.length);
             updateTextList();
 
             // Clear input

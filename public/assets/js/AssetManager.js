@@ -98,12 +98,15 @@ class AssetManager {
     for (const category of categories) {
       if (!Array.isArray(category)) continue;
 
-      const asset = category.find(a => a.id === assetId);
+      const asset = category.find(a => a && a.id === assetId);
       if (asset) {
         this.cache.metadata.set(assetId, asset);
         return asset;
       }
     }
+
+    // Debug: log what we're searching for
+    console.warn(`Asset not found: ${assetId}. Searched ${categories.length} categories.`);
 
     return null;
   }
@@ -240,15 +243,23 @@ class AssetManager {
       await new Promise((resolve, reject) => {
         const timeout = setTimeout(() => {
           reject(new Error('Audio load timeout'));
-        }, 10000); // 10 second timeout
+        }, 5000); // 5 second timeout (reduced from 10)
 
         audio.addEventListener('canplaythrough', () => {
           clearTimeout(timeout);
           resolve();
         }, { once: true });
 
-        audio.addEventListener('error', () => {
+        // Also resolve on 'canplay' event (less strict than canplaythrough)
+        audio.addEventListener('canplay', () => {
           clearTimeout(timeout);
+          resolve();
+        }, { once: true });
+
+        audio.addEventListener('error', (e) => {
+          clearTimeout(timeout);
+          // Log actual error for debugging
+          console.warn(`Audio load error for ${asset.id}:`, e);
           reject(new Error('Audio load error'));
         }, { once: true });
 
@@ -257,12 +268,16 @@ class AssetManager {
 
       return audio;
     } catch (error) {
-      if (attempt < this.retryCount) {
-        console.warn(`Retry ${attempt}/${this.retryCount} for ${asset.id}`);
-        await this._sleep(1000 * attempt);
+      if (attempt < 2) { // Reduced retries from 3 to 2
+        console.warn(`Retry ${attempt}/2 for ${asset.id}`);
+        await this._sleep(500); // Faster retry
         return this._loadAudioWithRetry(asset, attempt + 1);
       }
-      throw new Error(`Failed to load ${asset.id} after ${this.retryCount} attempts`);
+      // Return a silent audio element instead of throwing
+      console.warn(`Audio ${asset.id} failed to load, using silent placeholder`);
+      const silentAudio = new Audio();
+      silentAudio._isSilent = true; // Mark as silent for debugging
+      return silentAudio;
     }
   }
 

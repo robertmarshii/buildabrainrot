@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Fire Emoji 🔥 Style -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="fireGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF4500;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="fireGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer flame (orange-red) -->
+  <path d="M 100 180
+           Q 70 160, 65 130
+           Q 60 100, 75 75
+           Q 80 50, 90 40
+           Q 95 20, 100 10
+           Q 105 25, 110 45
+           Q 120 60, 125 80
+           Q 135 100, 135 125
+           Q 130 155, 100 180 Z"
+        fill="url(#fireGrad1)" filter="url(#glow)"/>
+
+  <!-- Middle flame (orange) -->
+  <path d="M 100 165
+           Q 80 145, 78 120
+           Q 76 95, 88 75
+           Q 92 55, 100 35
+           Q 108 55, 112 75
+           Q 122 95, 120 120
+           Q 118 145, 100 165 Z"
+        fill="#FF6600"/>
+
+  <!-- Inner flame (yellow-orange) -->
+  <path d="M 100 145
+           Q 88 130, 88 110
+           Q 88 85, 100 60
+           Q 112 85, 112 110
+           Q 112 130, 100 145 Z"
+        fill="url(#fireGrad2)"/>
+
+  <!-- Center bright spot (yellow-white) -->
+  <ellipse cx="100" cy="95" rx="12" ry="25" fill="#FFFF99" opacity="0.8"/>
+  <ellipse cx="100" cy="85" rx="8" ry="15" fill="#FFFFCC" opacity="0.9"/>
+</svg>

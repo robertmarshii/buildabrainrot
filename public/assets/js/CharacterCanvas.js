@@ -82,8 +82,11 @@ class CharacterCanvas {
    */
   _onDragStart(e) {
     const rect = this.canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // Calculate actual scale based on rendered size vs internal size
+    const scaleX = this.width / rect.width;
+    const scaleY = this.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
 
     // Check if clicking on an accessory (iterate backwards to check top items first)
     for (let i = this.character.accessories.length - 1; i >= 0; i--) {
@@ -109,8 +112,11 @@ class CharacterCanvas {
     if (!this.dragging.active) return;
 
     const rect = this.canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // Calculate actual scale based on rendered size vs internal size
+    const scaleX = this.width / rect.width;
+    const scaleY = this.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
 
     const acc = this.character.accessories[this.dragging.accessoryIndex];
     if (acc) {

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.6",
-  "updated": "2025-11-05",
+  "version": "1.0.8",
+  "updated": "2025-12-25",
   "audio": {
     "music": [
       {
@@ -163,7 +163,7 @@
         {
           "id": "char-body-shark",
           "name": "Silly Shark",
-          "file": "images/characters/bodies/char-body-shark.png",
+          "file": "images/characters/bodies/char-body-shark.svg",
           "category": "character-body",
           "type": "animal",
           "dimensions": {"width": 512, "height": 512},
@@ -176,10 +176,10 @@
           },
           "tags": ["animal", "sea", "silly", "popular"],
           "ageAppropriate": true,
-          "license": "AI-generated",
-          "source": "Bing Image Creator",
-          "dateAdded": "2025-11-05",
-          "fileSize": 45120
+          "license": "Custom SVG",
+          "source": "In-house design",
+          "dateAdded": "2025-12-25",
+          "fileSize": 2048
         },
         {
           "id": "char-body-cat",
@@ -333,16 +333,16 @@
         {
           "id": "acc-feet-sneakers",
           "name": "Red Sneakers",
-          "file": "images/accessories/acc-feet-sneakers.png",
+          "file": "images/accessories/acc-feet-sneakers.svg",
           "category": "accessory-feet",
           "attachPoint": "feet",
           "dimensions": {"width": 180, "height": 80},
           "tags": ["shoes", "cool", "red"],
           "ageAppropriate": true,
-          "license": "AI-generated",
-          "source": "Bing Image Creator",
-          "dateAdded": "2025-11-05",
-          "fileSize": 18200
+          "license": "Custom SVG",
+          "source": "In-house design",
+          "dateAdded": "2025-12-25",
+          "fileSize": 3072
         }
       ],
       "faces": [],
@@ -352,82 +352,82 @@
       {
         "id": "bg-toilet",
         "name": "Bathroom",
-        "file": "images/backgrounds/bg-toilet.png",
+        "file": "images/backgrounds/bg-toilet.svg",
         "category": "background",
         "dimensions": {"width": 1920, "height": 1080},
         "tags": ["bathroom", "funny", "meme", "popular"],
         "ageAppropriate": true,
-        "license": "AI-generated",
-        "source": "Bing Image Creator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 285000
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 8192
       },
       {
         "id": "bg-classroom",
         "name": "Classroom",
-        "file": "images/backgrounds/bg-classroom.png",
+        "file": "images/backgrounds/bg-classroom.svg",
         "category": "background",
         "dimensions": {"width": 1920, "height": 1080},
         "tags": ["school", "classroom", "learning", "indoor"],
         "ageAppropriate": true,
-        "license": "AI-generated",
-        "source": "Bing Image Creator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 280000
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 10240
       },
       {
         "id": "bg-space",
         "name": "Outer Space",
-        "file": "images/backgrounds/bg-space.png",
+        "file": "images/backgrounds/bg-space.svg",
         "category": "background",
         "dimensions": {"width": 1920, "height": 1080},
         "tags": ["space", "stars", "cool", "cosmic"],
         "ageAppropriate": true,
-        "license": "AI-generated",
-        "source": "Bing Image Creator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 245000
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 9216
       }
     ],
     "stickers": [
       {
         "id": "sticker-skull",
         "name": "Skull Emoji",
-        "file": "images/stickers/sticker-skull.png",
+        "file": "images/stickers/sticker-skull.svg",
         "category": "sticker-emoji",
         "dimensions": {"width": 200, "height": 200},
         "tags": ["emoji", "popular", "meme", "reaction"],
         "ageAppropriate": true,
-        "license": "AI-generated",
-        "source": "Bing Image Creator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 22000
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 2048
       },
       {
         "id": "sticker-fire",
         "name": "Fire Emoji",
-        "file": "images/stickers/sticker-fire.png",
+        "file": "images/stickers/sticker-fire.svg",
         "category": "sticker-emoji",
         "dimensions": {"width": 200, "height": 200},
         "tags": ["emoji", "fire", "hot", "popular"],
         "ageAppropriate": true,
-        "license": "AI-generated",
-        "source": "Bing Image Creator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 24500
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 2560
       },
       {
         "id": "sticker-text-sheesh",
         "name": "Sheesh Text",
-        "file": "images/stickers/sticker-text-sheesh.png",
+        "file": "images/stickers/sticker-text-sheesh.svg",
         "category": "sticker-text",
         "dimensions": {"width": 300, "height": 100},
         "tags": ["text", "meme", "gen-z", "slang"],
         "ageAppropriate": true,
-        "license": "Generated",
-        "source": "Text Generator",
-        "dateAdded": "2025-11-05",
-        "fileSize": 18000
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2025-12-25",
+        "fileSize": 3072
       }
     ]
   },
@@ -467,8 +467,8 @@
       "backgrounds": 3,
       "stickers": 3
     },
-    "lastUpdated": "2025-11-05",
+    "lastUpdated": "2025-12-25",
     "status": "starter-pack",
-    "notes": "Minimal viable asset set for development (21 total). Full library to be populated in parallel with Tasks 4-10. Audio: 2 music, 5 SFX, 2 voices. Images: 14 assets."
+    "notes": "Minimal viable asset set for development (21 total). All placeholder images replaced with custom SVG graphics. Audio: 2 music, 5 SFX, 2 voices. Images: 14 assets (all SVG)."
   }
 }

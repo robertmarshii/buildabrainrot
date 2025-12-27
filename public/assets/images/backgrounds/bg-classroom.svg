@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <!-- Classroom Background -->
+
+  <!-- Floor -->
+  <rect x="0" y="650" width="1920" height="430" fill="#D4A574"/>
+  <!-- Floor boards -->
+  <g opacity="0.3">
+    <line x1="0" y1="720" x2="1920" y2="720" stroke="#A68560" stroke-width="2"/>
+    <line x1="0" y1="800" x2="1920" y2="800" stroke="#A68560" stroke-width="2"/>
+    <line x1="0" y1="880" x2="1920" y2="880" stroke="#A68560" stroke-width="2"/>
+    <line x1="0" y1="960" x2="1920" y2="960" stroke="#A68560" stroke-width="2"/>
+    <line x1="0" y1="1040" x2="1920" y2="1040" stroke="#A68560" stroke-width="2"/>
+  </g>
+
+  <!-- Back wall -->
+  <rect x="0" y="0" width="1920" height="650" fill="#E8DCC4"/>
+
+  <!-- Chalkboard/Whiteboard -->
+  <rect x="400" y="120" width="1120" height="420" fill="#2D5016" stroke="#8B7355" stroke-width="12" rx="8"/>
+  <rect x="420" y="140" width="1080" height="380" fill="#3A6B23"/>
+
+  <!-- Chalk tray -->
+  <rect x="400" y="530" width="1120" height="25" fill="#8B7355"/>
+
+  <!-- Writing on board (silly equations) -->
+  <g fill="#FFFFFF" font-family="'Comic Sans MS', cursive" font-size="60" opacity="0.9">
+    <text x="500" y="250">BRAINROT = 💀</text>
+    <text x="500" y="350">1 + 1 = FISH?</text>
+    <text x="500" y="450">SKIBIDI × OHIO</text>
+  </g>
+
+  <!-- Board eraser and chalk -->
+  <rect x="450" y="545" width="80" height="35" fill="#FFE5B4" stroke="#D2B48C" stroke-width="2" rx="3"/>
+  <rect x="560" y="555" width="12" height="50" fill="#FFFFFF" rx="2"/>
+  <rect x="590" y="555" width="12" height="50" fill="#FFD700" rx="2"/>
+
+  <!-- Desks (front) -->
+  <!-- Desk 1 (left) -->
+  <g transform="translate(300, 720)">
+    <rect x="0" y="0" width="220" height="140" fill="#8B6F47" stroke="#5D4E37" stroke-width="3" rx="5"/>
+    <rect x="10" y="10" width="200" height="120" fill="#A0826D" opacity="0.6" rx="3"/>
+    <!-- Desk legs -->
+    <rect x="20" y="130" width="15" height="120" fill="#5D4E37"/>
+    <rect x="185" y="130" width="15" height="120" fill="#5D4E37"/>
+  </g>
+
+  <!-- Desk 2 (center-left) -->
+  <g transform="translate(650, 720)">
+    <rect x="0" y="0" width="220" height="140" fill="#8B6F47" stroke="#5D4E37" stroke-width="3" rx="5"/>
+    <rect x="10" y="10" width="200" height="120" fill="#A0826D" opacity="0.6" rx="3"/>
+    <rect x="20" y="130" width="15" height="120" fill="#5D4E37"/>
+    <rect x="185" y="130" width="15" height="120" fill="#5D4E37"/>
+  </g>
+
+  <!-- Desk 3 (center-right) -->
+  <g transform="translate(1050, 720)">
+    <rect x="0" y="0" width="220" height="140" fill="#8B6F47" stroke="#5D4E37" stroke-width="3" rx="5"/>
+    <rect x="10" y="10" width="200" height="120" fill="#A0826D" opacity="0.6" rx="3"/>
+    <rect x="20" y="130" width="15" height="120" fill="#5D4E37"/>
+    <rect x="185" y="130" width="15" height="120" fill="#5D4E37"/>
+  </g>
+
+  <!-- Desk 4 (right) -->
+  <g transform="translate(1400, 720)">
+    <rect x="0" y="0" width="220" height="140" fill="#8B6F47" stroke="#5D4E37" stroke-width="3" rx="5"/>
+    <rect x="10" y="10" width="200" height="120" fill="#A0826D" opacity="0.6" rx="3"/>
+    <rect x="20" y="130" width="15" height="120" fill="#5D4E37"/>
+    <rect x="185" y="130" width="15" height="120" fill="#5D4E37"/>
+  </g>
+
+  <!-- Window (left wall) -->
+  <rect x="50" y="180" width="280" height="350" fill="#87CEEB" stroke="#8B7355" stroke-width="10" rx="8"/>
+  <rect x="70" y="200" width="240" height="310" fill="#B0E0E6" opacity="0.7"/>
+  <!-- Window panes -->
+  <line x1="190" y1="200" x2="190" y2="510" stroke="#8B7355" stroke-width="6"/>
+  <line x1="70" y1="355" x2="310" y2="355" stroke="#8B7355" stroke-width="6"/>
+
+  <!-- Window (right wall) -->
+  <rect x="1590" y="180" width="280" height="350" fill="#87CEEB" stroke="#8B7355" stroke-width="10" rx="8"/>
+  <rect x="1610" y="200" width="240" height="310" fill="#B0E0E6" opacity="0.7"/>
+  <line x1="1730" y1="200" x2="1730" y2="510" stroke="#8B7355" stroke-width="6"/>
+  <line x1="1610" y1="355" x2="1850" y2="355" stroke="#8B7355" stroke-width="6"/>
+
+  <!-- Clock (above board) -->
+  <circle cx="960" cy="80" r="50" fill="#FFFFFF" stroke="#333333" stroke-width="5"/>
+  <circle cx="960" cy="80" r="3" fill="#333333"/>
+  <line x1="960" y1="80" x2="960" y2="50" stroke="#333333" stroke-width="3"/>
+  <line x1="960" y1="80" x2="980" y2="90" stroke="#333333" stroke-width="2"/>
+
+  <!-- Poster on wall (left) -->
+  <rect x="120" y="580" width="160" height="220" fill="#FFD700" stroke="#333333" stroke-width="3"/>
+  <text x="200" y="650" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">STAY</text>
+  <text x="200" y="690" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">FOCUSED</text>
+  <text x="200" y="760" font-family="Arial" font-size="60" text-anchor="middle">📚</text>
+
+  <!-- Poster on wall (right) -->
+  <rect x="1640" y="580" width="160" height="220" fill="#FF69B4" stroke="#333333" stroke-width="3"/>
+  <text x="1720" y="650" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">NO</text>
+  <text x="1720" y="690" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">PHONE</text>
+  <text x="1720" y="760" font-family="Arial" font-size="60" text-anchor="middle">📵</text>
+</svg>

@@ -510,3 +510,184 @@ section {
 .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
 .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
 .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Tablet and mobile responsive styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2em;
+  }
+
+  .btn-primary {
+    padding: 16px 36px;
+    font-size: 1.3em;
+    min-height: 48px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .step h3 {
+    font-size: 1.3em;
+  }
+
+  .examples-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .example-emoji {
+    font-size: 4em;
+  }
+
+  .example-label {
+    font-size: 1em;
+  }
+
+  .btn-secondary {
+    padding: 14px 32px;
+    font-size: 1.1em;
+    min-height: 48px;
+  }
+
+  .safety-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .btn-primary {
+    padding: 18px 32px;
+    font-size: 1.2em;
+    min-height: 50px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8em;
+  }
+
+  .section-header p {
+    font-size: 1em;
+  }
+
+  .steps-grid {
+    gap: 25px;
+  }
+
+  .step {
+    padding: 25px 20px;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+  }
+
+  .step h3 {
+    font-size: 1.2em;
+  }
+
+  .step p {
+    font-size: 0.95em;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .example-box {
+    min-height: 200px;
+  }
+
+  .example-emoji {
+    font-size: 3.5em;
+  }
+
+  .example-label {
+    font-size: 0.95em;
+    padding: 12px;
+  }
+
+  .btn-secondary {
+    padding: 16px 28px;
+    font-size: 1em;
+    min-height: 50px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .safety-features {
+    gap: 15px;
+  }
+
+  .feature {
+    padding: 20px 15px;
+  }
+
+  .feature-icon {
+    font-size: 2em;
+  }
+
+  .feature h3 {
+    font-size: 1.1em;
+  }
+
+  .feature p {
+    font-size: 0.9em;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer p {
+    font-size: 0.85em;
+  }
+}

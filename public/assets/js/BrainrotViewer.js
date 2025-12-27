@@ -130,14 +130,23 @@ class BrainrotViewer {
     this.canvas = new SceneCanvas(this.canvasId);
 
     // Make canvas responsive
-    const container = document.getElementById('view-screen');
-    const maxWidth = window.innerWidth;
-    const maxHeight = window.innerHeight - 200; // Leave room for controls
-
-    const scale = Math.min(maxWidth / 1920, maxHeight / 1080, 0.8);
     const canvas = document.getElementById(this.canvasId);
-    canvas.style.width = (1920 * scale) + 'px';
-    canvas.style.height = (1080 * scale) + 'px';
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      // Mobile: fit to screen width with proper aspect ratio
+      const maxWidth = Math.min(window.innerWidth * 0.95, window.innerWidth - 20);
+      const scale = maxWidth / 1920;
+      canvas.style.width = (1920 * scale) + 'px';
+      canvas.style.height = (1080 * scale) + 'px';
+    } else {
+      // Desktop: use standard scaling
+      const maxWidth = window.innerWidth;
+      const maxHeight = window.innerHeight - 200; // Leave room for controls
+      const scale = Math.min(maxWidth / 1920, maxHeight / 1080, 0.8);
+      canvas.style.width = (1920 * scale) + 'px';
+      canvas.style.height = (1080 * scale) + 'px';
+    }
   }
 
   /**

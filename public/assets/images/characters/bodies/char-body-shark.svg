@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Silly Shark Character Body -->
+  <defs>
+    <linearGradient id="sharkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8C5DD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B9AC4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main shark body -->
+  <ellipse cx="256" cy="256" rx="160" ry="200" fill="url(#sharkGrad)"/>
+
+  <!-- Belly (lighter) -->
+  <ellipse cx="256" cy="300" rx="110" ry="140" fill="#E8F2F7"/>
+
+  <!-- Tail fin (bottom) -->
+  <path d="M 256 440 Q 240 480, 220 510 Q 256 490, 292 510 Q 272 480, 256 440 Z" fill="url(#sharkGrad)"/>
+
+  <!-- Side fins (left and right) -->
+  <ellipse cx="130" cy="280" rx="50" ry="80" fill="url(#sharkGrad)" transform="rotate(-30 130 280)"/>
+  <ellipse cx="382" cy="280" rx="50" ry="80" fill="url(#sharkGrad)" transform="rotate(30 382 280)"/>
+
+  <!-- Dorsal fin (top) -->
+  <path d="M 256 120 L 220 50 Q 256 80, 292 50 Z" fill="url(#sharkGrad)"/>
+
+  <!-- Gills (side markings) -->
+  <g opacity="0.4">
+    <path d="M 140 220 Q 135 230, 140 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 150 220 Q 145 230, 150 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 160 220 Q 155 230, 160 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+
+    <path d="M 372 220 Q 377 230, 372 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 362 220 Q 367 230, 362 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 352 220 Q 357 230, 352 240" fill="none" stroke="#4A7BA7" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Attachment point markers (invisible in use, for reference) -->
+  <!-- Head attachment point at (256, 120) -->
+  <!-- Feet attachment point at (256, 450) -->
+  <!-- Hand attachment point at (350, 280) -->
+</svg>

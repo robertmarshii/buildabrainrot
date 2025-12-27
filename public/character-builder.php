@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         .builder-container {
             display: grid;
             grid-template-columns: 1fr 512px 1fr;
@@ -33,13 +37,21 @@
             text-align: center;
         }
 
-        #character-canvas {
+        .builder-canvas-area canvas {
             border: 2px solid #ddd;
             border-radius: 10px;
             margin: 0 auto;
             display: block;
-            max-width: 100%;
-            height: auto;
+            width: 512px;
+            height: 512px;
+        }
+
+        /* Responsive canvas sizing */
+        @media (max-width: 600px) {
+            .builder-canvas-area canvas {
+                width: 100% !important;
+                height: auto !important;
+            }
         }
 
         .section-title {
@@ -179,6 +191,206 @@
                 order: -1;
             }
         }
+
+        /* Mobile tab interface */
+        .mobile-tabs {
+            display: none;
+            padding: 10px;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        /* Mobile canvas styling */
+        #character-canvas-mobile {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        .mobile-tab-nav {
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-tab-btn {
+            flex: 1;
+            min-width: 80px;
+            padding: 12px 8px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .mobile-tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .mobile-tab-content {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 80px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .mobile-tab-content.active {
+            display: block;
+        }
+
+        .mobile-bottom-bar {
+            display: none;
+        }
+
+        /* Tablet and mobile responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            /* Hide desktop layout */
+            .builder-container {
+                display: none;
+            }
+
+            /* Show mobile tabs */
+            .mobile-tabs {
+                display: block;
+            }
+
+            .mobile-bottom-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 15px;
+                background: white;
+                box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+                gap: 10px;
+                z-index: 100;
+            }
+
+            .mobile-bottom-bar .btn {
+                flex: 1;
+                min-height: 50px;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .asset-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 8px;
+            }
+
+            .asset-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .asset-card .name {
+                font-size: 0.75em;
+            }
+
+            .color-palette {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+
+            .btn {
+                min-width: 100px;
+                padding: 14px 12px;
+                font-size: 0.95em;
+                min-height: 44px; /* Touch-friendly */
+            }
+
+            .btn-group {
+                gap: 8px;
+            }
+        }
+
+        /* Small mobile phones */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .builder-sidebar {
+                padding: 12px;
+                border-radius: 15px;
+            }
+
+            .builder-canvas-area {
+                padding: 12px;
+                border-radius: 15px;
+            }
+
+            .section-title {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            .asset-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                gap: 6px;
+            }
+
+            .asset-card {
+                padding: 8px;
+            }
+
+            .asset-card img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .asset-card .name {
+                font-size: 0.7em;
+            }
+
+            .color-palette {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .btn {
+                min-width: 80px;
+                padding: 16px 10px;
+                font-size: 0.9em;
+                min-height: 48px; /* Extra touch-friendly */
+            }
+
+            .accessory-item {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+
+            .accessory-item button {
+                padding: 6px 12px;
+                min-height: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -220,6 +432,49 @@
                 <div class="accessory-list" id="accessory-list"></div>
             </div>
         </div>
+
+        <!-- Mobile Tab Interface -->
+        <div class="mobile-tabs">
+            <!-- Canvas (always visible on mobile) -->
+            <div style="background: white; border-radius: 15px; padding: 15px; margin-bottom: 15px; text-align: center; max-width: 100%; overflow: hidden;">
+                <canvas id="character-canvas-mobile"></canvas>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="mobile-tab-nav">
+                <button class="mobile-tab-btn active" onclick="switchMobileTab('body')">Body</button>
+                <button class="mobile-tab-btn" onclick="switchMobileTab('color')">Color</button>
+                <button class="mobile-tab-btn" onclick="switchMobileTab('accessories')">Accessories</button>
+            </div>
+
+            <!-- Tab: Body -->
+            <div class="mobile-tab-content active" id="mobile-tab-body">
+                <div class="section-title">Choose Body</div>
+                <div class="asset-grid" id="body-grid-mobile"></div>
+            </div>
+
+            <!-- Tab: Color -->
+            <div class="mobile-tab-content" id="mobile-tab-color">
+                <div class="section-title">Pick Color</div>
+                <div class="color-palette" id="color-palette-mobile"></div>
+                <button class="btn btn-secondary" onclick="randomizeColor()" style="width: 100%; margin-top: 15px;">🎲 Random Color</button>
+            </div>
+
+            <!-- Tab: Accessories -->
+            <div class="mobile-tab-content" id="mobile-tab-accessories">
+                <div class="section-title">Add Accessories</div>
+                <div class="asset-grid" id="accessory-grid-mobile"></div>
+
+                <div class="section-title" style="margin-top: 20px;">Current Accessories</div>
+                <div class="accessory-list" id="accessory-list-mobile"></div>
+            </div>
+
+            <!-- Bottom Fixed Bar -->
+            <div class="mobile-bottom-bar">
+                <button class="btn btn-secondary" onclick="resetCharacter()">🔄</button>
+                <button class="btn btn-primary" onclick="nextStep()">Next Step →</button>
+            </div>
+        </div>
     </div>
 
     <!-- Loading container -->
@@ -251,6 +506,24 @@
             '#FFFFFF'  // White
         ];
 
+        // Check if mobile
+        const isMobile = () => window.innerWidth <= 768;
+
+        // Mobile tab switching
+        function switchMobileTab(tabName) {
+            // Update buttons
+            document.querySelectorAll('.mobile-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.mobile-tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`mobile-tab-${tabName}`).classList.add('active');
+        }
+
         // Initialize
         async function init() {
             try {
@@ -259,8 +532,17 @@
                 // Initialize asset manager
                 await assetManager.init();
 
-                // Initialize canvas
-                characterCanvas = new CharacterCanvas('character-canvas');
+                // Initialize canvas (mobile or desktop)
+                const canvasId = isMobile() ? 'character-canvas-mobile' : 'character-canvas';
+                characterCanvas = new CharacterCanvas(canvasId);
+
+                // Size mobile canvas properly (512x512 is square, so just fit to width)
+                if (isMobile()) {
+                    const canvas = document.getElementById(canvasId);
+                    const maxWidth = Math.min(window.innerWidth - 40, 512);
+                    canvas.style.width = maxWidth + 'px';
+                    canvas.style.height = maxWidth + 'px';
+                }
 
                 // Load UI
                 await loadBodyGrid();
@@ -278,25 +560,29 @@
         async function loadBodyGrid() {
             const bodies = assetManager.getAssetsByCategory('character-bodies');
             const grid = document.getElementById('body-grid');
+            const gridMobile = document.getElementById('body-grid-mobile');
 
             for (const body of bodies) {
+                const img = await assetManager.loadImage(body.id);
+
+                // Create for desktop
                 const card = document.createElement('div');
                 card.className = 'asset-card';
                 card.dataset.id = body.id;
-
-                const img = await assetManager.loadImage(body.id);
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
-
                 const name = document.createElement('div');
                 name.className = 'name';
                 name.textContent = body.name;
-
                 card.appendChild(imgEl);
                 card.appendChild(name);
-
                 card.addEventListener('click', () => selectBody(body.id));
                 grid.appendChild(card);
+
+                // Create for mobile
+                const cardMobile = card.cloneNode(true);
+                cardMobile.addEventListener('click', () => selectBody(body.id));
+                gridMobile.appendChild(cardMobile);
             }
 
             // Select first body by default
@@ -307,8 +593,8 @@
 
         // Select body
         async function selectBody(bodyId) {
-            // Update UI
-            document.querySelectorAll('#body-grid .asset-card').forEach(card => {
+            // Update UI (both desktop and mobile)
+            document.querySelectorAll('#body-grid .asset-card, #body-grid-mobile .asset-card').forEach(card => {
                 card.classList.toggle('selected', card.dataset.id === bodyId);
             });
 
@@ -319,19 +605,22 @@
         // Load color palette
         function loadColorPalette() {
             const palette = document.getElementById('color-palette');
+            const paletteMobile = document.getElementById('color-palette-mobile');
 
             COLORS.forEach(color => {
+                // Desktop
                 const swatch = document.createElement('div');
                 swatch.className = 'color-swatch';
                 swatch.style.backgroundColor = color;
                 swatch.dataset.color = color;
-
-                if (color === '#808080') {
-                    swatch.classList.add('selected');
-                }
-
+                if (color === '#808080') swatch.classList.add('selected');
                 swatch.addEventListener('click', () => selectColor(color));
                 palette.appendChild(swatch);
+
+                // Mobile
+                const swatchMobile = swatch.cloneNode(true);
+                swatchMobile.addEventListener('click', () => selectColor(color));
+                paletteMobile.appendChild(swatchMobile);
             });
         }
 
@@ -356,25 +645,29 @@
         async function loadAccessoryGrid() {
             const accessories = assetManager.getAssetsByCategory('character-accessories');
             const grid = document.getElementById('accessory-grid');
+            const gridMobile = document.getElementById('accessory-grid-mobile');
 
             for (const accessory of accessories) {
+                const img = await assetManager.loadImage(accessory.id);
+
+                // Desktop
                 const card = document.createElement('div');
                 card.className = 'asset-card';
                 card.dataset.id = accessory.id;
-
-                const img = await assetManager.loadImage(accessory.id);
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
-
                 const name = document.createElement('div');
                 name.className = 'name';
                 name.textContent = accessory.name;
-
                 card.appendChild(imgEl);
                 card.appendChild(name);
-
                 card.addEventListener('click', () => addAccessory(accessory.id));
                 grid.appendChild(card);
+
+                // Mobile
+                const cardMobile = card.cloneNode(true);
+                cardMobile.addEventListener('click', () => addAccessory(accessory.id));
+                gridMobile.appendChild(cardMobile);
             }
         }
 
@@ -392,32 +685,43 @@
         // Update accessory list
         function updateAccessoryList() {
             const list = document.getElementById('accessory-list');
+            const listMobile = document.getElementById('accessory-list-mobile');
             const accessories = characterCanvas.character.accessories;
 
             list.innerHTML = '';
+            listMobile.innerHTML = '';
+
+            if (accessories.length === 0) {
+                const emptyMsg = '<p style="text-align: center; color: #999;">No accessories added yet</p>';
+                list.innerHTML = emptyMsg;
+                listMobile.innerHTML = emptyMsg;
+                return;
+            }
 
             accessories.forEach((acc, index) => {
+                // Desktop
                 const item = document.createElement('div');
                 item.className = 'accessory-item';
-
                 const name = document.createElement('span');
                 name.textContent = acc.metadata?.name || acc.id;
-
                 const removeBtn = document.createElement('button');
                 removeBtn.textContent = '✕ Remove';
                 removeBtn.onclick = () => {
                     characterCanvas.removeAccessory(index);
                     updateAccessoryList();
                 };
-
                 item.appendChild(name);
                 item.appendChild(removeBtn);
                 list.appendChild(item);
-            });
 
-            if (accessories.length === 0) {
-                list.innerHTML = '<p style="text-align: center; color: #999;">No accessories added yet</p>';
-            }
+                // Mobile
+                const itemMobile = item.cloneNode(true);
+                itemMobile.querySelector('button').onclick = () => {
+                    characterCanvas.removeAccessory(index);
+                    updateAccessoryList();
+                };
+                listMobile.appendChild(itemMobile);
+            });
         }
 
         // Reset character

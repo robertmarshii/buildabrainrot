@@ -118,6 +118,8 @@ body {
 .view-screen {
   position: relative;
   overflow: hidden;
+  justify-content: flex-start;
+  padding-top: 20px;
 }
 
 #brainrot-canvas {
@@ -126,6 +128,10 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   cursor: pointer;
   transition: transform 0.2s;
+  display: block;
+  margin: 0 auto 10px auto;
+  max-width: 90vw;
+  max-height: 80vh;
 }
 
 #brainrot-canvas:hover {
@@ -134,18 +140,22 @@ body {
 
 /* Audio Controls */
 .audio-controls {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin: 20px auto;
+  left: auto;
+  bottom: auto;
+  transform: none;
   background: rgba(255, 255, 255, 0.95);
   padding: 15px 30px;
   border-radius: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
+  z-index: 50;
+  width: fit-content;
 }
 
 .control-btn {
@@ -186,14 +196,16 @@ body {
 
 /* Action Buttons */
 .action-buttons {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin: 20px auto 40px auto;
+  left: auto;
+  bottom: auto;
+  transform: none;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 90%;
 }
 
 .btn-action {
@@ -358,16 +370,21 @@ body {
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
+  .view-screen {
+    padding: 40px 10px 20px 10px;
+  }
+
   #brainrot-canvas {
     max-width: 95vw;
-    height: auto !important;
+    max-height: 70vh;
     border-width: 2px;
   }
 
   .audio-controls {
-    bottom: 100px;
+    margin: 15px auto;
     padding: 10px 20px;
     border-radius: 30px;
+    gap: 10px;
   }
 
   .playback-bar {
@@ -383,7 +400,7 @@ body {
   }
 
   .action-buttons {
-    bottom: 20px;
+    margin: 15px auto 20px auto;
     width: 90%;
     gap: 10px;
   }
@@ -425,12 +442,12 @@ body {
 /* Landscape mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .audio-controls {
-    bottom: 80px;
+    margin: 10px auto;
     padding: 8px 15px;
   }
 
   .action-buttons {
-    bottom: 10px;
+    margin: 10px auto 15px auto;
   }
 
   .branding {
@@ -445,13 +462,84 @@ body {
 
 /* Very small screens */
 @media (max-width: 480px) {
+  .view-screen {
+    padding: 20px 5px 10px 5px;
+  }
+
+  .loading-content,
+  .error-content {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .loading-content h1,
+  .error-content h1 {
+    font-size: 1.5em;
+  }
+
+  #loading-percentage {
+    font-size: 1.5em;
+  }
+
+  .btn-primary {
+    padding: 16px 24px;
+    font-size: 1em;
+    min-height: 48px;
+  }
+
+  .audio-controls {
+    margin: 10px auto;
+    padding: 8px 15px;
+    gap: 8px;
+  }
+
+  .playback-bar {
+    width: 120px;
+  }
+
+  #playback-time {
+    font-size: 0.8em;
+    min-width: 40px;
+  }
+
+  .control-btn {
+    font-size: 1.1em;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
   .action-buttons {
     flex-direction: column;
     align-items: stretch;
+    width: 85%;
+    gap: 8px;
+    margin: 10px auto 15px auto;
   }
 
   .btn-action {
     flex: none;
     width: 100%;
+    font-size: 15px;
+    padding: 14px 20px;
+    min-height: 48px;
+  }
+
+  .modal-content {
+    padding: 25px 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3em;
+  }
+
+  .btn-copy {
+    padding: 14px 18px;
+    min-height: 44px;
+  }
+
+  .btn-close {
+    padding: 14px;
+    min-height: 48px;
   }
 }

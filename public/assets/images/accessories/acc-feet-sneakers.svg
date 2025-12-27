@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" width="180" height="80">
+  <!-- Red Sneakers Accessory -->
+  <defs>
+    <linearGradient id="shoeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CC0000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left sneaker -->
+  <g>
+    <!-- Sole -->
+    <ellipse cx="35" cy="65" rx="40" ry="12" fill="#2C2C2C"/>
+    <ellipse cx="35" cy="63" rx="38" ry="10" fill="#F5F5F5"/>
+
+    <!-- Shoe body -->
+    <path d="M 10 65 Q 10 40, 35 30 L 55 30 Q 60 30, 60 35 L 60 65 Z" fill="url(#shoeGrad)"/>
+
+    <!-- Toe cap -->
+    <ellipse cx="30" cy="45" rx="22" ry="18" fill="#FF6666"/>
+
+    <!-- Laces area (tongue) -->
+    <rect x="35" y="25" width="20" height="25" fill="#FFAAAA" rx="3"/>
+
+    <!-- Lace holes -->
+    <circle cx="40" cy="32" r="2" fill="#2C2C2C"/>
+    <circle cx="50" cy="32" r="2" fill="#2C2C2C"/>
+    <circle cx="40" cy="40" r="2" fill="#2C2C2C"/>
+    <circle cx="50" cy="40" r="2" fill="#2C2C2C"/>
+
+    <!-- Laces -->
+    <line x1="40" y1="32" x2="50" y2="32" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="40" y1="40" x2="50" y2="40" stroke="#FFFFFF" stroke-width="1.5"/>
+
+    <!-- Nike-style swoosh -->
+    <path d="M 15 50 Q 35 45, 50 52" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Heel -->
+    <rect x="55" y="45" width="8" height="20" fill="#CC0000" rx="2"/>
+  </g>
+
+  <!-- Right sneaker -->
+  <g transform="translate(75, 0)">
+    <!-- Sole -->
+    <ellipse cx="35" cy="65" rx="40" ry="12" fill="#2C2C2C"/>
+    <ellipse cx="35" cy="63" rx="38" ry="10" fill="#F5F5F5"/>
+
+    <!-- Shoe body -->
+    <path d="M 10 65 Q 10 40, 35 30 L 55 30 Q 60 30, 60 35 L 60 65 Z" fill="url(#shoeGrad)"/>
+
+    <!-- Toe cap -->
+    <ellipse cx="30" cy="45" rx="22" ry="18" fill="#FF6666"/>
+
+    <!-- Laces area (tongue) -->
+    <rect x="35" y="25" width="20" height="25" fill="#FFAAAA" rx="3"/>
+
+    <!-- Lace holes -->
+    <circle cx="40" cy="32" r="2" fill="#2C2C2C"/>
+    <circle cx="50" cy="32" r="2" fill="#2C2C2C"/>
+    <circle cx="40" cy="40" r="2" fill="#2C2C2C"/>
+    <circle cx="50" cy="40" r="2" fill="#2C2C2C"/>
+
+    <!-- Laces -->
+    <line x1="40" y1="32" x2="50" y2="32" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="40" y1="40" x2="50" y2="40" stroke="#FFFFFF" stroke-width="1.5"/>
+
+    <!-- Nike-style swoosh -->
+    <path d="M 15 50 Q 35 45, 50 52" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Heel -->
+    <rect x="55" y="45" width="8" height="20" fill="#CC0000" rx="2"/>
+  </g>
+</svg>

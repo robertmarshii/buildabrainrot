@@ -173,8 +173,11 @@ class SceneCanvas extends CharacterCanvas {
   setupInteractions() {
     const getScaledPosition = (e) => {
       const rect = this.canvas.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / this.displayScale;
-      const y = (e.clientY - rect.top) / this.displayScale;
+      // Calculate actual scale based on rendered size vs internal size
+      const scaleX = this.width / rect.width;
+      const scaleY = this.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX;
+      const y = (e.clientY - rect.top) * scaleY;
       return { x, y };
     };
 

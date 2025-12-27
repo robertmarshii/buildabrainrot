@@ -7,6 +7,15 @@
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         .builder-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -19,6 +28,8 @@
             padding: 30px;
             margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .section-title {
@@ -65,6 +76,8 @@
             padding: 30px;
             border-radius: 10px;
             margin: 20px 0;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .timeline-ruler {
@@ -73,6 +86,7 @@
             background: white;
             border-radius: 5px;
             margin-bottom: 15px;
+            max-width: 100%;
         }
 
         .timeline-markers {
@@ -188,6 +202,8 @@
             gap: 15px;
             justify-content: center;
             margin-top: 30px;
+            flex-wrap: wrap;
+            max-width: 100%;
         }
 
         .btn {
@@ -387,7 +403,105 @@
             box-shadow: 0 6px 25px rgba(102,126,234,0.5);
         }
 
+        /* Tablet and mobile responsive styles */
         @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .builder-container {
+                padding: 10px;
+            }
+
+            .audio-controls {
+                padding: 20px 15px;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .music-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 10px;
+            }
+
+            .music-card {
+                padding: 12px;
+            }
+
+            .music-card .icon {
+                font-size: 2.5em;
+            }
+
+            .music-card .name {
+                font-size: 0.85em;
+            }
+
+            .timeline {
+                padding: 20px 15px;
+            }
+
+            .timeline-ruler {
+                height: 80px;
+            }
+
+            .timeline-sfx {
+                font-size: 1.5em;
+            }
+
+            .timeline-markers {
+                font-size: 0.8em;
+            }
+
+            .playback-controls {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .control-btn {
+                padding: 12px 24px;
+                font-size: 1.2em;
+                min-height: 48px;
+            }
+
+            .volume-control {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .volume-slider {
+                width: 100%;
+            }
+
+            .sfx-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 8px;
+            }
+
+            .sfx-card {
+                padding: 12px 8px;
+            }
+
+            .sfx-card .icon {
+                font-size: 2em;
+            }
+
+            .sfx-card .name {
+                font-size: 0.75em;
+            }
+
+            .btn-group {
+                gap: 8px;
+            }
+
+            .btn {
+                min-width: 100px;
+                padding: 14px 12px;
+                font-size: 0.95em;
+                min-height: 44px;
+            }
+
             .share-content {
                 padding: 30px 20px;
             }
@@ -402,6 +516,112 @@
 
             .share-url-input {
                 width: 100%;
+            }
+        }
+
+        /* Small mobile phones */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .audio-controls {
+                padding: 15px 12px;
+                border-radius: 15px;
+            }
+
+            .section-title {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            .music-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 8px;
+            }
+
+            .music-card {
+                padding: 10px;
+            }
+
+            .music-card .icon {
+                font-size: 2em;
+            }
+
+            .music-card .name {
+                font-size: 0.8em;
+            }
+
+            .timeline {
+                padding: 15px 10px;
+            }
+
+            .timeline-ruler {
+                height: 60px;
+            }
+
+            .timeline-sfx {
+                font-size: 1.2em;
+            }
+
+            .timeline-markers {
+                font-size: 0.7em;
+                padding: 5px;
+            }
+
+            .playback-controls {
+                gap: 8px;
+            }
+
+            .control-btn {
+                padding: 14px 20px;
+                font-size: 1.1em;
+                min-height: 50px;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .sfx-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 6px;
+            }
+
+            .sfx-card {
+                padding: 10px 6px;
+            }
+
+            .sfx-card .icon {
+                font-size: 1.8em;
+            }
+
+            .sfx-card .name {
+                font-size: 0.7em;
+            }
+
+            .btn {
+                min-width: 80px;
+                padding: 16px 10px;
+                font-size: 0.9em;
+                min-height: 48px;
+            }
+
+            .share-content {
+                padding: 20px 15px;
+            }
+
+            .share-options {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .btn-view {
+                padding: 16px;
+                font-size: 0.9em;
+                min-height: 50px;
             }
         }
     </style>

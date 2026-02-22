@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Sound Effects - Build a Brainrot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+        }
+        .instructions {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .sound-group {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .sound-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .sound-item:last-child {
+            border-bottom: none;
+        }
+        .sound-name {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .sound-filename {
+            color: #666;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #5566dd;
+        }
+        .btn-search {
+            background: #4CAF50;
+        }
+        .btn-search:hover {
+            background: #45a049;
+        }
+        .status {
+            padding: 15px;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .quick-links {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .quick-links a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #1976d2;
+        }
+        .quick-links a:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Download Sound Effects</h1>
+
+    <div class="instructions">
+        <h2>Quick Instructions</h2>
+        <ol>
+            <li>Click the "Search" button for each sound below</li>
+            <li>On Freesound.org, create a free account (takes 1 minute)</li>
+            <li>Download the sound as MP3</li>
+            <li>Rename it to the exact filename shown</li>
+            <li>Move it to the folder: <code>public/assets/audio/sfx/[category]/</code></li>
+            <li>Refresh your browser!</li>
+        </ol>
+    </div>
+
+    <div class="quick-links">
+        <h3>🚀 Fastest Option: Use These Exact Files</h3>
+        <p>Search for these exact terms on <a href="https://freesound.org" target="_blank">Freesound.org</a>:</p>
+        <a href="https://freesound.org/people/Reitanna/sounds/332661/" target="_blank">
+            ✅ Oof Sound (ID: 332661) - Perfect for sfx-reaction-oof.mp3
+        </a>
+        <a href="https://freesound.org/people/michael_grinnell/sounds/512859/" target="_blank">
+            ✅ Bruh (ID: 512859) - Perfect for sfx-reaction-bruh.mp3
+        </a>
+        <a href="https://freesound.org/people/InspectorJ/sounds/416710/" target="_blank">
+            ✅ Scream (ID: 416710) - Perfect for sfx-reaction-scream.mp3
+        </a>
+    </div>
+
+    <div class="sound-group">
+        <h2>Reaction Sounds (5 needed)</h2>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💢 Oof</div>
+                <div class="sound-filename">sfx-reaction-oof.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=oof+roblox" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">😑 Bruh</div>
+                <div class="sound-filename">sfx-reaction-bruh.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=bruh" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">😱 Scream</div>
+                <div class="sound-filename">sfx-reaction-scream.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=scream+short" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">😲 Wow</div>
+                <div class="sound-filename">sfx-reaction-wow.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=wow+voice" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">👏 Applause</div>
+                <div class="sound-filename">sfx-reaction-applause.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=applause+clapping" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+    </div>
+
+    <div class="sound-group">
+        <h2>Silly Sounds (4 needed)</h2>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💨 Fart</div>
+                <div class="sound-filename">sfx-silly-fart.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=fart+cartoon" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💨 Whoosh</div>
+                <div class="sound-filename">sfx-silly-whoosh.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=whoosh+swipe" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">🎈 Pop</div>
+                <div class="sound-filename">sfx-silly-pop.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=pop+bubble" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💥 Glass Break</div>
+                <div class="sound-filename">sfx-silly-glass-break.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=glass+break+shatter" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+    </div>
+
+    <div class="sound-group">
+        <h2>Meme Sounds (6 needed)</h2>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">🔧 Metal Pipe</div>
+                <div class="sound-filename">sfx-meme-metal-pipe.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=metal+pipe+falling" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">⚠️ Error</div>
+                <div class="sound-filename">sfx-meme-error.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=windows+error+sound" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💬 Discord Join</div>
+                <div class="sound-filename">sfx-meme-discord-join.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=discord+notification" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">🦗 Crickets</div>
+                <div class="sound-filename">sfx-meme-crickets.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=crickets+chirping" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💿 Record Scratch</div>
+                <div class="sound-filename">sfx-meme-record-scratch.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=record+scratch+vinyl" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+
+        <div class="sound-item">
+            <div>
+                <div class="sound-name">💥 Explosion</div>
+                <div class="sound-filename">sfx-meme-explosion.mp3</div>
+            </div>
+            <a href="https://freesound.org/search/?q=explosion+boom" target="_blank" class="btn btn-search">Search Freesound</a>
+        </div>
+    </div>
+
+    <div class="status">
+        <strong>📁 File Locations:</strong><br>
+        • Reactions: <code>public/assets/audio/sfx/reactions/</code><br>
+        • Silly: <code>public/assets/audio/sfx/silly/</code><br>
+        • Meme: <code>public/assets/audio/sfx/meme/</code>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="/audio-builder.php" class="btn">← Back to Audio Builder</a>
+    </div>
+</body>
+</html>

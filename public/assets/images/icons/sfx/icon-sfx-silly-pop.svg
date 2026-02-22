@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Pop - Balloon Popping Icon -->
+  <style>
+    svg { color: #FF1493; }
+  </style>
+
+  <!-- Balloon fragments (burst) -->
+  <path d="M 100 60 Q 90 50 80 55 L 70 45" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 100 60 Q 110 50 120 55 L 130 45" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 90 90 Q 75 85 65 95 L 50 90" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 110 90 Q 125 85 135 95 L 150 90" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 85 115 Q 70 120 65 130 L 55 140" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 115 115 Q 130 120 135 130 L 145 140" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 95 130 Q 90 145 85 155 L 80 170" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <path d="M 105 130 Q 110 145 115 155 L 120 170" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+  <!-- Center burst -->
+  <circle cx="100" cy="100" r="15" fill="#FFD700" opacity="0.7"/>
+
+  <!-- Pop star burst -->
+  <path d="M 100 85 L 95 95 L 85 95 L 92 102 L 88 112 L 100 105 L 112 112 L 108 102 L 115 95 L 105 95 Z" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+
+  <!-- Impact lines -->
+  <line x1="100" y1="100" x2="100" y2="60" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="140" y2="75" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="145" y2="100" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="140" y2="125" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="100" y2="140" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="60" y2="125" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="55" y2="100" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="60" y2="75" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- POP text -->
+  <text x="100" y="195" font-family="Arial" font-size="28" font-weight="bold" fill="#000" text-anchor="middle">POP!</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Laughing Emoji -->
+  <circle cx="100" cy="100" r="90" fill="#FFD700" stroke="#000" stroke-width="4"/>
+  <!-- Eyes (laughing) -->
+  <path d="M 50 75 Q 65 85 80 75" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 120 75 Q 135 85 150 75" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+  <!-- Mouth (open) -->
+  <ellipse cx="100" cy="130" rx="40" ry="30" fill="#8B4513" stroke="#000" stroke-width="4"/>
+  <ellipse cx="100" cy="125" rx="35" ry="25" fill="#FF6B6B"/>
+  <!-- Teeth -->
+  <rect x="75" y="110" width="50" height="15" fill="#fff"/>
+  <line x1="90" y1="110" x2="90" y2="125" stroke="#000" stroke-width="2"/>
+  <line x1="110" y1="110" x2="110" y2="125" stroke="#000" stroke-width="2"/>
+</svg>

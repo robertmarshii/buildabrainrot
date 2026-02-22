@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Ghost - Scaled up -->
+  <style>
+    svg { color: #E8E8E8; }
+  </style>
+  <!-- Main body (large rounded top) -->
+  <ellipse cx="256" cy="200" rx="170" ry="160" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Body extension -->
+  <rect x="86" y="200" width="340" height="240" fill="currentColor"/>
+
+  <!-- Wavy bottom -->
+  <path d="M 86 440 Q 120 410 154 440 Q 188 470 222 440 Q 256 410 290 440 Q 324 470 358 440 Q 392 410 426 440 L 426 450 L 86 450 Z" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Eyes -->
+  <ellipse cx="190" cy="180" rx="30" ry="45" fill="#000"/>
+  <ellipse cx="322" cy="180" rx="30" ry="45" fill="#000"/>
+
+  <!-- Eye highlights -->
+  <circle cx="200" cy="165" r="10" fill="#fff"/>
+  <circle cx="332" cy="165" r="10" fill="#fff"/>
+
+  <!-- Mouth (cute O shape) -->
+  <ellipse cx="256" cy="260" rx="25" ry="35" fill="#000"/>
+  <ellipse cx="256" cy="255" rx="18" ry="25" fill="currentColor"/>
+
+  <!-- Blush marks (optional cute touch) -->
+  <ellipse cx="130" cy="220" rx="20" ry="12" fill="#FFB6C1" opacity="0.5"/>
+  <ellipse cx="382" cy="220" rx="20" ry="12" fill="#FFB6C1" opacity="0.5"/>
+
+  <!-- Arms floating at sides -->
+  <ellipse cx="50" cy="280" rx="35" ry="90" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-15 50 280)"/>
+  <ellipse cx="462" cy="280" rx="35" ry="90" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(15 462 280)"/>
+</svg>

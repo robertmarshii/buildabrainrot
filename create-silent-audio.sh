@@ -57,6 +57,25 @@ create_silent_wav "public/assets/audio/sfx/animals/sfx-animal-dog-bark.mp3" 1
 # SFX - Silly (0.5-1 second)
 create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-boing.mp3" 1
 create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-honk.mp3" 1
+create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-fart.mp3" 1
+create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-whoosh.mp3" 1
+create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-pop.mp3" 1
+create_silent_wav "public/assets/audio/sfx/silly/sfx-silly-glass-break.mp3" 1
+
+# SFX - Reactions (new)
+create_silent_wav "public/assets/audio/sfx/reactions/sfx-reaction-oof.mp3" 1
+create_silent_wav "public/assets/audio/sfx/reactions/sfx-reaction-bruh.mp3" 1
+create_silent_wav "public/assets/audio/sfx/reactions/sfx-reaction-scream.mp3" 2
+create_silent_wav "public/assets/audio/sfx/reactions/sfx-reaction-wow.mp3" 1
+create_silent_wav "public/assets/audio/sfx/reactions/sfx-reaction-applause.mp3" 3
+
+# SFX - Meme (new category)
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-metal-pipe.mp3" 1
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-error.mp3" 1
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-discord-join.mp3" 1
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-crickets.mp3" 2
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-record-scratch.mp3" 1
+create_silent_wav "public/assets/audio/sfx/meme/sfx-meme-explosion.mp3" 1
 
 # Voices (1 second)
 create_silent_wav "public/assets/audio/voices/voice-sheesh.mp3" 1

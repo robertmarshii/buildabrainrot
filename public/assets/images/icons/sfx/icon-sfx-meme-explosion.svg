@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Explosion Icon -->
+  <style>
+    svg { color: #FF4500; }
+  </style>
+
+  <!-- Outer explosion burst -->
+  <circle cx="100" cy="100" r="60" fill="currentColor" opacity="0.6"/>
+
+  <!-- Middle burst -->
+  <circle cx="100" cy="100" r="45" fill="#FFD700"/>
+
+  <!-- Inner hot core -->
+  <circle cx="100" cy="100" r="30" fill="#FFA500"/>
+  <circle cx="100" cy="100" r="18" fill="#FFFF00"/>
+
+  <!-- Explosion star points -->
+  <path d="M 100 20 L 110 80 L 100 75 L 90 80 Z" fill="currentColor"/>
+  <path d="M 165 55 L 120 95 L 122 90 L 125 85 Z" fill="currentColor"/>
+  <path d="M 180 100 L 125 105 L 128 100 L 125 95 Z" fill="currentColor"/>
+  <path d="M 165 145 L 120 110 L 122 112 L 120 118 Z" fill="currentColor"/>
+  <path d="M 100 180 L 105 125 L 100 128 L 95 125 Z" fill="currentColor"/>
+  <path d="M 35 145 L 80 110 L 78 112 L 80 118 Z" fill="currentColor"/>
+  <path d="M 20 100 L 75 105 L 72 100 L 75 95 Z" fill="currentColor"/>
+  <path d="M 35 55 L 80 95 L 78 90 L 75 85 Z" fill="currentColor"/>
+
+  <!-- Additional burst rays -->
+  <path d="M 100 40 L 95 70 L 105 70 Z" fill="#FFD700"/>
+  <path d="M 145 60 L 120 85 L 128 92 Z" fill="#FFD700"/>
+  <path d="M 160 100 L 130 98 L 130 102 Z" fill="#FFD700"/>
+  <path d="M 145 140 L 120 115 L 128 108 Z" fill="#FFD700"/>
+  <path d="M 100 160 L 102 130 L 98 130 Z" fill="#FFD700"/>
+  <path d="M 55 140 L 80 115 L 72 108 Z" fill="#FFD700"/>
+  <path d="M 40 100 L 70 102 L 70 98 Z" fill="#FFD700"/>
+  <path d="M 55 60 L 80 85 L 72 92 Z" fill="#FFD700"/>
+
+  <!-- Smoke clouds -->
+  <circle cx="80" cy="50" r="15" fill="#808080" opacity="0.4"/>
+  <circle cx="125" cy="45" r="12" fill="#808080" opacity="0.3"/>
+  <circle cx="70" cy="155" r="18" fill="#808080" opacity="0.4"/>
+  <circle cx="135" cy="160" r="14" fill="#808080" opacity="0.3"/>
+
+  <!-- "BOOM!" text -->
+  <text x="100" y="25" font-family="Arial" font-size="24" font-weight="bold" fill="#DC143C" text-anchor="middle">BOOM!</text>
+</svg>

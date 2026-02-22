@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200">
+  <!-- Smartphone in hand -->
+  <style>
+    svg { color: #000000; }
+  </style>
+
+  <!-- Phone body -->
+  <rect x="30" y="40" width="60" height="120" fill="currentColor" stroke="#000" stroke-width="3" rx="8"/>
+
+  <!-- Screen -->
+  <rect x="35" y="50" width="50" height="90" fill="#4A90E2" stroke="#000" stroke-width="2" rx="3"/>
+
+  <!-- Screen content (brainrot meme) -->
+  <circle cx="60" cy="75" r="8" fill="#FFD700"/>
+  <rect x="45" y="90" width="30" height="3" fill="#fff"/>
+  <rect x="45" y="98" width="30" height="3" fill="#fff"/>
+  <rect x="45" y="106" width="20" height="3" fill="#fff"/>
+
+  <!-- Home button -->
+  <circle cx="60" cy="150" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+
+  <!-- Notch -->
+  <rect x="50" y="45" width="20" height="4" fill="#000" rx="2"/>
+</svg>

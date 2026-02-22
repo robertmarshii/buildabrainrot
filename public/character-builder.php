@@ -13,7 +13,7 @@
 
         .builder-container {
             display: grid;
-            grid-template-columns: 1fr 512px 1fr;
+            grid-template-columns: 1fr minmax(auto, 556px) 1fr;
             gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
@@ -42,8 +42,10 @@
             border-radius: 10px;
             margin: 0 auto;
             display: block;
-            width: 512px;
-            height: 512px;
+            width: 100%;
+            max-width: 512px;
+            height: auto;
+            aspect-ratio: 1 / 1;
         }
 
         /* Responsive canvas sizing */
@@ -490,20 +492,36 @@
         let characterCanvas;
         const loadingUI = new LoadingUI();
 
-        // Color palette
+        // Color palette (expanded)
         const COLORS = [
             '#808080', // Default gray
             '#FF6B6B', // Red
+            '#DC143C', // Crimson
             '#FFA500', // Orange
+            '#FF4500', // Orange Red
             '#FFD700', // Yellow
+            '#FFFF00', // Bright Yellow
             '#7ED321', // Green
+            '#32CD32', // Lime Green
+            '#00FF00', // Bright Green
             '#4A90E2', // Blue
+            '#1E90FF', // Dodger Blue
+            '#0000FF', // Bright Blue
             '#9B59B6', // Purple
-            '#F5A623', // Amber
+            '#8B008B', // Dark Magenta
             '#E91E63', // Pink
+            '#FF1493', // Deep Pink
+            '#FFB6C1', // Light Pink
             '#00CED1', // Cyan
+            '#00FFFF', // Bright Cyan
             '#8B4513', // Brown
-            '#FFFFFF'  // White
+            '#D2691E', // Chocolate
+            '#000000', // Black
+            '#FFFFFF', // White
+            '#C0C0C0', // Silver
+            '#FFE4E1', // Misty Rose
+            '#98FB98', // Pale Green
+            '#DDA0DD'  // Plum
         ];
 
         // Check if mobile

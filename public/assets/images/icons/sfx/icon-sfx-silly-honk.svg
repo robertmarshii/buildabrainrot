@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Honk - Bike/Clown Horn Icon -->
+  <style>
+    svg { color: #DC143C; }
+  </style>
+
+  <!-- Bulb -->
+  <path d="M 50 100 Q 50 70 70 60 Q 90 50 100 60 Q 110 70 110 100 Q 110 120 100 130 Q 90 140 70 130 Q 50 120 50 100 Z" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Bulb highlight -->
+  <ellipse cx="75" cy="85" rx="15" ry="20" fill="#FF6347" opacity="0.6"/>
+
+  <!-- Horn tube -->
+  <rect x="100" y="90" width="50" height="20" fill="#FFD700" stroke="#000" stroke-width="3" rx="5"/>
+
+  <!-- Horn flare -->
+  <path d="M 145 75 L 175 50 L 185 100 L 175 150 L 145 125 Z" fill="#FFD700" stroke="#000" stroke-width="3"/>
+  <path d="M 165 65 L 175 50 L 185 100 L 175 135 L 165 120 Z" fill="#FFA500"/>
+
+  <!-- Sound waves -->
+  <path d="M 190 70 Q 200 60 205 50" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 190 85 Q 205 80 215 75" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 192 100 Q 210 100 220 100" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 190 115 Q 205 120 215 125" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 190 130 Q 200 140 205 150" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+</svg>

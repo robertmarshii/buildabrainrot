@@ -129,7 +129,7 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
   display: block;
-  margin: 0 auto 10px auto;
+  margin: 50px auto 10px auto;
   max-width: 90vw;
   max-height: 80vh;
 }
@@ -236,21 +236,28 @@ body {
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 10;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .branding a {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  opacity: 0.9;
+  transition: all 0.2s;
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  display: inline-block;
 }
 
 .branding a:hover {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* Play Overlay (for mobile autoplay block) */
@@ -378,6 +385,7 @@ body {
     max-width: 95vw;
     max-height: 70vh;
     border-width: 2px;
+    margin-top: 40px;
   }
 
   .audio-controls {
@@ -415,10 +423,15 @@ body {
   .branding {
     top: 10px;
     left: 10px;
+    z-index: 150;
   }
 
   .branding a {
     font-size: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
   }
 
   .btn-play-large {
@@ -464,6 +477,10 @@ body {
 @media (max-width: 480px) {
   .view-screen {
     padding: 20px 5px 10px 5px;
+  }
+
+  #brainrot-canvas {
+    margin-top: 35px;
   }
 
   .loading-content,

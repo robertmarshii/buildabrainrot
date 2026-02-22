@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Discord Join Notification Icon -->
+  <style>
+    svg { color: #5865F2; }
+  </style>
+
+  <!-- Discord-style logo/icon shape -->
+  <path d="M 100 50 Q 70 50 50 70 Q 40 85 40 100 L 40 130 Q 40 145 50 155 Q 65 165 80 160 L 90 150 Q 95 145 100 145 Q 105 145 110 150 L 120 160 Q 135 165 150 155 Q 160 145 160 130 L 160 100 Q 160 85 150 70 Q 130 50 100 50 Z" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Eyes (simple circles) -->
+  <ellipse cx="80" cy="100" rx="12" ry="16" fill="#fff"/>
+  <ellipse cx="120" cy="100" rx="12" ry="16" fill="#fff"/>
+
+  <!-- Notification badge -->
+  <circle cx="145" cy="65" r="20" fill="#DC143C" stroke="#fff" stroke-width="3"/>
+  <text x="145" y="72" font-family="Arial" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+
+  <!-- Sound wave lines (notification) -->
+  <path d="M 165 55 Q 175 50 180 45" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 168 65 Q 180 65 190 65" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 165 75 Q 175 80 180 85" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Optional join arrow -->
+  <path d="M 30 100 L 20 100 L 25 95 M 20 100 L 25 105" stroke="#32CD32" stroke-width="4" stroke-linecap="round"/>
+</svg>

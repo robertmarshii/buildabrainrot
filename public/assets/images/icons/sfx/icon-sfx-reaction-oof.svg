@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Oof - Pain Face Icon -->
+  <style>
+    svg { color: #FFD700; }
+  </style>
+
+  <!-- Face -->
+  <circle cx="100" cy="100" r="80" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Closed eyes (pain) -->
+  <path d="M 60 80 Q 70 90 80 80" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 120 80 Q 130 90 140 80" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Pained mouth (O shape) -->
+  <ellipse cx="100" cy="125" rx="20" ry="30" fill="#8B4513" stroke="#000" stroke-width="3"/>
+  <text x="100" y="140" font-family="Arial" font-size="35" font-weight="bold" fill="#fff" text-anchor="middle">O</text>
+
+  <!-- Pain impact marks -->
+  <path d="M 35 60 L 25 50" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 30 70 L 15 65" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 165 60 L 175 50" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 170 70 L 185 65" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Sweat drop -->
+  <path d="M 145 95 Q 150 105 145 115 Q 140 105 145 95 Z" fill="#4169E1" stroke="#000" stroke-width="2"/>
+</svg>

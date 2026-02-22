@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Dog Bark Icon -->
+  <style>
+    svg { color: #8B4513; }
+  </style>
+
+  <!-- Dog head -->
+  <ellipse cx="100" cy="110" rx="55" ry="60" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Ears -->
+  <ellipse cx="60" cy="80" rx="20" ry="40" fill="currentColor" stroke="#000" stroke-width="3"/>
+  <ellipse cx="140" cy="80" rx="20" ry="40" fill="currentColor" stroke="#000" stroke-width="3"/>
+  <!-- Inner ears -->
+  <ellipse cx="60" cy="85" rx="12" ry="25" fill="#D2691E"/>
+  <ellipse cx="140" cy="85" rx="12" ry="25" fill="#D2691E"/>
+
+  <!-- Eyes -->
+  <circle cx="80" cy="105" r="10" fill="#000"/>
+  <circle cx="120" cy="105" r="10" fill="#000"/>
+  <circle cx="77" cy="102" r="4" fill="#fff"/>
+  <circle cx="117" cy="102" r="4" fill="#fff"/>
+
+  <!-- Nose -->
+  <ellipse cx="100" cy="125" rx="12" ry="10" fill="#000"/>
+
+  <!-- Snout -->
+  <ellipse cx="100" cy="135" rx="25" ry="20" fill="#D2691E" stroke="#000" stroke-width="2"/>
+
+  <!-- Open mouth (barking) -->
+  <path d="M 85 135 Q 100 150 115 135" fill="#000" stroke="#000" stroke-width="2"/>
+  <ellipse cx="100" cy="145" rx="12" ry="8" fill="#DC143C"/>
+
+  <!-- Bark text/sound waves -->
+  <text x="165" y="70" font-family="Arial" font-size="30" font-weight="bold" fill="#000">WOOF!</text>
+
+  <!-- Sound wave lines -->
+  <path d="M 155 90 Q 165 85 170 80" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 155 105 Q 170 105 180 105" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 155 120 Q 165 125 170 130" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+</svg>

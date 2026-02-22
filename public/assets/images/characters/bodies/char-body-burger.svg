@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Burger - Scaled up -->
+  <style>
+    svg { color: #D2691E; }
+  </style>
+  <!-- Top bun -->
+  <ellipse cx="256" cy="120" rx="150" ry="70" fill="#D2691E" stroke="#000" stroke-width="4"/>
+  <ellipse cx="256" cy="110" rx="150" ry="25" fill="#F4A460" stroke="#000" stroke-width="2"/>
+
+  <!-- Sesame seeds -->
+  <ellipse cx="200" cy="105" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="240" cy="100" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="280" cy="105" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="320" cy="108" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="220" cy="112" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="300" cy="102" rx="4" ry="6" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+
+  <!-- Lettuce -->
+  <path d="M 100 190 Q 120 175 140 190 Q 160 175 180 190 Q 210 175 240 190 Q 270 175 300 190 Q 330 175 360 190 Q 380 175 400 190 L 412 210 L 100 210 Z" fill="#7ED321" stroke="#228B22" stroke-width="2"/>
+
+  <!-- Tomato -->
+  <rect x="110" y="210" width="292" height="35" fill="#DC143C" stroke="#8B0000" stroke-width="2" rx="8"/>
+  <circle cx="160" cy="227" r="8" fill="#FF6347" fill-opacity="0.6"/>
+  <circle cx="256" cy="227" r="8" fill="#FF6347" fill-opacity="0.6"/>
+  <circle cx="352" cy="227" r="8" fill="#FF6347" fill-opacity="0.6"/>
+
+  <!-- Cheese -->
+  <path d="M 105 245 L 407 245 L 412 285 L 100 285 Z" fill="currentColor" stroke="#DAA520" stroke-width="2"/>
+  <!-- Cheese holes -->
+  <circle cx="180" cy="265" r="8" fill="#000" fill-opacity="0.15"/>
+  <circle cx="256" cy="265" r="10" fill="#000" fill-opacity="0.15"/>
+  <circle cx="332" cy="265" r="8" fill="#000" fill-opacity="0.15"/>
+
+  <!-- Patty -->
+  <ellipse cx="256" cy="315" rx="145" ry="35" fill="#654321" stroke="#000" stroke-width="3"/>
+  <!-- Grill marks -->
+  <line x1="180" y1="305" x2="190" y2="325" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <line x1="220" y1="305" x2="230" y2="325" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <line x1="280" y1="305" x2="290" y2="325" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <line x1="320" y1="305" x2="330" y2="325" stroke="#000" stroke-width="2" opacity="0.3"/>
+
+  <!-- Bottom bun -->
+  <ellipse cx="256" cy="370" rx="140" ry="30" fill="#D2691E" stroke="#000" stroke-width="4"/>
+  <ellipse cx="256" cy="360" rx="140" ry="20" fill="#F4A460" stroke="#000" stroke-width="2"/>
+</svg>

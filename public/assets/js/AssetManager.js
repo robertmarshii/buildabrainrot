@@ -33,33 +33,53 @@ class AssetManager {
     try {
       // Check localStorage cache first
       const cachedManifest = localStorage.getItem('manifest-cache');
+      const cachedVersion = localStorage.getItem('manifest-version');
       const cacheTime = localStorage.getItem('manifest-cache-time');
 
-      if (cachedManifest && cacheTime) {
-        const age = Date.now() - parseInt(cacheTime);
-        // Cache for 1 hour
-        if (age < 3600000) {
-          this.manifest = JSON.parse(cachedManifest);
-          this.initialized = true;
-          console.log('✓ Loaded manifest from cache (v' + this.manifest.version + ')');
-          return;
-        }
-      }
-
-      // Fetch fresh manifest
+      // Fetch fresh manifest to check version
       const response = await fetch(this.baseUrl + 'manifest.json');
       if (!response.ok) {
         throw new Error(`Manifest fetch failed: ${response.status}`);
       }
 
-      this.manifest = await response.json();
+      const freshManifest = await response.json();
+
+      // Auto-bust cache if version changed
+      if (cachedManifest && cachedVersion && cachedVersion !== freshManifest.version) {
+        console.log(`✓ Version changed (${cachedVersion} → ${freshManifest.version}), clearing cache`);
+        this.clearCache();
+      }
+
+      // Use cache if still valid (1 hour) and version matches
+      if (cachedManifest && cacheTime && cachedVersion === freshManifest.version) {
+        const age = Date.now() - parseInt(cacheTime);
+        if (age < 3600000) {
+          this.manifest = JSON.parse(cachedManifest);
+          this.initialized = true;
+          console.log('✓ Loaded manifest from cache (v' + this.manifest.version + ')');
+
+          // Debug: Log SFX asset count
+          const sfxCount = this.manifest.audio?.sfx ? Object.values(this.manifest.audio.sfx).flat().length : 0;
+          console.log(`✓ Manifest contains ${sfxCount} SFX assets in ${Object.keys(this.manifest.audio?.sfx || {}).length} categories`);
+
+          return;
+        }
+      }
+
+      // Use fresh manifest
+      this.manifest = freshManifest;
 
       // Cache in localStorage
       localStorage.setItem('manifest-cache', JSON.stringify(this.manifest));
+      localStorage.setItem('manifest-version', this.manifest.version);
       localStorage.setItem('manifest-cache-time', Date.now().toString());
 
       this.initialized = true;
       console.log(`✓ Loaded manifest v${this.manifest.version}`);
+
+      // Debug: Log SFX asset count
+      const sfxCount = this.manifest.audio?.sfx ? Object.values(this.manifest.audio.sfx).flat().length : 0;
+      console.log(`✓ Manifest contains ${sfxCount} SFX assets in ${Object.keys(this.manifest.audio?.sfx || {}).length} categories`);
     } catch (error) {
       console.error('Failed to load manifest:', error);
       throw error;
@@ -91,7 +111,7 @@ class AssetManager {
       this.manifest.images?.backgrounds || [],
       this.manifest.images?.stickers || [],
       this.manifest.audio?.music || [],
-      ...(this.manifest.audio?.sfx ? Object.values(this.manifest.audio.sfx).flat() : []),
+      ...(this.manifest.audio?.sfx ? Object.values(this.manifest.audio.sfx) : []),
       this.manifest.audio?.voices || []
     ];
 
@@ -107,6 +127,8 @@ class AssetManager {
 
     // Debug: log what we're searching for
     console.warn(`Asset not found: ${assetId}. Searched ${categories.length} categories.`);
+    console.log('SFX structure:', this.manifest.audio?.sfx);
+    console.log('First SFX category sample:', this.manifest.audio?.sfx?.reactions?.slice(0, 2));
 
     return null;
   }
@@ -273,9 +295,9 @@ class AssetManager {
         await this._sleep(500); // Faster retry
         return this._loadAudioWithRetry(asset, attempt + 1);
       }
-      // Return a silent audio element instead of throwing
+      // Return a working silent audio element instead of throwing
       console.warn(`Audio ${asset.id} failed to load, using silent placeholder`);
-      const silentAudio = new Audio();
+      const silentAudio = this._createSilentAudio(asset.duration || 20);
       silentAudio._isSilent = true; // Mark as silent for debugging
       return silentAudio;
     }
@@ -478,6 +500,26 @@ class AssetManager {
       assetId: id,
       message: error.message
     }));
+  }
+
+  /**
+   * Create a working silent audio element
+   *
+   * @private
+   * @param {number} duration - Duration in seconds
+   * @returns {HTMLAudioElement}
+   */
+  _createSilentAudio(duration = 20) {
+    // Create a minimal valid MP3 data URL (silent audio)
+    // This is a base64-encoded silent MP3 file (very short, repeatable)
+    const silentMp3 = 'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAADhAC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7//////////////////////////////////////////////////////////////////8AAAAATGF2YzU4LjEzAAAAAAAAAAAAAAAAJAAAAAAAAAAAA4SxJNMZAAAAAAAAAAAAAAAAAAAA//MUZAAAAAGkAAAAAAAAA0gAAAAATEFN//MUZDsAAAGkAAAAAAAAA0gAAAAARTMu//MUZHYAAAGkAAAAAAAAA0gAAAAAOTku//MUZJEAAAGkAAAAAAAAA0gAAAAANVVV';
+
+    const audio = new Audio();
+    audio.src = silentMp3;
+    audio.loop = true;
+    audio.volume = 0; // Ensure it's silent
+
+    return audio;
   }
 
   /**

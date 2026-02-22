@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Bruh - Unimpressed Face Icon -->
+  <style>
+    svg { color: #FFD700; }
+  </style>
+
+  <!-- Face -->
+  <circle cx="100" cy="100" r="80" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Unimpressed eyes -->
+  <ellipse cx="70" cy="85" rx="15" ry="10" fill="#000"/>
+  <ellipse cx="130" cy="85" rx="15" ry="10" fill="#000"/>
+
+  <!-- Raised eyebrow (skeptical) -->
+  <path d="M 50 65 Q 65 55 85 60" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 115 60 Q 130 55 150 60" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Flat mouth (unimpressed) -->
+  <line x1="70" y1="130" x2="130" y2="130" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Side-eye whites -->
+  <ellipse cx="65" cy="85" rx="8" ry="6" fill="#fff"/>
+  <ellipse cx="125" cy="85" rx="8" ry="6" fill="#fff"/>
+</svg>

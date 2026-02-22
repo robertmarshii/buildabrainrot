@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fart - Gas Cloud Icon -->
+  <style>
+    svg { color: #90EE90; }
+  </style>
+
+  <!-- Large cloud puff -->
+  <circle cx="80" cy="100" r="35" fill="currentColor" opacity="0.7" stroke="#228B22" stroke-width="2"/>
+  <circle cx="120" cy="105" r="40" fill="currentColor" opacity="0.7" stroke="#228B22" stroke-width="2"/>
+  <circle cx="100" cy="80" r="30" fill="currentColor" opacity="0.7" stroke="#228B22" stroke-width="2"/>
+  <circle cx="110" cy="130" r="28" fill="currentColor" opacity="0.7" stroke="#228B22" stroke-width="2"/>
+  <circle cx="70" cy="125" r="25" fill="currentColor" opacity="0.7" stroke="#228B22" stroke-width="2"/>
+
+  <!-- Smaller puffs -->
+  <circle cx="145" cy="90" r="18" fill="currentColor" opacity="0.5" stroke="#228B22" stroke-width="2"/>
+  <circle cx="55" cy="85" r="15" fill="currentColor" opacity="0.5" stroke="#228B22" stroke-width="2"/>
+
+  <!-- Wavy stink lines -->
+  <path d="M 60 60 Q 55 45 60 30" fill="none" stroke="#228B22" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 85 55 Q 80 40 85 25" fill="none" stroke="#228B22" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 110 50 Q 105 35 110 20" fill="none" stroke="#228B22" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 135 60 Q 130 45 135 30" fill="none" stroke="#228B22" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Optional small particles -->
+  <circle cx="50" cy="110" r="4" fill="#228B22" opacity="0.4"/>
+  <circle cx="140" cy="115" r="5" fill="#228B22" opacity="0.4"/>
+  <circle cx="95" cy="140" r="4" fill="#228B22" opacity="0.4"/>
+</svg>

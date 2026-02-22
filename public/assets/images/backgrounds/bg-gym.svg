@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Gym Background -->
+  <!-- Floor -->
+  <rect x="0" y="650" width="1920" height="430" fill="#4A4A4A"/>
+  <!-- Floor lines -->
+  <g opacity="0.2">
+    <line x1="0" y1="750" x2="1920" y2="750" stroke="#fff" stroke-width="3"/>
+    <line x1="0" y1="850" x2="1920" y2="850" stroke="#fff" stroke-width="3"/>
+    <line x1="0" y1="950" x2="1920" y2="950" stroke="#fff" stroke-width="3"/>
+  </g>
+
+  <!-- Wall -->
+  <rect x="0" y="0" width="1920" height="650" fill="#2C3E50"/>
+
+  <!-- Mirror (large) -->
+  <rect x="50" y="80" width="800" height="500" fill="#B0C4DE" stroke="#2F4F4F" stroke-width="8" rx="10"/>
+  <!-- Mirror reflection effect -->
+  <rect x="70" y="100" width="760" height="460" fill="#E6F2FF" opacity="0.3"/>
+
+  <!-- Weight Rack -->
+  <rect x="1400" y="300" width="450" height="350" fill="#2F4F4F" stroke="#000" stroke-width="4"/>
+  <!-- Shelves -->
+  <rect x="1420" y="340" width="410" height="8" fill="#000"/>
+  <rect x="1420" y="450" width="410" height="8" fill="#000"/>
+  <rect x="1420" y="560" width="410" height="8" fill="#000"/>
+
+  <!-- Dumbbells on rack -->
+  <g>
+    <!-- Row 1 -->
+    <rect x="1440" y="310" width="60" height="20" fill="#4A4A4A" stroke="#000" stroke-width="2" rx="5"/>
+    <circle cx="1435" cy="320" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+    <circle cx="1505" cy="320" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+
+    <rect x="1540" y="310" width="60" height="20" fill="#4A4A4A" stroke="#000" stroke-width="2" rx="5"/>
+    <circle cx="1535" cy="320" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+    <circle cx="1605" cy="320" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+
+    <!-- Row 2 -->
+    <rect x="1440" y="420" width="60" height="20" fill="#4A4A4A" stroke="#000" stroke-width="2" rx="5"/>
+    <circle cx="1435" cy="430" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+    <circle cx="1505" cy="430" r="15" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Bench Press -->
+  <rect x="900" y="600" width="300" height="150" fill="#8B0000" stroke="#5C0000" stroke-width="4" rx="15"/>
+  <rect x="920" y="610" width="260" height="130" fill="#A52A2A"/>
+  <!-- Legs -->
+  <rect x="920" y="750" width="30" height="180" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+  <rect x="1150" y="750" width="30" height="180" fill="#2C2C2C" stroke="#000" stroke-width="2"/>
+
+  <!-- Barbell on bench -->
+  <rect x="850" y="550" width="400" height="15" fill="#4A4A4A" stroke="#000" stroke-width="3" rx="7"/>
+  <!-- Weight plates -->
+  <circle cx="870" cy="557" r="40" fill="#2C2C2C" stroke="#000" stroke-width="3"/>
+  <circle cx="1230" cy="557" r="40" fill="#2C2C2C" stroke="#000" stroke-width="3"/>
+  <circle cx="890" cy="557" r="35" fill="#2C2C2C" stroke="#000" stroke-width="3"/>
+  <circle cx="1210" cy="557" r="35" fill="#2C2C2C" stroke="#000" stroke-width="3"/>
+
+  <!-- Treadmill -->
+  <rect x="100" y="700" width="350" height="300" fill="#2F4F4F" stroke="#000" stroke-width="4" rx="10"/>
+  <!-- Belt -->
+  <rect x="120" y="850" width="310" height="120" fill="#1C1C1C" stroke="#000" stroke-width="3"/>
+  <!-- Console -->
+  <rect x="180" y="720" width="200" height="120" fill="#4A4A4A" stroke="#000" stroke-width="3" rx="8"/>
+  <rect x="200" y="740" width="160" height="80" fill="#00FF00" stroke="#000" stroke-width="2"/>
+  <!-- Display text -->
+  <text x="280" y="785" font-family="Arial" font-size="24" font-weight="bold" fill="#000" text-anchor="middle">5.2 MPH</text>
+  <!-- Handrails -->
+  <rect x="100" y="720" width="15" height="200" fill="#C0C0C0" stroke="#808080" stroke-width="2" rx="7"/>
+  <rect x="435" y="720" width="15" height="200" fill="#C0C0C0" stroke="#808080" stroke-width="2" rx="7"/>
+
+  <!-- Motivational Poster -->
+  <rect x="950" y="100" width="400" height="300" fill="#000" stroke="#FFD700" stroke-width="6" rx="8"/>
+  <text x="1150" y="200" font-family="Arial" font-size="60" font-weight="bold" fill="#FFD700" text-anchor="middle">NO PAIN</text>
+  <text x="1150" y="280" font-family="Arial" font-size="60" font-weight="bold" fill="#FFD700" text-anchor="middle">NO GAIN</text>
+  <!-- Flexing arm icon -->
+  <circle cx="1150" cy="350" r="30" fill="#FFD700"/>
+  <ellipse cx="1120" cy="350" rx="35" ry="25" fill="#FFD700" transform="rotate(-30 1120 350)"/>
+  <ellipse cx="1180" cy="350" rx="35" ry="25" fill="#FFD700" transform="rotate(30 1180 350)"/>
+
+  <!-- Water Cooler -->
+  <rect x="1700" y="700" width="120" height="300" fill="#E0E0E0" stroke="#A0A0A0" stroke-width="3" rx="10"/>
+  <!-- Water bottle part -->
+  <rect x="1710" y="710" width="100" height="180" fill="#87CEEB" stroke="#4682B4" stroke-width="2" rx="8"/>
+  <ellipse cx="1760" cy="710" rx="50" ry="20" fill="#6495ED"/>
+  <!-- Spigot -->
+  <rect x="1740" y="900" width="40" height="15" fill="#C0C0C0" stroke="#808080" stroke-width="2" rx="3"/>
+
+  <!-- Yoga Mat (rolled) -->
+  <rect x="550" y="850" width="200" height="80" fill="#9B59B6" stroke="#7D3C98" stroke-width="3" rx="40"/>
+  <ellipse cx="550" cy="890" rx="40" ry="40" fill="#8E44AD" stroke="#7D3C98" stroke-width="3"/>
+  <ellipse cx="750" cy="890" rx="40" ry="40" fill="#8E44AD" stroke="#7D3C98" stroke-width="3"/>
+</svg>

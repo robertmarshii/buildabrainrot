@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Wow - Amazed Face Icon -->
+  <style>
+    svg { color: #FFD700; }
+  </style>
+
+  <!-- Face -->
+  <circle cx="100" cy="100" r="80" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Wide amazed eyes -->
+  <circle cx="75" cy="85" r="18" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="125" cy="85" r="18" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="75" cy="85" r="10" fill="#000"/>
+  <circle cx="125" cy="85" r="10" fill="#000"/>
+  <!-- Sparkles in eyes -->
+  <circle cx="70" cy="80" r="4" fill="#fff"/>
+  <circle cx="120" cy="80" r="4" fill="#fff"/>
+
+  <!-- Raised eyebrows (amazed) -->
+  <path d="M 50 60 Q 65 50 85 55" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 115 55 Q 135 50 150 60" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Open mouth (wow shape) -->
+  <ellipse cx="100" cy="130" rx="18" ry="25" fill="#000" stroke="#000" stroke-width="3"/>
+  <ellipse cx="100" cy="128" rx="14" ry="20" fill="#8B4513"/>
+
+  <!-- Sparkles around head -->
+  <path d="M 30 50 L 32 58 L 25 60 L 32 62 L 30 70 L 38 62 L 45 60 L 38 58 Z" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+  <path d="M 165 45 L 167 53 L 160 55 L 167 57 L 165 65 L 173 57 L 180 55 L 173 53 Z" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+</svg>

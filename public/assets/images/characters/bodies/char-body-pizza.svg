@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Pizza Slice - Scaled up -->
+  <style>
+    svg { color: #FFD700; }
+  </style>
+  <!-- Crust (triangle base) -->
+  <path d="M 256 60 L 90 480 L 422 480 Z" fill="#D2691E" stroke="#000" stroke-width="4"/>
+
+  <!-- Cheese layer -->
+  <path d="M 256 100 L 110 460 L 402 460 Z" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Sauce showing through -->
+  <path d="M 256 130 L 130 440 L 382 440 Z" fill="#DC143C" fill-opacity="0.3"/>
+
+  <!-- Pepperoni circles -->
+  <circle cx="256" cy="180" r="28" fill="#8B0000" stroke="#000" stroke-width="2"/>
+  <circle cx="200" cy="260" r="26" fill="#8B0000" stroke="#000" stroke-width="2"/>
+  <circle cx="312" cy="260" r="26" fill="#8B0000" stroke="#000" stroke-width="2"/>
+  <circle cx="180" cy="360" r="30" fill="#8B0000" stroke="#000" stroke-width="2"/>
+  <circle cx="332" cy="360" r="30" fill="#8B0000" stroke="#000" stroke-width="2"/>
+  <circle cx="256" cy="400" r="28" fill="#8B0000" stroke="#000" stroke-width="2"/>
+
+  <!-- Cheese bubbles/texture -->
+  <circle cx="230" cy="220" r="8" fill="#fff" fill-opacity="0.4"/>
+  <circle cx="290" cy="310" r="10" fill="#fff" fill-opacity="0.4"/>
+  <circle cx="220" cy="320" r="7" fill="#fff" fill-opacity="0.4"/>
+  <circle cx="300" cy="410" r="9" fill="#fff" fill-opacity="0.4"/>
+
+  <!-- Crust texture -->
+  <ellipse cx="256" cy="70" rx="35" ry="12" fill="#8B4513" fill-opacity="0.3"/>
+  <ellipse cx="230" cy="85" rx="20" ry="8" fill="#8B4513" fill-opacity="0.3"/>
+  <ellipse cx="282" cy="85" rx="20" ry="8" fill="#8B4513" fill-opacity="0.3"/>
+</svg>

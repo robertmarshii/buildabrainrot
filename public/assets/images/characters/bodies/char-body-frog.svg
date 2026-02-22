@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Frog Body - Funky frog with arms and legs fitting inside viewBox -->
+  <style>
+    svg { color: #32CD32; }
+  </style>
+
+  <!-- Legs (drawn first so they appear behind body) -->
+  <g id="legs">
+    <!-- Left leg -->
+    <ellipse cx="175" cy="440" rx="35" ry="60" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-10 175 440)"/>
+    <!-- Left foot -->
+    <ellipse cx="135" cy="480" rx="55" ry="30" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Toes -->
+    <circle cx="105" cy="475" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="135" cy="485" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="165" cy="475" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+    <!-- Right leg -->
+    <ellipse cx="337" cy="440" rx="35" ry="60" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(10 337 440)"/>
+    <!-- Right foot -->
+    <ellipse cx="377" cy="480" rx="55" ry="30" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Toes -->
+    <circle cx="347" cy="475" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="377" cy="485" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="407" cy="475" r="14" fill="currentColor" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Arms (drawn before body so they tuck behind) -->
+  <g id="arms">
+    <!-- Left arm -->
+    <ellipse cx="85" cy="290" rx="35" ry="80" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-15 85 290)"/>
+    <!-- Left hand -->
+    <ellipse cx="55" cy="345" rx="40" ry="25" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Fingers -->
+    <circle cx="35" cy="338" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="35" cy="356" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="60" cy="360" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+    <!-- Right arm -->
+    <ellipse cx="427" cy="290" rx="35" ry="80" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(15 427 290)"/>
+    <!-- Right hand -->
+    <ellipse cx="457" cy="345" rx="40" ry="25" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Fingers -->
+    <circle cx="477" cy="338" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="477" cy="356" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <circle cx="452" cy="360" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Main body (drawn on top of arms/legs) -->
+  <g id="body">
+    <ellipse cx="256" cy="330" rx="180" ry="150" fill="currentColor" stroke="#000" stroke-width="4"/>
+    <!-- Belly -->
+    <ellipse cx="256" cy="350" rx="120" ry="110" fill="#fff" fill-opacity="0.3" stroke="#000" stroke-width="2"/>
+    <!-- Spots -->
+    <circle cx="175" cy="305" r="20" fill="#000" fill-opacity="0.2"/>
+    <circle cx="337" cy="305" r="20" fill="#000" fill-opacity="0.2"/>
+    <circle cx="256" cy="280" r="16" fill="#000" fill-opacity="0.2"/>
+  </g>
+
+  <!-- Head -->
+  <g id="head">
+    <ellipse cx="256" cy="165" rx="160" ry="110" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+    <!-- Eye bumps -->
+    <ellipse cx="185" cy="80" rx="50" ry="65" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <ellipse cx="327" cy="80" rx="50" ry="65" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+    <!-- Eyes -->
+    <ellipse cx="185" cy="75" rx="36" ry="45" fill="#fff" stroke="#000" stroke-width="2"/>
+    <ellipse cx="327" cy="75" rx="36" ry="45" fill="#fff" stroke="#000" stroke-width="2"/>
+
+    <!-- Pupils -->
+    <ellipse cx="185" cy="78" rx="18" ry="23" fill="#000"/>
+    <ellipse cx="327" cy="78" rx="18" ry="23" fill="#000"/>
+
+    <!-- Highlights -->
+    <circle cx="192" cy="68" r="8" fill="#fff"/>
+    <circle cx="334" cy="68" r="8" fill="#fff"/>
+
+    <!-- Mouth -->
+    <path d="M 145 210 Q 256 240 367 210" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

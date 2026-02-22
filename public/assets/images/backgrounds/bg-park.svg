@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- City Park Background -->
+  <!-- Sky -->
+  <rect x="0" y="0" width="1920" height="700" fill="#87CEEB"/>
+
+  <!-- Clouds -->
+  <ellipse cx="300" cy="150" rx="80" ry="50" fill="#fff" opacity="0.9"/>
+  <ellipse cx="350" cy="150" rx="70" ry="45" fill="#fff" opacity="0.9"/>
+  <ellipse cx="380" cy="160" rx="60" ry="40" fill="#fff" opacity="0.9"/>
+
+  <ellipse cx="1200" cy="200" rx="90" ry="55" fill="#fff" opacity="0.9"/>
+  <ellipse cx="1260" cy="200" rx="75" ry="50" fill="#fff" opacity="0.9"/>
+
+  <ellipse cx="800" cy="120" rx="70" ry="45" fill="#fff" opacity="0.9"/>
+  <ellipse cx="850" cy="130" rx="65" ry="40" fill="#fff" opacity="0.9"/>
+
+  <!-- Sun -->
+  <circle cx="1700" cy="150" r="80" fill="#FFD700"/>
+  <circle cx="1700" cy="150" r="90" fill="#FFD700" opacity="0.3"/>
+
+  <!-- Distant trees -->
+  <ellipse cx="200" cy="550" rx="100" ry="120" fill="#228B22"/>
+  <ellipse cx="400" cy="560" rx="90" ry="110" fill="#228B22"/>
+  <ellipse cx="600" cy="555" rx="95" ry="115" fill="#228B22"/>
+  <ellipse cx="1400" cy="550" rx="100" ry="120" fill="#228B22"/>
+  <ellipse cx="1600" cy="560" rx="95" ry="115" fill="#228B22"/>
+  <ellipse cx="1800" cy="555" rx="90" ry="110" fill="#228B22"/>
+
+  <!-- Ground/Grass -->
+  <rect x="0" y="700" width="1920" height="380" fill="#7EC850"/>
+
+  <!-- Grass texture -->
+  <g opacity="0.3">
+    <path d="M 0 750 Q 100 740 200 750 T 400 750 T 600 750 T 800 750 T 1000 750 T 1200 750 T 1400 750 T 1600 750 T 1800 750 T 1920 750" fill="none" stroke="#5FA020" stroke-width="2"/>
+    <path d="M 0 800 Q 100 790 200 800 T 400 800 T 600 800 T 800 800 T 1000 800 T 1200 800 T 1400 800 T 1600 800 T 1800 800 T 1920 800" fill="none" stroke="#5FA020" stroke-width="2"/>
+  </g>
+
+  <!-- Path/Sidewalk -->
+  <path d="M 0 900 Q 400 880 800 900 Q 1200 920 1600 900 L 1920 900 L 1920 980 L 0 980 Z" fill="#D3D3D3" stroke="#A9A9A9" stroke-width="4"/>
+  <!-- Path cracks -->
+  <line x1="300" y1="900" x2="310" y2="980" stroke="#808080" stroke-width="2" opacity="0.5"/>
+  <line x1="800" y1="900" x2="790" y2="980" stroke="#808080" stroke-width="2" opacity="0.5"/>
+  <line x1="1300" y1="900" x2="1310" y2="980" stroke="#808080" stroke-width="2" opacity="0.5"/>
+
+  <!-- Trees (foreground) -->
+  <!-- Left tree -->
+  <rect x="150" y="400" width="80" height="400" fill="#8B4513" stroke="#654321" stroke-width="4" rx="15"/>
+  <ellipse cx="190" cy="350" rx="150" ry="180" fill="#228B22" stroke="#1a6b1a" stroke-width="4"/>
+  <ellipse cx="190" cy="330" rx="130" ry="150" fill="#32CD32"/>
+  <ellipse cx="160" cy="320" rx="80" ry="100" fill="#3CB371"/>
+  <ellipse cx="220" cy="340" rx="90" ry="110" fill="#3CB371"/>
+
+  <!-- Right tree -->
+  <rect x="1690" y="450" width="80" height="350" fill="#8B4513" stroke="#654321" stroke-width="4" rx="15"/>
+  <ellipse cx="1730" cy="400" rx="140" ry="170" fill="#228B22" stroke="#1a6b1a" stroke-width="4"/>
+  <ellipse cx="1730" cy="380" rx="120" ry="140" fill="#32CD32"/>
+  <ellipse cx="1700" cy="370" rx="75" ry="95" fill="#3CB371"/>
+  <ellipse cx="1760" cy="390" rx="85" ry="105" fill="#3CB371"/>
+
+  <!-- Park Bench -->
+  <rect x="850" y="780" width="250" height="15" fill="#8B4513" stroke="#654321" stroke-width="3" rx="7"/>
+  <rect x="860" y="750" width="230" height="15" fill="#8B4513" stroke="#654321" stroke-width="3" rx="7"/>
+  <!-- Backrest -->
+  <rect x="860" y="700" width="230" height="15" fill="#8B4513" stroke="#654321" stroke-width="3" rx="7"/>
+  <!-- Legs -->
+  <rect x="870" y="795" width="20" height="100" fill="#2F4F4F" stroke="#000" stroke-width="2"/>
+  <rect x="1060" y="795" width="20" height="100" fill="#2F4F4F" stroke="#000" stroke-width="2"/>
+  <!-- Support bars -->
+  <line x1="875" y1="715" x2="875" y2="780" stroke="#2F4F4F" stroke-width="6"/>
+  <line x1="1075" y1="715" x2="1075" y2="780" stroke="#2F4F4F" stroke-width="6"/>
+
+  <!-- Flowers -->
+  <g>
+    <!-- Left flower patch -->
+    <circle cx="450" cy="850" r="12" fill="#FF69B4"/>
+    <circle cx="480" cy="840" r="12" fill="#FFD700"/>
+    <circle cx="510" cy="855" r="12" fill="#FF1493"/>
+    <circle cx="540" cy="845" r="12" fill="#FF69B4"/>
+
+    <!-- Right flower patch -->
+    <circle cx="1350" cy="860" r="12" fill="#FFD700"/>
+    <circle cx="1380" cy="850" r="12" fill="#FF69B4"/>
+    <circle cx="1410" cy="865" r="12" fill="#FF1493"/>
+    <circle cx="1440" cy="855" r="12" fill="#FFD700"/>
+  </g>
+
+  <!-- Lamp Post -->
+  <rect x="600" y="500" width="25" height="400" fill="#2F4F4F" stroke="#000" stroke-width="3"/>
+  <!-- Lamp -->
+  <path d="M 550 500 L 575 450 L 650 450 L 675 500 Z" fill="#2F4F4F" stroke="#000" stroke-width="3"/>
+  <ellipse cx="612" cy="460" rx="60" ry="30" fill="#FFD700" opacity="0.6"/>
+
+  <!-- Birds -->
+  <path d="M 1000 250 Q 1010 245 1020 250" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 1010 245 Q 1020 240 1030 245" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+
+  <path d="M 1400 180 Q 1410 175 1420 180" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 1410 175 Q 1420 170 1430 175" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+</svg>

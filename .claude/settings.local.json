@@ -16,7 +16,15 @@
       "WebFetch(domain:pixabay.com)",
       "WebFetch(domain:archive.org)",
       "WebFetch(domain:soundbible.com)",
-      "WebFetch(domain:incompetech.com)"
+      "WebFetch(domain:incompetech.com)",
+      "Bash(git checkout:*)",
+      "Bash(git log:*)",
+      "Bash(./download-real-audio.sh)",
+      "Bash(kill:*)",
+      "Bash(xargs:*)",
+      "Bash(node -e:*)",
+      "WebFetch(domain:orangefreesounds.com)",
+      "WebFetch(domain:freemusicarchive.org)"
     ],
     "deny": [],
     "ask": []

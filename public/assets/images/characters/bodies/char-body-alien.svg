@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Alien - Scaled up -->
+  <style>
+    svg { color: #00FF00; }
+  </style>
+  <!-- Head (large) -->
+  <ellipse cx="256" cy="180" rx="160" ry="150" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Eyes (huge) -->
+  <ellipse cx="190" cy="180" rx="55" ry="75" fill="#000" stroke="#000" stroke-width="3"/>
+  <ellipse cx="322" cy="180" rx="55" ry="75" fill="#000" stroke="#000" stroke-width="3"/>
+
+  <!-- Eye highlights -->
+  <ellipse cx="200" cy="160" rx="18" ry="25" fill="#fff" opacity="0.6"/>
+  <ellipse cx="332" cy="160" rx="18" ry="25" fill="#fff" opacity="0.6"/>
+
+  <!-- Small nose bumps -->
+  <circle cx="256" cy="220" r="8" fill="#000" fill-opacity="0.2"/>
+
+  <!-- Tiny mouth -->
+  <path d="M 240 250 Q 256 258 272 250" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Body (small and thin) -->
+  <ellipse cx="256" cy="360" rx="80" ry="100" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Thin arms -->
+  <g id="arms">
+    <!-- Left arm -->
+    <line x1="176" y1="320" x2="100" y2="380" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+    <line x1="176" y1="320" x2="100" y2="380" stroke="#000" stroke-width="3" fill="none"/>
+
+    <!-- Left hand (3 fingers) -->
+    <circle cx="100" cy="380" r="20" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <ellipse cx="85" cy="395" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <ellipse cx="100" cy="398" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <ellipse cx="115" cy="395" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+    <!-- Right arm -->
+    <line x1="336" y1="320" x2="412" y2="380" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+    <line x1="336" y1="320" x2="412" y2="380" stroke="#000" stroke-width="3" fill="none"/>
+
+    <!-- Right hand (3 fingers) -->
+    <circle cx="412" cy="380" r="20" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <ellipse cx="397" cy="395" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <ellipse cx="412" cy="398" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+    <ellipse cx="427" cy="395" rx="8" ry="20" fill="currentColor" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Thin legs -->
+  <g id="legs">
+    <!-- Left leg -->
+    <line x1="220" y1="460" x2="200" y2="485" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+    <line x1="220" y1="460" x2="200" y2="485" stroke="#000" stroke-width="3" fill="none"/>
+    <ellipse cx="200" cy="495" rx="25" ry="15" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+    <!-- Right leg -->
+    <line x1="292" y1="460" x2="312" y2="485" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+    <line x1="292" y1="460" x2="312" y2="485" stroke="#000" stroke-width="3" fill="none"/>
+    <ellipse cx="312" cy="495" rx="25" ry="15" fill="currentColor" stroke="#000" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Bedroom Background -->
+  <!-- Floor -->
+  <rect x="0" y="600" width="1920" height="480" fill="#D4A574"/>
+  <!-- Wood floor planks -->
+  <g opacity="0.3">
+    <line x1="0" y1="650" x2="1920" y2="650" stroke="#8B4513" stroke-width="2"/>
+    <line x1="0" y1="720" x2="1920" y2="720" stroke="#8B4513" stroke-width="2"/>
+    <line x1="0" y1="790" x2="1920" y2="790" stroke="#8B4513" stroke-width="2"/>
+    <line x1="0" y1="860" x2="1920" y2="860" stroke="#8B4513" stroke-width="2"/>
+    <line x1="0" y1="930" x2="1920" y2="930" stroke="#8B4513" stroke-width="2"/>
+    <line x1="0" y1="1000" x2="1920" y2="1000" stroke="#8B4513" stroke-width="2"/>
+  </g>
+
+  <!-- Wall -->
+  <rect x="0" y="0" width="1920" height="600" fill="#E6D5B8"/>
+
+  <!-- Wallpaper pattern -->
+  <g opacity="0.2">
+    <circle cx="200" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="400" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="600" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="800" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="1000" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="1200" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="1400" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="1600" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="1800" cy="150" r="20" fill="#C4A57B"/>
+    <circle cx="200" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="400" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="600" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="800" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="1000" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="1200" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="1400" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="1600" cy="350" r="20" fill="#C4A57B"/>
+    <circle cx="1800" cy="350" r="20" fill="#C4A57B"/>
+  </g>
+
+  <!-- Bed -->
+  <rect x="1200" y="550" width="650" height="400" fill="#8B4513" stroke="#654321" stroke-width="4"/>
+  <!-- Mattress -->
+  <rect x="1200" y="500" width="650" height="100" fill="#E8E8E8" stroke="#C0C0C0" stroke-width="3" rx="8"/>
+  <!-- Pillow -->
+  <ellipse cx="1350" cy="520" rx="100" ry="40" fill="#FFE5CC" stroke="#E0D5C0" stroke-width="2"/>
+  <ellipse cx="1700" cy="520" rx="100" ry="40" fill="#FFE5CC" stroke="#E0D5C0" stroke-width="2"/>
+  <!-- Blanket -->
+  <path d="M 1200 600 L 1850 600 L 1850 850 Q 1700 900 1400 900 Q 1250 900 1200 850 Z" fill="#6495ED" stroke="#4169E1" stroke-width="3"/>
+  <!-- Blanket texture -->
+  <line x1="1250" y1="650" x2="1800" y2="650" stroke="#4169E1" stroke-width="2" opacity="0.3"/>
+  <line x1="1250" y1="720" x2="1800" y2="720" stroke="#4169E1" stroke-width="2" opacity="0.3"/>
+  <line x1="1250" y1="790" x2="1780" y2="790" stroke="#4169E1" stroke-width="2" opacity="0.3"/>
+
+  <!-- Nightstand -->
+  <rect x="1000" y="600" width="150" height="250" fill="#8B4513" stroke="#654321" stroke-width="3"/>
+  <rect x="1020" y="620" width="110" height="80" fill="#654321" stroke="#4a2f1a" stroke-width="2"/>
+  <circle cx="1075" cy="660" r="8" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+
+  <!-- Lamp on nightstand -->
+  <rect x="1050" y="570" width="50" height="30" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+  <path d="M 1050 570 L 1035 550 L 1065 550 L 1050 570 M 1100 570 L 1085 550 L 1115 550 L 1100 570" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+  <rect x="1070" y="550" width="10" height="20" fill="#8B4513"/>
+
+  <!-- Poster on wall -->
+  <rect x="200" y="100" width="400" height="350" fill="#FF69B4" stroke="#000" stroke-width="4" rx="5"/>
+  <text x="400" y="280" font-family="Arial" font-size="80" font-weight="bold" fill="#fff" text-anchor="middle">VIBES</text>
+  <circle cx="250" cy="180" r="30" fill="#FFD700"/>
+  <circle cx="550" cy="180" r="30" fill="#FFD700"/>
+  <circle cx="400" cy="380" r="40" fill="#4169E1"/>
+
+  <!-- Window -->
+  <rect x="700" y="80" width="450" height="400" fill="#87CEEB" stroke="#654321" stroke-width="6" rx="8"/>
+  <!-- Window frame -->
+  <line x1="925" y1="80" x2="925" y2="480" stroke="#654321" stroke-width="6"/>
+  <line x1="700" y1="280" x2="1150" y2="280" stroke="#654321" stroke-width="6"/>
+  <!-- Stars in window (night) -->
+  <circle cx="800" cy="150" r="8" fill="#FFD700"/>
+  <circle cx="900" cy="200" r="6" fill="#FFD700"/>
+  <circle cx="1050" cy="160" r="7" fill="#FFD700"/>
+  <circle cx="850" cy="380" r="6" fill="#FFD700"/>
+  <!-- Moon -->
+  <circle cx="1000" cy="200" r="60" fill="#FFF8DC"/>
+
+  <!-- Dresser -->
+  <rect x="100" y="550" width="350" height="400" fill="#8B4513" stroke="#654321" stroke-width="4"/>
+  <!-- Drawers -->
+  <rect x="120" y="570" width="310" height="110" fill="#654321" stroke="#4a2f1a" stroke-width="2"/>
+  <rect x="120" y="700" width="310" height="110" fill="#654321" stroke="#4a2f1a" stroke-width="2"/>
+  <rect x="120" y="830" width="310" height="110" fill="#654321" stroke="#4a2f1a" stroke-width="2"/>
+  <!-- Handles -->
+  <circle cx="210" cy="625" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+  <circle cx="340" cy="625" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+  <circle cx="210" cy="755" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+  <circle cx="340" cy="755" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+  <circle cx="210" cy="885" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+  <circle cx="340" cy="885" r="10" fill="#C0C0C0" stroke="#000" stroke-width="2"/>
+
+  <!-- Rug -->
+  <ellipse cx="700" cy="900" rx="250" ry="120" fill="#DC143C" stroke="#8B0000" stroke-width="4"/>
+  <ellipse cx="700" cy="900" rx="220" ry="100" fill="#FF6347" opacity="0.5"/>
+</svg>

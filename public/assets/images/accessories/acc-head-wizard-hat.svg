@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Wizard/Witch Hat -->
+  <style>
+    svg { color: #9B59B6; }
+  </style>
+
+  <!-- Brim -->
+  <ellipse cx="100" cy="160" rx="90" ry="20" fill="currentColor" stroke="#000" stroke-width="4"/>
+  <ellipse cx="100" cy="155" rx="90" ry="15" fill="#000" fill-opacity="0.2"/>
+
+  <!-- Cone -->
+  <path d="M 40 160 L 100 20 L 160 160 Z" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Stars pattern -->
+  <path d="M 90 80 L 93 87 L 100 87 L 95 92 L 97 100 L 90 95 L 83 100 L 85 92 L 80 87 L 87 87 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+  <path d="M 105 110 L 107 115 L 112 115 L 108 118 L 110 123 L 105 120 L 100 123 L 102 118 L 98 115 L 103 115 Z" fill="#FFD700" stroke="#000" stroke-width="1"/>
+  <path d="M 85 130 L 87 134 L 91 134 L 88 137 L 90 141 L 85 138 L 81 141 L 83 137 L 79 134 L 83 134 Z" fill="#FFD700" stroke="#000" stroke-width="1"/>
+
+  <!-- Moon -->
+  <path d="M 110 50 Q 120 55 120 65 Q 120 75 110 80 Q 115 75 115 65 Q 115 55 110 50 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Highlight -->
+  <ellipse cx="85" cy="100" rx="8" ry="15" fill="#fff" opacity="0.3"/>
+</svg>

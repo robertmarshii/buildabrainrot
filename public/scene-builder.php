@@ -558,6 +558,18 @@
                         <button class="quick-phrase-btn" onclick="usePhrase('no cap')">no cap</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('bussin')">bussin</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('fr fr')">fr fr</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('ong')">ong</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('skibidi')">skibidi</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('rizz')">rizz</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('sus')">sus</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('bruh')">bruh</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('slay')">slay</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('bet')">bet</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('L + ratio')">L + ratio</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('W')">W</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('yeet')">yeet</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('vibe check')">vibe check</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('sigma')">sigma</button>
                     </div>
 
                     <div class="text-styles">
@@ -615,6 +627,18 @@
                         <button class="quick-phrase-btn" onclick="usePhrase('no cap', true)">no cap</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('bussin', true)">bussin</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('fr fr', true)">fr fr</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('ong', true)">ong</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('skibidi', true)">skibidi</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('rizz', true)">rizz</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('sus', true)">sus</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('bruh', true)">bruh</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('slay', true)">slay</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('bet', true)">bet</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('L + ratio', true)">L + ratio</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('W', true)">W</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('yeet', true)">yeet</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('vibe check', true)">vibe check</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('sigma', true)">sigma</button>
                     </div>
 
                     <div class="text-styles" id="text-styles-mobile">

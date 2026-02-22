@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Penguin - Scaled up -->
+  <style>
+    svg { color: #4A4A4A; }
+  </style>
+  <!-- Main body (oval) -->
+  <ellipse cx="256" cy="310" rx="145" ry="170" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- White belly -->
+  <ellipse cx="256" cy="325" rx="100" ry="135" fill="#fff" stroke="#000" stroke-width="2"/>
+
+  <!-- Head -->
+  <ellipse cx="256" cy="135" rx="110" ry="120" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- White face -->
+  <ellipse cx="256" cy="150" rx="75" ry="80" fill="#fff" stroke="#000" stroke-width="2"/>
+
+  <!-- Eyes -->
+  <ellipse cx="230" cy="130" rx="22" ry="27" fill="#fff" stroke="#000" stroke-width="2"/>
+  <ellipse cx="282" cy="130" rx="22" ry="27" fill="#fff" stroke="#000" stroke-width="2"/>
+  <circle cx="230" cy="136" r="12" fill="#000"/>
+  <circle cx="282" cy="136" r="12" fill="#000"/>
+
+  <!-- Eye highlights -->
+  <circle cx="234" cy="130" r="5" fill="#fff"/>
+  <circle cx="286" cy="130" r="5" fill="#fff"/>
+
+  <!-- Beak -->
+  <polygon points="256,160 235,185 277,185" fill="#FFA500" stroke="#000" stroke-width="2"/>
+
+  <!-- Wings -->
+  <ellipse cx="135" cy="300" rx="42" ry="110" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-20 135 300)"/>
+  <ellipse cx="377" cy="300" rx="42" ry="110" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(20 377 300)"/>
+
+  <!-- Feet -->
+  <ellipse cx="215" cy="485" rx="42" ry="24" fill="#FFA500" stroke="#000" stroke-width="3"/>
+  <ellipse cx="297" cy="485" rx="42" ry="24" fill="#FFA500" stroke="#000" stroke-width="3"/>
+
+  <!-- Foot webbing detail -->
+  <line x1="195" y1="490" x2="235" y2="490" stroke="#000" stroke-width="2"/>
+  <line x1="205" y1="495" x2="225" y2="495" stroke="#000" stroke-width="2"/>
+  <line x1="277" y1="490" x2="317" y2="490" stroke="#000" stroke-width="2"/>
+  <line x1="287" y1="495" x2="307" y2="495" stroke="#000" stroke-width="2"/>
+</svg>

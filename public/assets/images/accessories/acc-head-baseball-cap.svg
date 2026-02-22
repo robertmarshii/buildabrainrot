@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100">
+  <!-- Baseball Cap -->
+  <ellipse cx="70" cy="80" rx="65" ry="15" fill="#FF0000" stroke="#000" stroke-width="2"/>
+  <ellipse cx="70" cy="50" rx="50" ry="40" fill="#FF0000" stroke="#000" stroke-width="3"/>
+  <ellipse cx="70" cy="45" rx="40" ry="30" fill="#8B0000"/>
+  <circle cx="70" cy="50" r="12" fill="#FFD700" stroke="#000" stroke-width="2"/>
+</svg>

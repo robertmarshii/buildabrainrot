@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Robot Body - Scaled to match shark/cat size -->
+  <style>
+    svg { color: #C0C0C0; }
+  </style>
+
+  <!-- Antenna (at very top) -->
+  <line x1="256" y1="35" x2="256" y2="5" stroke="#000" stroke-width="7"/>
+  <circle cx="256" cy="5" r="20" fill="#ff0000" stroke="#000" stroke-width="3"/>
+
+  <!-- Head (large) -->
+  <g id="head">
+    <rect x="116" y="35" width="280" height="195" fill="currentColor" stroke="#000" stroke-width="4" rx="26"/>
+
+    <!-- Eyes (displays) -->
+    <rect x="146" y="105" width="80" height="70" fill="#00ffff" stroke="#000" stroke-width="2" rx="6"/>
+    <rect x="286" y="105" width="80" height="70" fill="#00ffff" stroke="#000" stroke-width="2" rx="6"/>
+
+    <!-- Pupils -->
+    <circle cx="186" cy="140" r="18" fill="#000"/>
+    <circle cx="326" cy="140" r="18" fill="#000"/>
+  </g>
+
+  <g id="body">
+    <!-- Main body rectangle (huge) -->
+    <rect x="81" y="230" width="350" height="300" fill="currentColor" stroke="#000" stroke-width="4" rx="18"/>
+
+    <!-- Chest panel -->
+    <rect x="121" y="270" width="270" height="220" fill="#fff" fill-opacity="0.2" stroke="#000" stroke-width="2" rx="12"/>
+
+    <!-- Buttons -->
+    <circle cx="196" cy="335" r="22" fill="#ff0000" stroke="#000" stroke-width="2"/>
+    <circle cx="316" cy="335" r="22" fill="#00ff00" stroke="#000" stroke-width="2"/>
+    <circle cx="256" cy="420" r="22" fill="#0000ff" stroke="#000" stroke-width="2"/>
+
+    <!-- Screen -->
+    <rect x="206" y="465" width="100" height="18" fill="#00ffff" stroke="#000" stroke-width="2" rx="4"/>
+  </g>
+
+  <!-- Arms (big and thick) -->
+  <rect x="0" y="250" width="81" height="240" fill="currentColor" stroke="#000" stroke-width="4" rx="14"/>
+  <rect x="431" y="250" width="81" height="240" fill="currentColor" stroke="#000" stroke-width="4" rx="14"/>
+
+  <!-- Hands/Claws (big) -->
+  <circle cx="40" cy="505" r="42" fill="currentColor" stroke="#000" stroke-width="3"/>
+  <circle cx="472" cy="505" r="42" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Feet (at bottom) -->
+  <rect x="106" y="525" width="140" height="12" fill="currentColor" stroke="#000" stroke-width="3" rx="6"/>
+  <rect x="266" y="525" width="140" height="12" fill="currentColor" stroke="#000" stroke-width="3" rx="6"/>
+</svg>

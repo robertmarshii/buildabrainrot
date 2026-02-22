@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Angel Wings -->
+  <style>
+    svg { color: #FFFFFF; }
+  </style>
+
+  <!-- Left wing -->
+  <g transform="translate(0, 0)">
+    <!-- Feather layers -->
+    <ellipse cx="80" cy="100" rx="70" ry="50" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-20 80 100)"/>
+    <ellipse cx="60" cy="90" rx="55" ry="40" fill="currentColor" stroke="#000" stroke-width="2" transform="rotate(-25 60 90)"/>
+    <ellipse cx="45" cy="85" rx="40" ry="30" fill="currentColor" stroke="#000" stroke-width="2" transform="rotate(-30 45 85)"/>
+
+    <!-- Feather details -->
+    <path d="M 50 80 Q 60 85 70 90" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M 45 90 Q 55 95 65 100" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M 50 100 Q 60 105 70 110" fill="none" stroke="#000" stroke-width="1.5"/>
+  </g>
+
+  <!-- Right wing -->
+  <g transform="translate(300, 0) scale(-1, 1)">
+    <!-- Feather layers -->
+    <ellipse cx="80" cy="100" rx="70" ry="50" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-20 80 100)"/>
+    <ellipse cx="60" cy="90" rx="55" ry="40" fill="currentColor" stroke="#000" stroke-width="2" transform="rotate(-25 60 90)"/>
+    <ellipse cx="45" cy="85" rx="40" ry="30" fill="currentColor" stroke="#000" stroke-width="2" transform="rotate(-30 45 85)"/>
+
+    <!-- Feather details -->
+    <path d="M 50 80 Q 60 85 70 90" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M 45 90 Q 55 95 65 100" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M 50 100 Q 60 105 70 110" fill="none" stroke="#000" stroke-width="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Crickets - Awkward Silence Icon -->
+  <style>
+    svg { color: #228B22; }
+  </style>
+
+  <!-- Cricket 1 (left) -->
+  <!-- Body -->
+  <ellipse cx="60" cy="100" rx="18" ry="25" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <circle cx="60" cy="85" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+  <!-- Antennae -->
+  <path d="M 55 75 Q 50 65 45 55" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 65 75 Q 70 65 75 55" fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- Legs -->
+  <path d="M 50 95 Q 35 95 30 105" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 50 105 Q 30 110 25 120" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 70 95 Q 85 95 90 105" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 70 105 Q 90 110 95 120" fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- Wings -->
+  <ellipse cx="60" cy="95" rx="12" ry="8" fill="#90EE90" opacity="0.6" stroke="#000" stroke-width="1"/>
+
+  <!-- Cricket 2 (right) -->
+  <!-- Body -->
+  <ellipse cx="140" cy="110" rx="18" ry="25" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <circle cx="140" cy="95" r="12" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+  <!-- Antennae -->
+  <path d="M 135 85 Q 130 75 125 65" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 145 85 Q 150 75 155 65" fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- Legs -->
+  <path d="M 130 105 Q 115 105 110 115" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 130 115 Q 110 120 105 130" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 150 105 Q 165 105 170 115" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 150 115 Q 170 120 175 130" fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- Wings -->
+  <ellipse cx="140" cy="105" rx="12" ry="8" fill="#90EE90" opacity="0.6" stroke="#000" stroke-width="1"/>
+
+  <!-- Sound waves (chirping) -->
+  <path d="M 75 80 Q 85 75 95 70" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="3,3" opacity="0.5"/>
+  <path d="M 125 90 Q 115 85 105 80" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- "..." awkward silence -->
+  <text x="100" y="50" font-family="Arial" font-size="40" font-weight="bold" fill="#808080" text-anchor="middle">...</text>
+</svg>

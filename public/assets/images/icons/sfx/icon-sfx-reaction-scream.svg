@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Scream - Screaming Face Icon -->
+  <style>
+    svg { color: #FFD700; }
+  </style>
+
+  <!-- Face (stretched/shocked) -->
+  <ellipse cx="100" cy="100" rx="70" ry="85" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Wide open eyes -->
+  <circle cx="75" cy="80" r="20" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="125" cy="80" r="20" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="75" cy="80" r="12" fill="#000"/>
+  <circle cx="125" cy="80" r="12" fill="#000"/>
+
+  <!-- Wide open mouth (screaming) -->
+  <ellipse cx="100" cy="135" rx="25" ry="40" fill="#000" stroke="#000" stroke-width="3"/>
+  <ellipse cx="100" cy="130" rx="20" ry="25" fill="#8B0000"/>
+
+  <!-- Tongue -->
+  <ellipse cx="100" cy="145" rx="10" ry="15" fill="#DC143C"/>
+
+  <!-- Shock lines around head -->
+  <path d="M 40 50 L 25 30" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 50 35 L 40 15" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 160 50 L 175 30" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 150 35 L 160 15" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 35 100 L 10 100" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 165 100 L 190 100" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+</svg>

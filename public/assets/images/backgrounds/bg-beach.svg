@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Beach Background -->
+  <!-- Sky -->
+  <rect x="0" y="0" width="1920" height="500" fill="#87CEEB"/>
+
+  <!-- Sun -->
+  <circle cx="1650" cy="150" r="100" fill="#FFD700"/>
+  <circle cx="1650" cy="150" r="120" fill="#FFD700" opacity="0.4"/>
+  <circle cx="1650" cy="150" r="140" fill="#FFD700" opacity="0.2"/>
+
+  <!-- Clouds -->
+  <ellipse cx="300" cy="150" rx="90" ry="55" fill="#fff" opacity="0.9"/>
+  <ellipse cx="360" cy="150" rx="80" ry="50" fill="#fff" opacity="0.9"/>
+  <ellipse cx="410" cy="160" rx="70" ry="45" fill="#fff" opacity="0.9"/>
+
+  <ellipse cx="900" cy="180" rx="85" ry="52" fill="#fff" opacity="0.9"/>
+  <ellipse cx="955" cy="185" rx="75" ry="48" fill="#fff" opacity="0.9"/>
+
+  <!-- Ocean -->
+  <rect x="0" y="500" width="1920" height="250" fill="#4682B4"/>
+
+  <!-- Waves -->
+  <path d="M 0 520 Q 200 510 400 520 T 800 520 T 1200 520 T 1600 520 T 1920 520" fill="none" stroke="#5F9EA0" stroke-width="4" opacity="0.7"/>
+  <path d="M 0 550 Q 250 540 500 550 T 1000 550 T 1500 550 T 1920 550" fill="none" stroke="#5F9EA0" stroke-width="4" opacity="0.7"/>
+  <path d="M 0 590 Q 220 580 440 590 T 880 590 T 1320 590 T 1920 590" fill="none" stroke="#5F9EA0" stroke-width="4" opacity="0.7"/>
+
+  <!-- White foam on waves -->
+  <ellipse cx="300" cy="520" rx="40" ry="8" fill="#fff" opacity="0.8"/>
+  <ellipse cx="700" cy="520" rx="45" ry="8" fill="#fff" opacity="0.8"/>
+  <ellipse cx="1400" cy="520" rx="42" ry="8" fill="#fff" opacity="0.8"/>
+
+  <ellipse cx="450" cy="550" rx="38" ry="8" fill="#fff" opacity="0.8"/>
+  <ellipse cx="1000" cy="550" rx="40" ry="8" fill="#fff" opacity="0.8"/>
+  <ellipse cx="1650" cy="550" rx="43" ry="8" fill="#fff" opacity="0.8"/>
+
+  <!-- Sand -->
+  <rect x="0" y="750" width="1920" height="330" fill="#F4A460"/>
+
+  <!-- Sand texture -->
+  <g opacity="0.2">
+    <circle cx="200" cy="850" r="3" fill="#D2691E"/>
+    <circle cx="500" cy="900" r="3" fill="#D2691E"/>
+    <circle cx="800" cy="870" r="3" fill="#D2691E"/>
+    <circle cx="1100" cy="920" r="3" fill="#D2691E"/>
+    <circle cx="1400" cy="880" r="3" fill="#D2691E"/>
+    <circle cx="1700" cy="910" r="3" fill="#D2691E"/>
+    <circle cx="350" cy="950" r="3" fill="#D2691E"/>
+    <circle cx="950" cy="980" r="3" fill="#D2691E"/>
+    <circle cx="1550" cy="960" r="3" fill="#D2691E"/>
+  </g>
+
+  <!-- Beach Umbrella -->
+  <path d="M 400 650 L 400 950" stroke="#D2691E" stroke-width="12" stroke-linecap="round"/>
+  <!-- Umbrella top -->
+  <path d="M 250 650 Q 325 580 400 650 Q 475 580 550 650" fill="#FF6B6B" stroke="#DC143C" stroke-width="4"/>
+  <path d="M 250 650 L 400 650" fill="#FFD700" opacity="0.3"/>
+  <path d="M 400 650 L 550 650" fill="#FFD700" opacity="0.3"/>
+  <!-- Umbrella stripes -->
+  <line x1="300" y1="635" x2="325" y2="590" stroke="#DC143C" stroke-width="3"/>
+  <line x1="350" y1="620" x2="362" y2="585" stroke="#DC143C" stroke-width="3"/>
+  <line x1="450" y1="620" x2="438" y2="585" stroke="#DC143C" stroke-width="3"/>
+  <line x1="500" y1="635" x2="475" y2="590" stroke="#DC143C" stroke-width="3"/>
+
+  <!-- Beach Towel -->
+  <rect x="500" y="880" width="200" height="140" fill="#FF1493" stroke="#C71585" stroke-width="4" rx="8"/>
+  <line x1="520" y1="900" x2="680" y2="900" stroke="#FFB6C1" stroke-width="8"/>
+  <line x1="520" y1="930" x2="680" y2="930" stroke="#FFB6C1" stroke-width="8"/>
+  <line x1="520" y1="960" x2="680" y2="960" stroke="#FFB6C1" stroke-width="8"/>
+  <line x1="520" y1="990" x2="680" y2="990" stroke="#FFB6C1" stroke-width="8"/>
+
+  <!-- Beach Ball -->
+  <circle cx="800" cy="900" r="60" fill="#FF6347" stroke="#000" stroke-width="3"/>
+  <path d="M 740 900 A 60 60 0 0 1 860 900" fill="#FFD700"/>
+  <path d="M 800 840 A 60 60 0 0 1 800 960" fill="#4169E1"/>
+  <circle cx="800" cy="900" r="60" fill="none" stroke="#000" stroke-width="3"/>
+
+  <!-- Sandcastle -->
+  <g>
+    <!-- Main tower -->
+    <rect x="1400" y="870" width="100" height="150" fill="#DEB887" stroke="#D2691E" stroke-width="3"/>
+    <path d="M 1390 870 L 1450 820 L 1510 870 Z" fill="#DEB887" stroke="#D2691E" stroke-width="3"/>
+    <rect x="1440" y="820" width="20" height="25" fill="#FFD700"/>
+
+    <!-- Side towers -->
+    <rect x="1330" y="920" width="60" height="100" fill="#DEB887" stroke="#D2691E" stroke-width="2"/>
+    <path d="M 1325 920 L 1360 885 L 1395 920 Z" fill="#DEB887" stroke="#D2691E" stroke-width="2"/>
+
+    <rect x="1510" y="920" width="60" height="100" fill="#DEB887" stroke="#D2691E" stroke-width="2"/>
+    <path d="M 1505 920 L 1540 885 L 1575 920 Z" fill="#DEB887" stroke="#D2691E" stroke-width="2"/>
+
+    <!-- Windows -->
+    <rect x="1430" y="950" width="40" height="50" fill="#333" rx="3"/>
+    <rect x="1345" y="970" width="30" height="35" fill="#333" rx="2"/>
+    <rect x="1525" y="970" width="30" height="35" fill="#333" rx="2"/>
+  </g>
+
+  <!-- Seagulls -->
+  <path d="M 1100 300 Q 1115 295 1130 300" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 1115 295 Q 1130 290 1145 295" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M 700 250 Q 715 245 730 250" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 715 245 Q 730 240 745 245" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Starfish -->
+  <path d="M 1100 950 L 1110 925 L 1130 935 L 1125 955 L 1145 960 L 1130 975 L 1130 1000 L 1115 980 L 1095 990 L 1095 970 L 1075 965 L 1090 950 Z" fill="#FF6347" stroke="#DC143C" stroke-width="2"/>
+
+  <!-- Shells -->
+  <ellipse cx="250" cy="920" rx="20" ry="15" fill="#FFE4E1" stroke="#DEB887" stroke-width="2" transform="rotate(30 250 920)"/>
+  <ellipse cx="1750" cy="880" rx="18" ry="14" fill="#FFE4E1" stroke="#DEB887" stroke-width="2" transform="rotate(-20 1750 880)"/>
+</svg>

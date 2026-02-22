@@ -335,8 +335,10 @@ class SceneCanvas extends CharacterCanvas {
   isPointInItem(point, item) {
     if (!item.image) return false;
 
-    const halfWidth = (item.image.width * item.scale) / 2;
-    const halfHeight = (item.image.height * item.scale) / 2;
+    // Use metadata dimensions for consistent hit detection
+    const { width, height } = this._getImageDimensions(item.image, item.metadata);
+    const halfWidth = (width * item.scale) / 2;
+    const halfHeight = (height * item.scale) / 2;
 
     return (
       point.x >= item.position.x - halfWidth &&
@@ -617,6 +619,9 @@ class SceneCanvas extends CharacterCanvas {
   _drawSticker(sticker) {
     if (!sticker.image) return;
 
+    // Use metadata dimensions for consistent sizing regardless of intrinsic SVG size
+    const { width, height } = this._getImageDimensions(sticker.image, sticker.metadata);
+
     this.ctx.save();
 
     this.ctx.translate(sticker.position.x, sticker.position.y);
@@ -629,9 +634,9 @@ class SceneCanvas extends CharacterCanvas {
       this.ctx.scale(sticker.scale, sticker.scale);
     }
 
-    const x = -sticker.image.width / 2;
-    const y = -sticker.image.height / 2;
-    this.ctx.drawImage(sticker.image, x, y);
+    const x = -width / 2;
+    const y = -height / 2;
+    this.ctx.drawImage(sticker.image, x, y, width, height);
 
     this.ctx.restore();
   }

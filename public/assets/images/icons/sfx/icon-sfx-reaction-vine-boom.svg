@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Vine Boom - Explosion Icon -->
+  <style>
+    svg { color: #FF6347; }
+  </style>
+
+  <!-- Explosion center -->
+  <circle cx="100" cy="100" r="40" fill="currentColor"/>
+  <circle cx="100" cy="100" r="30" fill="#FFD700"/>
+  <circle cx="100" cy="100" r="20" fill="#FFA500"/>
+
+  <!-- Explosion rays -->
+  <path d="M 100 40 L 90 10 L 100 0 L 110 10 Z" fill="currentColor"/>
+  <path d="M 140 60 L 170 40 L 180 50 L 160 70 Z" fill="currentColor"/>
+  <path d="M 160 100 L 190 90 L 200 100 L 190 110 Z" fill="currentColor"/>
+  <path d="M 140 140 L 170 160 L 160 170 L 130 150 Z" fill="currentColor"/>
+  <path d="M 100 160 L 110 190 L 100 200 L 90 190 Z" fill="currentColor"/>
+  <path d="M 60 140 L 30 160 L 20 150 L 40 130 Z" fill="currentColor"/>
+  <path d="M 40 100 L 10 110 L 0 100 L 10 90 Z" fill="currentColor"/>
+  <path d="M 60 60 L 30 40 L 40 30 L 70 50 Z" fill="currentColor"/>
+
+  <!-- Impact lines -->
+  <line x1="100" y1="100" x2="100" y2="30" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="155" y2="55" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="170" y2="100" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="155" y2="145" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="100" y2="170" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="45" y2="145" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="30" y2="100" stroke="#FFD700" stroke-width="4"/>
+  <line x1="100" y1="100" x2="45" y2="55" stroke="#FFD700" stroke-width="4"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180">
+  <!-- Bunny Ears -->
+  <style>
+    svg { color: #FFB6C1; }
+  </style>
+  <!-- Left ear -->
+  <ellipse cx="50" cy="60" rx="22" ry="70" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-15 50 60)"/>
+  <!-- Left inner ear -->
+  <ellipse cx="50" cy="60" rx="12" ry="50" fill="#fff" stroke="#000" stroke-width="2" transform="rotate(-15 50 60)"/>
+
+  <!-- Right ear -->
+  <ellipse cx="150" cy="60" rx="22" ry="70" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(15 150 60)"/>
+  <!-- Right inner ear -->
+  <ellipse cx="150" cy="60" rx="12" ry="50" fill="#fff" stroke="#000" stroke-width="2" transform="rotate(15 150 60)"/>
+</svg>

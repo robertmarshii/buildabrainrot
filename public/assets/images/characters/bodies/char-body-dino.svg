@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Dinosaur (T-Rex) - Scaled up -->
+  <style>
+    svg { color: #228B22; }
+  </style>
+  <!-- Body -->
+  <ellipse cx="280" cy="300" rx="140" ry="150" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Belly -->
+  <ellipse cx="280" cy="320" rx="90" ry="110" fill="#fff" fill-opacity="0.3" stroke="#000" stroke-width="2"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="140" rx="120" ry="110" fill="currentColor" stroke="#000" stroke-width="4"/>
+
+  <!-- Snout -->
+  <ellipse cx="120" cy="160" rx="60" ry="50" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Jaw line -->
+  <path d="M 70 160 L 70 185 Q 110 195 150 185 L 150 165" fill="currentColor" stroke="#000" stroke-width="3"/>
+
+  <!-- Teeth (top) -->
+  <polygon points="75,160 70,175 80,175" fill="#fff" stroke="#000" stroke-width="1"/>
+  <polygon points="95,160 90,175 100,175" fill="#fff" stroke="#000" stroke-width="1"/>
+  <polygon points="115,160 110,175 120,175" fill="#fff" stroke="#000" stroke-width="1"/>
+  <polygon points="135,160 130,175 140,175" fill="#fff" stroke="#000" stroke-width="1"/>
+
+  <!-- Teeth (bottom) -->
+  <polygon points="75,185 80,175 85,185" fill="#fff" stroke="#000" stroke-width="1"/>
+  <polygon points="100,185 105,175 110,185" fill="#fff" stroke="#000" stroke-width="1"/>
+  <polygon points="125,185 130,175 135,185" fill="#fff" stroke="#000" stroke-width="1"/>
+
+  <!-- Eye -->
+  <circle cx="180" cy="120" r="18" fill="#fff" stroke="#000" stroke-width="2"/>
+  <circle cx="180" cy="125" r="12" fill="#000"/>
+  <circle cx="184" cy="118" r="5" fill="#fff"/>
+
+  <!-- Nostril -->
+  <ellipse cx="95" cy="155" rx="6" ry="8" fill="#000"/>
+
+  <!-- Neck -->
+  <path d="M 240 200 Q 260 240 270 280" stroke="currentColor" stroke-width="90" fill="none" stroke-linecap="round"/>
+  <path d="M 240 200 Q 260 240 270 280" stroke="#000" stroke-width="4" fill="none"/>
+
+  <!-- Back spikes -->
+  <polygon points="260,220 250,190 270,210" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <polygon points="285,250 275,220 295,240" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <polygon points="310,280 300,250 320,270" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <polygon points="340,310 330,280 350,300" fill="currentColor" stroke="#000" stroke-width="2"/>
+  <polygon points="365,340 355,310 375,330" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+  <!-- Tiny arms -->
+  <ellipse cx="240" cy="270" rx="15" ry="45" fill="currentColor" stroke="#000" stroke-width="3" transform="rotate(-30 240 270)"/>
+  <ellipse cx="220" cy="300" rx="12" ry="18" fill="currentColor" stroke="#000" stroke-width="2"/>
+
+  <!-- Legs (large and powerful) -->
+  <g id="legs">
+    <!-- Left leg -->
+    <ellipse cx="240" cy="410" rx="40" ry="80" fill="currentColor" stroke="#000" stroke-width="4"/>
+    <ellipse cx="220" cy="485" rx="45" ry="22" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Claws -->
+    <polygon points="185,490 190,505 195,490" fill="#000"/>
+    <polygon points="210,490 215,505 220,490" fill="#000"/>
+    <polygon points="235,490 240,505 245,490" fill="#000"/>
+
+    <!-- Right leg -->
+    <ellipse cx="330" cy="410" rx="40" ry="80" fill="currentColor" stroke="#000" stroke-width="4"/>
+    <ellipse cx="350" cy="485" rx="45" ry="22" fill="currentColor" stroke="#000" stroke-width="3"/>
+    <!-- Claws -->
+    <polygon points="315,490 320,505 325,490" fill="#000"/>
+    <polygon points="340,490 345,505 350,490" fill="#000"/>
+    <polygon points="365,490 370,505 375,490" fill="#000"/>
+  </g>
+
+  <!-- Tail -->
+  <path d="M 400 320 Q 450 300 480 260" stroke="currentColor" stroke-width="65" fill="none" stroke-linecap="round"/>
+  <path d="M 400 320 Q 450 300 480 260" stroke="#000" stroke-width="4" fill="none"/>
+</svg>

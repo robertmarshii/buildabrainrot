@@ -78,6 +78,12 @@ class AudioMixer {
    * @returns {Promise<Object>} Asset metadata
    */
   async addSFX(sfxId, time) {
+    // Limit to 15 sound effects
+    if (this.sfxQueue.length >= 15) {
+      console.warn('Maximum of 15 sound effects reached');
+      throw new Error('Maximum of 15 sound effects reached. Remove one before adding more.');
+    }
+
     try {
       // Try to find asset directly from getAssetsByCategory first
       const availableSfx = this.assetManager.getAssetsByCategory('sfx');
@@ -95,16 +101,16 @@ class AudioMixer {
         throw new Error(`SFX asset not found: ${sfxId}`);
       }
 
-      // Create new Audio element for this SFX instance
-      // Don't clone - create fresh instance to ensure it loads properly
-      const sfxAudio = new Audio();
-      sfxAudio.src = this.assetManager.baseUrl + asset.file;
-      sfxAudio.volume = 1.0;
-      sfxAudio.preload = 'auto';
+      // Load audio through AssetManager for retry logic and silent fallback
+      const sfxAudio = await this.assetManager.loadAudio(sfxId);
+
+      // Clone the audio so each instance is independent
+      const sfxInstance = sfxAudio.cloneNode();
+      sfxInstance.volume = 1.0;
 
       this.sfxQueue.push({
         id: sfxId,
-        audio: sfxAudio,
+        audio: sfxInstance,
         time: time,
         duration: asset.duration || 1,
         played: false,

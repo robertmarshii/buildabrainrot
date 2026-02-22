@@ -101,6 +101,7 @@ $fullUrl = "https://" . ($_SERVER['HTTP_HOST'] ?? 'buildabrainrot.com') . "/b/" 
             <button id="btn-remix" class="btn-action" title="Remix this brainrot">🎨 Remix This</button>
             <button id="btn-share" class="btn-action" title="Share">📤 Share</button>
             <button id="btn-download" class="btn-action" title="Download as image">💾 Download</button>
+            <button id="btn-make-own" class="btn-action" title="Make your own brainrot" onclick="window.location.href='/'">✨ Make Your Own</button>
         </div>
 
         <!-- Branding -->

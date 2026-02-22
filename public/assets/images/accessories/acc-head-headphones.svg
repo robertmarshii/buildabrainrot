@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160">
+  <!-- Headphones -->
+  <path d="M 30 80 Q 30 20 90 20 Q 150 20 150 80" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+  <rect x="15" y="70" width="30" height="50" rx="15" fill="#000" stroke="#000" stroke-width="2"/>
+  <rect x="135" y="70" width="30" height="50" rx="15" fill="#000" stroke="#000" stroke-width="2"/>
+  <rect x="20" y="80" width="20" height="35" rx="10" fill="#4169E1"/>
+  <rect x="140" y="80" width="20" height="35" rx="10" fill="#4169E1"/>
+</svg>

@@ -114,6 +114,11 @@
             transform: translate(-50%, -50%);
             font-size: 2em;
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .playback-controls {
@@ -167,6 +172,10 @@
         .sfx-card .icon {
             font-size: 2.5em;
             margin-bottom: 5px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .sfx-card .name {
@@ -485,6 +494,7 @@
 
             .sfx-card .icon {
                 font-size: 2em;
+                height: 50px;
             }
 
             .sfx-card .name {
@@ -596,6 +606,7 @@
 
             .sfx-card .icon {
                 font-size: 1.8em;
+                height: 45px;
             }
 
             .sfx-card .name {
@@ -755,13 +766,13 @@
             const sfx = assetManager.getAssetsByCategory('sfx');
             const grid = document.getElementById('sfx-grid');
 
-            for (const sound of sfx.slice(0, 8)) { // Limit to first 8
+            for (const sound of sfx) {
                 const card = document.createElement('div');
                 card.className = 'sfx-card';
 
-                const icon = getSFXIcon(sound.id);
+                const iconHtml = getSFXIcon(sound);
                 card.innerHTML = `
-                    <div class="icon">${icon}</div>
+                    <div class="icon">${iconHtml}</div>
                     <div class="name">${sound.name}</div>
                 `;
 
@@ -771,7 +782,14 @@
         }
 
         // Get SFX icon
-        function getSFXIcon(sfxId) {
+        function getSFXIcon(sound) {
+            // If sound has an icon field, use the SVG image
+            if (sound.icon) {
+                return `<img src="/assets/${sound.icon}" alt="${sound.name}" style="width: 100%; height: 100%; object-fit: contain;">`;
+            }
+
+            // Fallback to emoji icons for sounds without SVG icons
+            const sfxId = sound.id;
             if (sfxId.includes('vine-boom')) return '💥';
             if (sfxId.includes('airhorn')) return '📯';
             if (sfxId.includes('bark')) return '🐶';
@@ -783,9 +801,17 @@
         // Add SFX at current time
         async function addSFX(sfxId) {
             const time = audioMixer.currentTime || Math.random() * 15;
-            await audioMixer.addSFX(sfxId, time);
-            updateSFXList();
-            updateTimelineVisual();
+            try {
+                await audioMixer.addSFX(sfxId, time);
+                updateSFXList();
+                updateTimelineVisual();
+            } catch (error) {
+                if (error.message.includes('Maximum of 15')) {
+                    alert('Max 15 sound effects! Remove one to add more.');
+                } else {
+                    console.error('Failed to add SFX:', error);
+                }
+            }
         }
 
         // Update SFX list
@@ -831,7 +857,11 @@
             audioMixer.sfxQueue.forEach((sfx, index) => {
                 const marker = document.createElement('div');
                 marker.className = 'timeline-sfx';
-                marker.textContent = getSFXIcon(sfx.id);
+
+                // Get the icon HTML (either SVG img or emoji)
+                const iconHtml = getSFXIcon(sfx.metadata);
+                marker.innerHTML = iconHtml;
+
                 marker.style.left = ((sfx.time / audioMixer.duration) * 100) + '%';
                 marker.dataset.index = index;
                 marker.title = `${sfx.metadata.name} @ ${sfx.time.toFixed(1)}s - Drag to reposition`;

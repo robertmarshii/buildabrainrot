@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- "BRUH" Text Sticker -->
+  <defs>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="bruhGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF4500;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FF6347;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background bubble -->
+  <rect x="5" y="5" width="290" height="90" rx="20" fill="#FFFFFF" filter="url(#textShadow)"/>
+  <!-- Inner background -->
+  <rect x="10" y="10" width="280" height="80" rx="18" fill="#2C2C2C" opacity="0.9"/>
+  <!-- Text -->
+  <text x="150" y="70" font-family="Arial Black, sans-serif" font-size="60" font-weight="900" text-anchor="middle" fill="url(#bruhGrad)" stroke="#FFFFFF" stroke-width="2" filter="url(#textShadow)" letter-spacing="5">BRUH</text>
+</svg>

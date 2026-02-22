@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Money Mouth Emoji -->
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/></filter>
+  </defs>
+  <!-- Face -->
+  <circle cx="100" cy="100" r="90" fill="#FFD700" stroke="#E6A800" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Dollar sign eyes -->
+  <text x="70" y="95" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" text-anchor="middle" fill="#2E7D32">$</text>
+  <text x="130" y="95" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" text-anchor="middle" fill="#2E7D32">$</text>
+  <!-- Tongue (dollar bill) -->
+  <rect x="75" y="125" width="50" height="30" rx="5" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Dollar on tongue -->
+  <text x="100" y="148" font-family="Arial Black, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E7D32">$</text>
+  <!-- Mouth around tongue -->
+  <path d="M 70 130 Q 70 120 100 120 Q 130 120 130 130" fill="none" stroke="#000" stroke-width="4"/>
+</svg>

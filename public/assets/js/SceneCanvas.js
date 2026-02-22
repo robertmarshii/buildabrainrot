@@ -655,8 +655,16 @@ class SceneCanvas extends CharacterCanvas {
       this.ctx.rotate((text.rotation * Math.PI) / 180);
     }
 
-    // Set font
-    this.ctx.font = `bold ${text.fontSize}px "Comic Sans MS", Arial, sans-serif`;
+    // Set font based on style
+    const fontMap = {
+      bubble: `bold ${text.fontSize}px "Comic Sans MS", "Comic Neue", cursive`,
+      comic: `bold ${text.fontSize}px "Impact", "Arial Black", sans-serif`,
+      neon: `bold ${text.fontSize}px "Trebuchet MS", "Lucida Sans", sans-serif`,
+      graffiti: `italic bold ${text.fontSize * 1.1}px "Arial Black", "Impact", sans-serif`,
+      pixel: `bold ${text.fontSize}px "Courier New", "Lucida Console", monospace`,
+      drip: `bold ${text.fontSize}px "Georgia", "Times New Roman", serif`
+    };
+    this.ctx.font = fontMap[text.style] || fontMap.bubble;
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
 
@@ -665,21 +673,90 @@ class SceneCanvas extends CharacterCanvas {
     const textWidth = metrics.width;
     const textHeight = text.fontSize * 1.2;
 
-    // Draw bubble based on style
+    // Draw background based on style
     if (text.style === 'bubble') {
       this._drawBubbleBackground(textWidth, textHeight, text.backgroundColor);
     } else if (text.style === 'comic') {
       this._drawComicBackground(textWidth, textHeight, text.backgroundColor);
+    } else if (text.style === 'neon') {
+      this._drawNeonBackground(textWidth, textHeight);
+    } else if (text.style === 'graffiti') {
+      this._drawGraffitiBackground(textWidth, textHeight);
+    } else if (text.style === 'pixel') {
+      this._drawPixelBackground(textWidth, textHeight);
+    } else if (text.style === 'drip') {
+      this._drawDripBackground(textWidth, textHeight);
     }
 
-    // Draw text outline
-    this.ctx.strokeStyle = text.outlineColor || '#000';
-    this.ctx.lineWidth = 6;
-    this.ctx.strokeText(text.content, 0, 0);
-
-    // Draw text fill
-    this.ctx.fillStyle = text.color;
-    this.ctx.fillText(text.content, 0, 0);
+    // Style-specific text rendering
+    if (text.style === 'neon') {
+      // Neon glow effect
+      this.ctx.shadowColor = text.color;
+      this.ctx.shadowBlur = 20;
+      this.ctx.fillStyle = text.color;
+      this.ctx.fillText(text.content, 0, 0);
+      this.ctx.shadowBlur = 40;
+      this.ctx.fillText(text.content, 0, 0);
+      this.ctx.shadowBlur = 0;
+      // Bright center
+      this.ctx.fillStyle = '#FFFFFF';
+      this.ctx.globalAlpha = 0.6;
+      this.ctx.fillText(text.content, 0, 0);
+      this.ctx.globalAlpha = 1.0;
+    } else if (text.style === 'graffiti') {
+      // Thick outline with fill
+      this.ctx.strokeStyle = '#000';
+      this.ctx.lineWidth = 8;
+      this.ctx.strokeText(text.content, 0, 0);
+      this.ctx.fillStyle = text.color;
+      this.ctx.fillText(text.content, 0, 0);
+      // Highlight streak
+      this.ctx.globalAlpha = 0.3;
+      this.ctx.fillStyle = '#FFFFFF';
+      this.ctx.fillText(text.content, -2, -2);
+      this.ctx.globalAlpha = 1.0;
+    } else if (text.style === 'pixel') {
+      // Blocky pixel outline
+      this.ctx.strokeStyle = '#000';
+      this.ctx.lineWidth = 4;
+      this.ctx.lineJoin = 'miter';
+      this.ctx.miterLimit = 2;
+      this.ctx.strokeText(text.content, 0, 0);
+      this.ctx.fillStyle = text.color;
+      this.ctx.fillText(text.content, 0, 0);
+    } else if (text.style === 'drip') {
+      // Draw text outline
+      this.ctx.strokeStyle = text.outlineColor || '#000';
+      this.ctx.lineWidth = 6;
+      this.ctx.strokeText(text.content, 0, 0);
+      // Fill text
+      this.ctx.fillStyle = text.color;
+      this.ctx.fillText(text.content, 0, 0);
+      // Draw drips below some letters
+      const dripCount = Math.min(text.content.length, 5);
+      for (let i = 0; i < dripCount; i++) {
+        const dx = (i - dripCount / 2) * (textWidth / dripCount) + textWidth / dripCount / 2;
+        const dripLen = 15 + Math.random() * 25;
+        this.ctx.beginPath();
+        this.ctx.moveTo(dx, textHeight / 2);
+        this.ctx.quadraticCurveTo(dx + 3, textHeight / 2 + dripLen * 0.6, dx, textHeight / 2 + dripLen);
+        this.ctx.strokeStyle = text.color;
+        this.ctx.lineWidth = 4;
+        this.ctx.stroke();
+        // Drip blob
+        this.ctx.beginPath();
+        this.ctx.arc(dx, textHeight / 2 + dripLen, 4, 0, Math.PI * 2);
+        this.ctx.fillStyle = text.color;
+        this.ctx.fill();
+      }
+    } else {
+      // Default (bubble/comic)
+      this.ctx.strokeStyle = text.outlineColor || '#000';
+      this.ctx.lineWidth = 6;
+      this.ctx.strokeText(text.content, 0, 0);
+      this.ctx.fillStyle = text.color;
+      this.ctx.fillText(text.content, 0, 0);
+    }
 
     this.ctx.restore();
   }
@@ -736,6 +813,70 @@ class SceneCanvas extends CharacterCanvas {
     this.ctx.closePath();
     this.ctx.fill();
     this.ctx.stroke();
+  }
+
+  /**
+   * Draw neon style background (dark rounded rect)
+   * @private
+   */
+  _drawNeonBackground(width, height) {
+    const padding = 25;
+    this.ctx.fillStyle = 'rgba(10, 10, 30, 0.85)';
+    this.ctx.beginPath();
+    this.ctx.roundRect(
+      -width / 2 - padding,
+      -height / 2 - padding,
+      width + padding * 2,
+      height + padding * 2,
+      15
+    );
+    this.ctx.fill();
+  }
+
+  /**
+   * Draw graffiti style background (spray paint splatter)
+   * @private
+   */
+  _drawGraffitiBackground(width, height) {
+    const padding = 30;
+    // Rough spray background
+    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    this.ctx.beginPath();
+    this.ctx.ellipse(0, 0, width / 2 + padding, height / 2 + padding + 5, 0, 0, Math.PI * 2);
+    this.ctx.fill();
+  }
+
+  /**
+   * Draw pixel style background (blocky rect)
+   * @private
+   */
+  _drawPixelBackground(width, height) {
+    const padding = 20;
+    // Sharp-edged pixel box
+    this.ctx.fillStyle = '#1a1a2e';
+    this.ctx.fillRect(
+      -width / 2 - padding,
+      -height / 2 - padding,
+      width + padding * 2,
+      height + padding * 2
+    );
+    // Pixel border
+    this.ctx.strokeStyle = '#00FF00';
+    this.ctx.lineWidth = 4;
+    this.ctx.strokeRect(
+      -width / 2 - padding,
+      -height / 2 - padding,
+      width + padding * 2,
+      height + padding * 2
+    );
+  }
+
+  /**
+   * Draw drip style background (none - text only with drips)
+   * @private
+   */
+  _drawDripBackground(width, height) {
+    // No background for drip style - just the text and drips
   }
 
   /**

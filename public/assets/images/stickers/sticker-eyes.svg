@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Eyes Emoji (looking sideways) -->
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/></filter>
+  </defs>
+  <!-- Left eye white -->
+  <ellipse cx="65" cy="100" rx="45" ry="35" fill="#FFFFFF" stroke="#000" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Right eye white -->
+  <ellipse cx="145" cy="100" rx="45" ry="35" fill="#FFFFFF" stroke="#000" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Left iris -->
+  <circle cx="80" cy="100" r="18" fill="#6B3E08"/>
+  <!-- Right iris -->
+  <circle cx="160" cy="100" r="18" fill="#6B3E08"/>
+  <!-- Left pupil -->
+  <circle cx="83" cy="98" r="10" fill="#000"/>
+  <!-- Right pupil -->
+  <circle cx="163" cy="98" r="10" fill="#000"/>
+  <!-- Highlights -->
+  <circle cx="77" cy="93" r="5" fill="#fff" opacity="0.9"/>
+  <circle cx="157" cy="93" r="5" fill="#fff" opacity="0.9"/>
+</svg>

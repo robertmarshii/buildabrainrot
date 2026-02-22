@@ -158,6 +158,7 @@
 
         .text-styles {
             display: flex;
+            flex-wrap: wrap;
             gap: 5px;
             margin-bottom: 10px;
         }
@@ -553,6 +554,18 @@
                 <div class="text-input-area">
                     <input type="text" id="text-input" placeholder="Type your text..." maxlength="30">
 
+                    <div class="text-styles">
+                        <button class="style-btn selected" data-style="bubble">💭 Bubble</button>
+                        <button class="style-btn" data-style="comic">💥 Comic</button>
+                        <button class="style-btn" data-style="neon">✨ Neon</button>
+                        <button class="style-btn" data-style="graffiti">🎨 Graffiti</button>
+                        <button class="style-btn" data-style="pixel">👾 Pixel</button>
+                        <button class="style-btn" data-style="drip">💧 Drip</button>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="addTextToScene()" style="width: 100%; margin-top: 8px;">➕ Add Text</button>
+
+                    <div class="section-title" style="margin-top: 10px;">Quick Phrases</div>
                     <div class="quick-phrases">
                         <button class="quick-phrase-btn" onclick="usePhrase('sheesh!')">sheesh!</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('no cap')">no cap</button>
@@ -570,14 +583,23 @@
                         <button class="quick-phrase-btn" onclick="usePhrase('yeet')">yeet</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('vibe check')">vibe check</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('sigma')">sigma</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('daddy chill')">daddy chill</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('its giving')">its giving</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('understood the assignment')">understood the assignment</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('main character')">main character</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('say less')">say less</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('caught in 4k')">caught in 4k</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('rent free')">rent free</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('big yikes')">big yikes</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('lowkey')">lowkey</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('highkey')">highkey</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('periodt')">periodt</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('cap')">cap</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('deadass')">deadass</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('fanum tax')">fanum tax</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('gyatt')">gyatt</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('mewing')">mewing</button>
                     </div>
-
-                    <div class="text-styles">
-                        <button class="style-btn selected" data-style="bubble">💭 Bubble</button>
-                        <button class="style-btn" data-style="comic">💥 Comic</button>
-                    </div>
-
-                    <button class="btn btn-primary" onclick="addTextToScene()" style="width: 100%;">➕ Add Text</button>
                 </div>
 
                 <div class="section-title">Text on Scene</div>
@@ -622,6 +644,18 @@
                 <div class="text-input-area">
                     <input type="text" id="text-input-mobile" placeholder="Type your text..." maxlength="30">
 
+                    <div class="text-styles" id="text-styles-mobile">
+                        <button class="style-btn selected" data-style="bubble">💭 Bubble</button>
+                        <button class="style-btn" data-style="comic">💥 Comic</button>
+                        <button class="style-btn" data-style="neon">✨ Neon</button>
+                        <button class="style-btn" data-style="graffiti">🎨 Graffiti</button>
+                        <button class="style-btn" data-style="pixel">👾 Pixel</button>
+                        <button class="style-btn" data-style="drip">💧 Drip</button>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="addTextToScene(true)" style="width: 100%; margin-top: 8px;">➕ Add Text</button>
+
+                    <div class="section-title" style="margin-top: 10px;">Quick Phrases</div>
                     <div class="quick-phrases">
                         <button class="quick-phrase-btn" onclick="usePhrase('sheesh!', true)">sheesh!</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('no cap', true)">no cap</button>
@@ -639,14 +673,23 @@
                         <button class="quick-phrase-btn" onclick="usePhrase('yeet', true)">yeet</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('vibe check', true)">vibe check</button>
                         <button class="quick-phrase-btn" onclick="usePhrase('sigma', true)">sigma</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('daddy chill', true)">daddy chill</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('its giving', true)">its giving</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('understood the assignment', true)">understood the assignment</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('main character', true)">main character</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('say less', true)">say less</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('caught in 4k', true)">caught in 4k</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('rent free', true)">rent free</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('big yikes', true)">big yikes</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('lowkey', true)">lowkey</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('highkey', true)">highkey</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('periodt', true)">periodt</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('cap', true)">cap</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('deadass', true)">deadass</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('fanum tax', true)">fanum tax</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('gyatt', true)">gyatt</button>
+                        <button class="quick-phrase-btn" onclick="usePhrase('mewing', true)">mewing</button>
                     </div>
-
-                    <div class="text-styles" id="text-styles-mobile">
-                        <button class="style-btn selected" data-style="bubble">💭 Bubble</button>
-                        <button class="style-btn" data-style="comic">💥 Comic</button>
-                    </div>
-
-                    <button class="btn btn-primary" onclick="addTextToScene(true)" style="width: 100%;">➕ Add Text</button>
                 </div>
 
                 <div class="section-title">Text on Scene</div>

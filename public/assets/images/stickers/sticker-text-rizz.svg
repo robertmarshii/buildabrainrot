@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- "RIZZ" Text Sticker -->
+  <defs>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="rizzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6EC7;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FF3CAC;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FF1744;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background bubble -->
+  <rect x="5" y="5" width="290" height="90" rx="20" fill="#FFFFFF" filter="url(#textShadow)"/>
+  <!-- Inner background -->
+  <rect x="10" y="10" width="280" height="80" rx="18" fill="#1A1A2E" opacity="0.95"/>
+  <!-- Text -->
+  <text x="150" y="70" font-family="Arial Black, sans-serif" font-size="60" font-weight="900" text-anchor="middle" fill="url(#rizzGrad)" stroke="#FFFFFF" stroke-width="2" filter="url(#textShadow)" letter-spacing="8">RIZZ</text>
+  <!-- Hearts -->
+  <path d="M 40 30 Q 40 22 47 22 Q 54 22 54 30 Q 54 38 40 46 Q 26 38 26 30 Q 26 22 33 22 Q 40 22 40 30 Z" fill="#FF1744" opacity="0.7"/>
+  <path d="M 265 30 Q 265 22 272 22 Q 279 22 279 30 Q 279 38 265 46 Q 251 38 251 30 Q 251 22 258 22 Q 265 22 265 30 Z" fill="#FF1744" opacity="0.7"/>
+</svg>

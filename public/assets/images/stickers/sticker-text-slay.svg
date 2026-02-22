@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- "SLAY" Text Sticker -->
+  <defs>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="slayGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E040FB;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FF4081;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FFD740;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background bubble -->
+  <rect x="5" y="5" width="290" height="90" rx="20" fill="#FFFFFF" filter="url(#textShadow)"/>
+  <!-- Inner background -->
+  <rect x="10" y="10" width="280" height="80" rx="18" fill="#7B1FA2" opacity="0.9"/>
+  <!-- Text -->
+  <text x="150" y="70" font-family="Arial Black, sans-serif" font-size="60" font-weight="900" text-anchor="middle" fill="url(#slayGrad)" stroke="#FFFFFF" stroke-width="2" filter="url(#textShadow)" letter-spacing="8">SLAY</text>
+  <!-- Sparkles -->
+  <polygon points="35,25 37,30 42,30 38,33 40,38 35,35 30,38 32,33 28,30 33,30" fill="#FFD740" opacity="0.8"/>
+  <polygon points="265,25 267,30 272,30 268,33 270,38 265,35 260,38 262,33 258,30 263,30" fill="#FFD740" opacity="0.8"/>
+</svg>

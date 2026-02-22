@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Crying Laughing Emoji -->
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/></filter>
+  </defs>
+  <!-- Face -->
+  <circle cx="100" cy="100" r="90" fill="#FFD700" stroke="#E6A800" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Eyes (squinted from laughing) -->
+  <path d="M 55 80 Q 70 65 85 80" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 115 80 Q 130 65 145 80" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <!-- Tears -->
+  <path d="M 50 85 Q 45 110 40 130 Q 38 140 45 135 Q 50 125 55 95" fill="#4FC3F7"/>
+  <path d="M 150 85 Q 155 110 160 130 Q 162 140 155 135 Q 150 125 145 95" fill="#4FC3F7"/>
+  <!-- Mouth (big open laugh) -->
+  <path d="M 55 120 Q 100 170 145 120" fill="#8B4513" stroke="#000" stroke-width="4"/>
+  <!-- Teeth -->
+  <rect x="70" y="118" width="60" height="15" rx="3" fill="#fff"/>
+</svg>

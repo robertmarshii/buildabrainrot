@@ -1,5 +1,5 @@
 {
-  "version": "1.0.18",
+  "version": "1.0.19",
   "updated": "2026-01-02",
   "audio": {
     "music": [
@@ -1140,12 +1140,142 @@
         "source": "In-house design",
         "dateAdded": "2025-12-29",
         "fileSize": 2300
+      },
+      {
+        "id": "sticker-crying",
+        "name": "Crying Laughing",
+        "file": "images/stickers/sticker-crying.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "crying", "laughing", "popular", "meme"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1800
+      },
+      {
+        "id": "sticker-sunglasses",
+        "name": "Cool Face",
+        "file": "images/stickers/sticker-sunglasses.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "cool", "sunglasses", "popular"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1500
+      },
+      {
+        "id": "sticker-clown",
+        "name": "Clown Face",
+        "file": "images/stickers/sticker-clown.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "clown", "meme", "funny"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1900
+      },
+      {
+        "id": "sticker-thinking",
+        "name": "Thinking Face",
+        "file": "images/stickers/sticker-thinking.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "thinking", "hmm", "reaction"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1600
+      },
+      {
+        "id": "sticker-exploding",
+        "name": "Mind Blown",
+        "file": "images/stickers/sticker-exploding.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "exploding", "mind-blown", "shocked"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 2000
+      },
+      {
+        "id": "sticker-money",
+        "name": "Money Mouth",
+        "file": "images/stickers/sticker-money.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "money", "rich", "flex"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1400
+      },
+      {
+        "id": "sticker-eyes",
+        "name": "Side Eyes",
+        "file": "images/stickers/sticker-eyes.svg",
+        "category": "sticker-emoji",
+        "dimensions": {"width": 200, "height": 200},
+        "tags": ["emoji", "eyes", "looking", "sus", "suspicious"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1200
+      },
+      {
+        "id": "sticker-text-bruh",
+        "name": "Bruh Text",
+        "file": "images/stickers/sticker-text-bruh.svg",
+        "category": "sticker-text",
+        "dimensions": {"width": 300, "height": 100},
+        "tags": ["text", "bruh", "meme", "reaction"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1500
+      },
+      {
+        "id": "sticker-text-slay",
+        "name": "Slay Text",
+        "file": "images/stickers/sticker-text-slay.svg",
+        "category": "sticker-text",
+        "dimensions": {"width": 300, "height": 100},
+        "tags": ["text", "slay", "queen", "popular"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1600
+      },
+      {
+        "id": "sticker-text-rizz",
+        "name": "Rizz Text",
+        "file": "images/stickers/sticker-text-rizz.svg",
+        "category": "sticker-text",
+        "dimensions": {"width": 300, "height": 100},
+        "tags": ["text", "rizz", "charm", "popular"],
+        "ageAppropriate": true,
+        "license": "Custom SVG",
+        "source": "In-house design",
+        "dateAdded": "2026-02-22",
+        "fileSize": 1700
       }
     ]
   },
   "animations": [],
   "metadata": {
-    "totalAssets": 68,
+    "totalAssets": 79,
     "categories": [
       "audio.music",
       "audio.sfx.reactions",
@@ -1163,7 +1293,7 @@
     ],
     "assetCounts": {
       "audio": 24,
-      "images": 44,
+      "images": 55,
       "animations": 0
     },
     "audioBreakdown": {
@@ -1179,7 +1309,7 @@
       "accessories": 17,
       "faces": 0,
       "backgrounds": 10,
-      "stickers": 6
+      "stickers": 17
     },
     "lastUpdated": "2026-01-02",
     "status": "complete-pack",

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Thinking Emoji -->
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/></filter>
+  </defs>
+  <!-- Face -->
+  <circle cx="100" cy="100" r="90" fill="#FFD700" stroke="#E6A800" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Eyes -->
+  <circle cx="70" cy="80" r="10" fill="#fff" stroke="#000" stroke-width="2"/>
+  <circle cx="130" cy="80" r="10" fill="#fff" stroke="#000" stroke-width="2"/>
+  <circle cx="73" cy="80" r="5" fill="#000"/>
+  <circle cx="133" cy="80" r="5" fill="#000"/>
+  <!-- Raised eyebrow -->
+  <path d="M 115 60 Q 130 50 148 58" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Flat eyebrow -->
+  <path d="M 52 68 L 85 65" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Small mouth (hmm) -->
+  <path d="M 80 130 Q 100 125 110 130" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Hand on chin -->
+  <ellipse cx="115" cy="150" rx="25" ry="18" fill="#D4A017" stroke="#B8860B" stroke-width="2"/>
+  <!-- Thumb -->
+  <ellipse cx="95" cy="140" rx="10" ry="8" fill="#D4A017" stroke="#B8860B" stroke-width="2"/>
+</svg>

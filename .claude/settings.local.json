@@ -24,7 +24,8 @@
       "Bash(xargs:*)",
       "Bash(node -e:*)",
       "WebFetch(domain:orangefreesounds.com)",
-      "WebFetch(domain:freemusicarchive.org)"
+      "WebFetch(domain:freemusicarchive.org)",
+      "Bash(cd:*)"
     ],
     "deny": [],
     "ask": []

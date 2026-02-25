@@ -12,9 +12,7 @@ yarn-error.log*
 # Generated assets (temporary, large files)
 public/assets/images/**/*.png
 public/assets/images/**/*.jpg
-public/assets/audio/**/*.mp3
 !public/assets/images/.gitkeep
-!public/assets/audio/.gitkeep
 
 # Keep manifest and docs
 !public/assets/manifest.json

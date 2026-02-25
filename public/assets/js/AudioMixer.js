@@ -101,12 +101,14 @@ class AudioMixer {
         throw new Error(`SFX asset not found: ${sfxId}`);
       }
 
-      // Load audio through AssetManager for retry logic and silent fallback
-      const sfxAudio = await this.assetManager.loadAudio(sfxId);
+      // Preload through AssetManager for retry logic and silent fallback
+      const preloaded = await this.assetManager.loadAudio(sfxId);
 
-      // Clone the audio so each instance is independent
-      const sfxInstance = sfxAudio.cloneNode();
+      // Create a new Audio with the same src for independent playback
+      // (cloneNode on media elements doesn't reliably carry loaded data)
+      const sfxInstance = new Audio(preloaded.src);
       sfxInstance.volume = 1.0;
+      sfxInstance.preload = 'auto';
 
       this.sfxQueue.push({
         id: sfxId,

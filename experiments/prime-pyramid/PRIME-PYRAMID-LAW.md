@@ -74,6 +74,14 @@ pyramid are not accidents: they are the geometric image of divisibility by
 2, 3, 5 (and 7), and the entire catalogue of possible layer patterns is
 finite and cyclic.
 
+## Where this goes next
+
+The skeleton is the deterministic half of the story — *where* primes may
+sit. The analytic half — *how many* arrive per layer, and why the counts
+wobble — is governed by the zeros of the Riemann zeta function. That
+extension (Law v3) is built and verified in
+[`RIEMANN-CONNECTION.md`](RIEMANN-CONNECTION.md).
+
 ## Files
 
 - `prime_pyramid_law.py` — builds the pyramid, sieves primes, verifies

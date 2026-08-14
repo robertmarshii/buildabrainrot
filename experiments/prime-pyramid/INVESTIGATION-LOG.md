@@ -120,3 +120,42 @@ them — is the one place a surprise could still live.
 | `mod12_deep_dive.py` | permutation, localisation, split-half replication |
 | `diagonal_wipeout.py` | wipeout mechanism test + main-diagonal theorem |
 | `slab_analysis.py` | 11–19 slab, frozen-rule validation on 29–37, 41–49 |
+
+## Experiment D — rays vs Hardy–Littlewood (the attunement target)
+
+`rays_hardy_littlewood.py`, `rays_chart.py`. A ray fixes (r, c) relative
+to a corner and descends the layers, making the block number an integer
+cubic in n: TL(r0,c0): N = B(n) + r0·n + c0 + 1; BR(a,b):
+N = B(n) + n² − an − b (r = n−1−a, c = n−1−b). 200 rays, layers 12–500
+(pyramid sieved to 41,791,750 blocks). For each ray the Bateman–Horn /
+Hardy–Littlewood constant C(f) = Π_p (1−ω_p/p)/(1−1/p) was computed by
+root-counting mod p (p ≤ 3000; exact densities over a period-36 window
+for p = 2, 3), giving the prediction E = C(f)·Σ 1/ln f(n).
+
+Two bugs were caught by their own signatures before trusting a verdict:
+a period-aliasing error in the p = 2, 3 densities (f mod 2 has period 4,
+f mod 3 period 9 — a 6-window aliases both), and a missed residue-class
+credit for p = 5, 7 < offset range (every cold ray had v ≥ 7, every hot
+ray v ≤ 4 — the constants, not the primes, were wrong).
+
+Final results:
+
+- **51 rays are algebraically reducible** (rational root in the cubic)
+  and are predicted eventually prime-free: observed **0 primes on all
+  51**, layers 12–500. This includes the first-block ray B(n)+1
+  (root n = −1) and the last-block ray B(n+1) = n(n+1)(2n+1)/6.
+- **149 generic rays**: 6,680 primes observed vs 6,719.7 predicted —
+  **ratio 0.994 ± 0.012**, mean z = −0.03, max |z| = 1.77 against an
+  expected-max ≈ 3.2 for 149 rays. No ray beats its constant.
+  (`renders/rays_vs_hl.svg`.)
+
+Verdict: ray-by-ray, the pyramid's prime-rich and prime-poor directions
+are **fully predicted by the Hardy–Littlewood constants** — down to
+sub-percent aggregate accuracy. The pyramid contains no directional
+prime information beyond what the constants already encode. Combined
+with Experiments A–C, the investigation's answer is now complete: every
+geometric prime pattern in the square-based pyramid is accounted for by
+(i) the moving modular lattices, (ii) the wipeout laws, and (iii) the
+Hardy–Littlewood ray constants. The pyramid is a faithful geometric
+window onto known prime arithmetic — and an honest null on everything
+beyond it, at every scale we could test.

@@ -7,3 +7,4 @@
 - [Home](https://buildabrainrot.com/): what it is and how it works in four steps
 - [Character builder](https://buildabrainrot.com/character-builder): make a character
 - [For parents](https://buildabrainrot.com/parents): safety features, what data is and isn't collected
+- [Privacy](https://buildabrainrot.com/privacy): what data the site uses, browser storage, short links and your rights

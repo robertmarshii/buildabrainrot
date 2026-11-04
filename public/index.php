@@ -198,6 +198,7 @@
                 <ul class="footer-links">
                     <li><a href="/parents">About</a></li>
                     <li><a href="/parents">For Parents</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
                     <li><a href="mailto:parents@buildabrainrot.com">Contact</a></li>
                 </ul>
             </div>

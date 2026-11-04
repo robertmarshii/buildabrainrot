@@ -94,7 +94,7 @@
             <ul>
                 <li>Fun and creative</li>
                 <li>Age-appropriate</li>
-                <li>Safe and moderated</li>
+                <li>Built only from pictures and sounds we have chosen</li>
                 <li>Educational (encourages creativity and self-expression)</li>
             </ul>
 
@@ -104,13 +104,12 @@
 
             <h2>🔒 Safety Features</h2>
             <ul class="safety-list">
-                <li><strong>No Personal Information Required</strong> - No signup, no email, no passwords, no data collection</li>
-                <li><strong>No Chat or Messaging</strong> - Children cannot communicate with strangers</li>
-                <li><strong>No User-Generated Content</strong> - All assets (images, sounds) are pre-approved and kid-friendly</li>
-                <li><strong>Age-Appropriate Content</strong> - All content is reviewed for appropriateness</li>
-                <li><strong>No Ads or Tracking</strong> - We don't show ads or track children</li>
-                <li><strong>COPPA Compliant</strong> - Follows Children's Online Privacy Protection Act guidelines</li>
-                <li><strong>Anonymous Sharing</strong> - Shared creations contain no personal information</li>
+                <li><strong>No Personal Information Required</strong> - No sign-up, no email, no passwords, no accounts</li>
+                <li><strong>No Chat or Messaging</strong> - Children cannot message other people on the site</li>
+                <li><strong>No Uploads</strong> - Children cannot upload pictures or sounds; every character part, background, sticker and sound is one we chose for the site</li>
+                <li><strong>Short Typed Text</strong> - Children can type short text (up to 30 characters) onto their scene. We do not check this text, and it becomes part of the share link, so anyone with the link can see it. Remind your child not to type their name, school, address or anything else personal</li>
+                <li><strong>No Ads or Analytics</strong> - We don't show ads and we don't use analytics or tracking cookies</li>
+                <li><strong>No Name on Shared Creations</strong> - A share link holds only the creation itself (the choices made and any text typed). No name or account is attached</li>
             </ul>
 
             <h2>👪 Parental Controls</h2>
@@ -127,13 +126,13 @@
             <ul>
                 <li>✓ We do NOT collect personal information</li>
                 <li>✓ We do NOT require account creation</li>
-                <li>✓ We do NOT track individual users</li>
+                <li>✓ We do NOT use analytics or track individual users</li>
                 <li>✓ We do NOT sell data to third parties</li>
                 <li>✓ We do NOT use advertising cookies</li>
             </ul>
 
             <div class="highlight-box">
-                <strong>🔍 What data we collect:</strong> Only anonymous analytics (page views, feature usage) to improve the app. No personal identifiers are stored.
+                <strong>🔍 What data is involved:</strong> Our web server keeps standard request logs (such as IP address, time and page address). When your child finishes a creation, its link is sent to the free is.gd service to make a short link. Read the full <a href="/privacy">privacy notice</a> for details.
             </div>
 
             <h2>📧 Contact Us</h2>

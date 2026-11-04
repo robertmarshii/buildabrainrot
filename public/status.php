@@ -2,11 +2,9 @@
 // Password-protected status page: /status. HTTP Basic auth, any username.
 // The password's bcrypt hash comes from the STATUS_PASSWORD_HASH environment variable (the hash itself,
 // or the hash base64-encoded so it has no "$" characters). Prints no environment, config or secrets.
-// TEMPORARY: until STATUS_PASSWORD_HASH is set in Easypanel, the old in-file hash below is used as a
-// fallback so /status keeps working. Remove STATUS_FALLBACK_PASSWORD_HASH once the variable is set.
+// With no usable STATUS_PASSWORD_HASH the page refuses everyone (fails closed).
 declare(strict_types=1);
 
-const STATUS_FALLBACK_PASSWORD_HASH = '$2y$12$jvH7lq./cZN8/MOQkDHG7Ocv6ap/iIpvEHB5EGDgqvDGUk0AX1hoq';
 const STATUS_APP_NAME = 'buildabrainrot';
 const STATUS_VERSION_FILE = '/srv/git-sha';
 
@@ -49,10 +47,9 @@ function status_env_password_hash(): ?string
 }
 
 $given = status_given_password();
-// Temporary fallback to the in-file hash while STATUS_PASSWORD_HASH is not set (see the top of this file).
-$hash = status_env_password_hash() ?? STATUS_FALLBACK_PASSWORD_HASH;
+$hash = status_env_password_hash();
 // password_verify compares in constant time.
-if ($given === null || !password_verify($given, $hash)) {
+if ($given === null || $hash === null || !password_verify($given, $hash)) {
     http_response_code(401);
     header('WWW-Authenticate: Basic realm="status", charset="UTF-8"');
     echo "Unauthorized\n";

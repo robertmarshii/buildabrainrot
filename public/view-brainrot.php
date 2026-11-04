@@ -24,11 +24,14 @@ if (!preg_match('/^[A-Za-z0-9\-_~]+$/', $encoded)) {
 $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 $isCrawler = preg_match('/bot|crawler|spider|facebook|twitter|linkedin|pinterest/i', $userAgent);
 
+// Fixed site address: never build share links from the client-supplied Host header
+const SITE_URL = 'https://buildabrainrot.com';
+
 // Default preview image
-$previewUrl = "https://" . ($_SERVER['HTTP_HOST'] ?? 'buildabrainrot.com') . "/assets/images/ui/og-image.png";
+$previewUrl = SITE_URL . "/assets/images/ui/og-image.png";
 
 // Full URL for sharing
-$fullUrl = "https://" . ($_SERVER['HTTP_HOST'] ?? 'buildabrainrot.com') . "/b/" . htmlspecialchars($encoded);
+$fullUrl = SITE_URL . "/b/" . htmlspecialchars($encoded);
 ?>
 <!DOCTYPE html>
 <html lang="en">

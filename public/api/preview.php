@@ -15,9 +15,50 @@ if (!$encoded) {
 }
 
 // Validate ID format
-if (!preg_match('/^[A-Za-z0-9\-_~]+$/', $encoded)) {
+if (!is_string($encoded) || strlen($encoded) > 8000 || !preg_match('/^[A-Za-z0-9\-_~]+$/', $encoded)) {
     http_response_code(400);
     die('Invalid ID format');
+}
+
+/**
+ * Decode a share ID the same way BrainrotEncoder.js does: "c_" (zlib) or "u_"
+ * prefix, then URL-safe base64 (-_~ for +/=) of the JSON. Returns null unless it
+ * is a real brainrot (has character.body and scene.background), so random IDs
+ * cannot fill the preview cache.
+ */
+function decode_brainrot(string $encoded): ?array
+{
+    $prefix = substr($encoded, 0, 2);
+    if ($prefix !== 'c_' && $prefix !== 'u_') {
+        return null;
+    }
+    $raw = base64_decode(strtr(substr($encoded, 2), '-_~', '+/='), true);
+    if ($raw === false) {
+        return null;
+    }
+    if ($prefix === 'c_') {
+        $raw = @zlib_decode($raw, 100000);
+        if ($raw === false) {
+            return null;
+        }
+    }
+    $data = json_decode($raw, true);
+    if (!is_array($data) || empty($data['character']['body']) || empty($data['scene']['background'])) {
+        return null;
+    }
+    return $data;
+}
+
+if (decode_brainrot($encoded) === null) {
+    http_response_code(400);
+    die('Invalid ID');
+}
+
+$font = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
+if (!function_exists('imagettftext') || !is_file($font)) {
+    http_response_code(503);
+    error_log('preview.php: GD with FreeType or the DejaVu font is missing');
+    die('Preview unavailable');
 }
 
 // Check cache first
@@ -53,20 +94,19 @@ $white = imagecolorallocate($image, 255, 255, 255);
 
 // Title
 $title = 'Check out my brainrot!';
-imagettftext($image, 60, 0, 100, 280, $white, __DIR__ . '/../assets/fonts/arial.ttf', $title);
+imagettftext($image, 60, 0, 100, 280, $white, $font, $title);
 
 // Subtitle
 $subtitle = 'Made on buildabrainrot.com';
-imagettftext($image, 40, 0, 100, 360, $white, __DIR__ . '/../assets/fonts/arial.ttf', $subtitle);
-
-// Emoji (if PHP supports it)
-imagettftext($image, 80, 0, 100, 180, $white, __DIR__ . '/../assets/fonts/arial.ttf', '🧠');
+imagettftext($image, 40, 0, 100, 360, $white, $font, $subtitle);
 
 // Save to cache
 if (!is_dir($cacheDir)) {
-    mkdir($cacheDir, 0755, true);
+    @mkdir($cacheDir, 0755, true);
 }
-imagepng($image, $cacheFile);
+if (is_dir($cacheDir) && is_writable($cacheDir)) {
+    imagepng($image, $cacheFile);
+}
 
 // Output
 header('Content-Type: image/png');

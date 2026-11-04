@@ -84,6 +84,9 @@ DirectoryIndex index.php index.html
     # Prevent MIME sniffing
     Header always set X-Content-Type-Options "nosniff"
 
+    # Only ever use HTTPS for this site
+    Header always set Strict-Transport-Security "max-age=31536000"
+
     # Referrer policy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 

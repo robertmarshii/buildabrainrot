@@ -19,4 +19,8 @@ COPY ./public /var/www/html
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
+# Version for /status: Easypanel passes the commit being built as the GIT_SHA build argument.
+ARG GIT_SHA=""
+RUN mkdir -p /srv && printf '%s\n' "${GIT_SHA:-unknown}" > /srv/git-sha
+
 EXPOSE 80

@@ -1,9 +1,12 @@
 <?php
 // Password-protected status page: /status. HTTP Basic auth, any username.
-// Only a bcrypt hash of the password is stored here. Prints no environment, config or secrets.
+// The password's bcrypt hash comes from the STATUS_PASSWORD_HASH environment variable (the hash itself,
+// or the hash base64-encoded so it has no "$" characters). Prints no environment, config or secrets.
+// TEMPORARY: until STATUS_PASSWORD_HASH is set in Easypanel, the old in-file hash below is used as a
+// fallback so /status keeps working. Remove STATUS_FALLBACK_PASSWORD_HASH once the variable is set.
 declare(strict_types=1);
 
-const STATUS_PASSWORD_HASH = '$2y$12$jvH7lq./cZN8/MOQkDHG7Ocv6ap/iIpvEHB5EGDgqvDGUk0AX1hoq';
+const STATUS_FALLBACK_PASSWORD_HASH = '$2y$12$jvH7lq./cZN8/MOQkDHG7Ocv6ap/iIpvEHB5EGDgqvDGUk0AX1hoq';
 const STATUS_APP_NAME = 'buildabrainrot';
 const STATUS_VERSION_FILE = '/srv/git-sha';
 
@@ -26,9 +29,30 @@ function status_given_password(): ?string
     return null;
 }
 
+/** The bcrypt hash from STATUS_PASSWORD_HASH, or null when it is missing or not a bcrypt hash. */
+function status_env_password_hash(): ?string
+{
+    $isBcrypt = fn ($h): bool => is_string($h) && (bool) preg_match('/^\$2[aby]\$\d\d\$[.\/A-Za-z0-9]{53}$/', $h);
+    $v = getenv('STATUS_PASSWORD_HASH');
+    if (!is_string($v) || $v === '') {
+        $v = $_ENV['STATUS_PASSWORD_HASH'] ?? '';
+    }
+    $v = trim((string) $v);
+    if ($isBcrypt($v)) {
+        return $v;
+    }
+    $decoded = base64_decode($v, true);
+    if ($isBcrypt($decoded)) {
+        return trim((string) $decoded);
+    }
+    return null;
+}
+
 $given = status_given_password();
+// Temporary fallback to the in-file hash while STATUS_PASSWORD_HASH is not set (see the top of this file).
+$hash = status_env_password_hash() ?? STATUS_FALLBACK_PASSWORD_HASH;
 // password_verify compares in constant time.
-if ($given === null || !password_verify($given, STATUS_PASSWORD_HASH)) {
+if ($given === null || !password_verify($given, $hash)) {
     http_response_code(401);
     header('WWW-Authenticate: Basic realm="status", charset="UTF-8"');
     echo "Unauthorized\n";

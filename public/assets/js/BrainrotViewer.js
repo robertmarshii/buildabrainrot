@@ -235,7 +235,7 @@ class BrainrotViewer {
         character: this.brainrotData.character,
         scene: this.brainrotData.scene
       }));
-      window.location.href = '/character-builder.php?remix=true';
+      window.location.href = '/character-builder?remix=true';
     });
 
     // Share button

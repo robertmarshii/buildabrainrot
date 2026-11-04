@@ -25,6 +25,16 @@ RewriteBase /
     Require all granted
 </Files>
 
+# One host: www.buildabrainrot.com/anything -> https://buildabrainrot.com/anything (path and query kept)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# Clean URLs only: /character-builder.php -> /character-builder (both answered 200 before).
+# THE_REQUEST is the browser's own request line, so the internal rewrite below does not loop.
+RewriteCond %{THE_REQUEST} \s/([^.\s?]+)\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/(api|status)
+RewriteRule ^ https://buildabrainrot.com/%1 [R=301,L]
+
 # Brainrot viewer: /b/{encoded-id} -> view-brainrot.php?id={encoded-id}
 RewriteRule ^b/([A-Za-z0-9\\-_~]+)$ /view-brainrot.php?id=$1 [L,QSA]
 
@@ -50,6 +60,8 @@ DirectoryIndex index.php index.html
 
     # Images
     ExpiresByType image/png "access plus 1 week"
+    ExpiresByType image/x-icon "access plus 1 week"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 week"
     ExpiresByType image/jpg "access plus 1 week"
     ExpiresByType image/jpeg "access plus 1 week"
     ExpiresByType image/gif "access plus 1 week"
@@ -69,8 +81,7 @@ DirectoryIndex index.php index.html
     # Manifest and JSON
     ExpiresByType application/json "access plus 1 hour"
 
-    # HTML (don't cache too long)
-    ExpiresByType text/html "access plus 1 hour"
+    # HTML is not given an expiry: pages and /status stay fresh
 </IfModule>
 
 # Security headers
@@ -104,9 +115,11 @@ DirectoryIndex index.php index.html
 # Prevent directory listing
 Options -Indexes
 
-# Custom error pages (optional - create these later)
-# ErrorDocument 404 /error-404.php
-# ErrorDocument 500 /error-500.php
+# Custom error page (sent with a 404 status)
+ErrorDocument 404 /404.php
+
+# Web app manifest
+AddType application/manifest+json .webmanifest
 
 # Protect against certain types of attacks
 <IfModule mod_rewrite.c>

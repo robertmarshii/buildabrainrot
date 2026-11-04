@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Parents - Build a Brainrot</title>
+    <meta name="description" content="Information for parents and guardians about Build a Brainrot: safety features, what data is and is not collected, and how to contact us.">
+    <link rel="canonical" href="https://buildabrainrot.com/parents">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
         .content-page {
@@ -77,7 +83,7 @@
     </style>
 </head>
 <body>
-    <div class="content-page">
+    <div class="content-page" role="main">
         <div class="content-box">
             <h1>🛡️ Information for Parents & Guardians</h1>
 
@@ -144,7 +150,6 @@
             </ul>
 
             <a href="/" class="btn">🏠 Back to Homepage</a>
-            <a href="/privacy.php" class="btn" style="background: #f0f0f0; color: #333;">📄 Privacy Policy</a>
         </div>
     </div>
 </body>

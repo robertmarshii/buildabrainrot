@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scene Builder - Build a Brainrot</title>
+    <meta name="description" content="Put your brainrot character in a scene with backgrounds and stickers. Free, no sign-up, for ages 7+.">
+    <link rel="canonical" href="https://buildabrainrot.com/scene-builder">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
@@ -144,7 +150,7 @@
 
         .quick-phrase-btn {
             padding: 8px;
-            background: #667eea;
+            background: #5a67d8;
             color: white;
             border: none;
             border-radius: 5px;
@@ -153,7 +159,7 @@
         }
 
         .quick-phrase-btn:hover {
-            background: #5566dd;
+            background: #4c51bf;
         }
 
         .text-styles {
@@ -516,7 +522,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container" style="margin-top: 0;">
         <header>
             <h1 style="text-align: center; color: #667eea;">🎬 Scene Builder</h1>
             <p style="text-align: center;">Add backgrounds, stickers, and text!</p>
@@ -524,7 +530,7 @@
 
         <div class="builder-container">
             <!-- Left Sidebar: Background & Stickers -->
-            <div class="builder-sidebar">
+            <div class="builder-sidebar" tabindex="0" aria-label="Backgrounds and stickers">
                 <div class="section-title">1. Choose Background</div>
                 <div class="asset-grid" id="background-grid"></div>
 
@@ -538,7 +544,7 @@
             <!-- Center: Canvas -->
             <div class="builder-canvas-area">
                 <canvas id="scene-canvas"></canvas>
-                <p style="color: #999; font-size: 0.9em;">💡 Drag items to reposition them</p>
+                <p style="color: #666; font-size: 0.9em;">💡 Drag items to reposition them</p>
 
                 <div class="btn-group">
                     <button class="btn btn-secondary" onclick="goBack()">← Back</button>
@@ -612,7 +618,7 @@
             <!-- Canvas (always visible on mobile) -->
             <div style="background: white; border-radius: 15px; padding: 15px; margin-bottom: 15px; text-align: center; max-width: 100%; overflow: hidden;">
                 <canvas id="scene-canvas-mobile"></canvas>
-                <p style="color: #999; font-size: 0.85em; margin-top: 10px;">💡 Drag items to reposition</p>
+                <p style="color: #666; font-size: 0.85em; margin-top: 10px;">💡 Drag items to reposition</p>
             </div>
 
             <!-- Tab Navigation -->
@@ -702,7 +708,7 @@
                 <button class="btn btn-primary" onclick="nextStep()">Next Step →</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Loading container -->
     <div id="loading-container"></div>
@@ -798,6 +804,7 @@
 
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
+                imgEl.alt = ''; // the visible name below is the label
 
                 const name = document.createElement('div');
                 name.className = 'name';
@@ -846,6 +853,7 @@
 
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
+                imgEl.alt = ''; // the visible name below is the label
 
                 const name = document.createElement('div');
                 name.className = 'name';
@@ -884,7 +892,7 @@
             listMobile.innerHTML = '';
 
             if (stickers.length === 0) {
-                const emptyMsg = '<p style="text-align: center; color: #999; font-size: 0.9em;">No stickers added</p>';
+                const emptyMsg = '<p style="text-align: center; color: #666; font-size: 0.9em;">No stickers added</p>';
                 list.innerHTML = emptyMsg;
                 listMobile.innerHTML = emptyMsg;
                 return;
@@ -967,7 +975,7 @@
             listMobile.innerHTML = '';
 
             if (texts.length === 0) {
-                const emptyMsg = '<p style="text-align: center; color: #999; font-size: 0.9em;">No text added</p>';
+                const emptyMsg = '<p style="text-align: center; color: #666; font-size: 0.9em;">No text added</p>';
                 list.innerHTML = emptyMsg;
                 listMobile.innerHTML = emptyMsg;
                 return;
@@ -1004,7 +1012,7 @@
         // Go back
         function goBack() {
             if (confirm('Go back to character builder? (Scene will be lost)')) {
-                window.location.href = '/character-builder.php';
+                window.location.href = '/character-builder';
             }
         }
 
@@ -1020,7 +1028,7 @@
             sessionStorage.setItem('complete-brainrot', JSON.stringify(completeData));
 
             // Navigate to audio builder
-            window.location.href = '/audio-builder.php';
+            window.location.href = '/audio-builder';
         }
 
         // Initialize on page load

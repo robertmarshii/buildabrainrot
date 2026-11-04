@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /status
+Disallow: /test/
+# Shared creations (/b/...) stay crawlable so the noindex header on them is seen.
+
+Sitemap: https://buildabrainrot.com/sitemap.xml

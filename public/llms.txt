@@ -1,0 +1,9 @@
+# Build a Brainrot
+
+> Free web app where kids aged 7+ make their own silly "brainrot" meme characters: pick a character (sharks, cats, bananas and more), add colours, accessories, stickers and sounds, then share a link or download an image. No sign-up, no email, no chat, no ads.
+
+## Pages
+
+- [Home](https://buildabrainrot.com/): what it is and how it works in four steps
+- [Character builder](https://buildabrainrot.com/character-builder): make a character
+- [For parents](https://buildabrainrot.com/parents): safety features, what data is and isn't collected

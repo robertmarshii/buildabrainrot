@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Builder - Build a Brainrot</title>
+    <meta name="description" content="Pick a body, colour and accessories to make your own silly brainrot character. Free, no sign-up, for ages 7+.">
+    <link rel="canonical" href="https://buildabrainrot.com/character-builder">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
@@ -396,7 +402,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container" style="margin-top: 0;">
         <header>
             <h1 style="text-align: center; color: #667eea;">🧠 Character Builder</h1>
             <p style="text-align: center;">Create your brainrot character!</p>
@@ -426,7 +432,7 @@
             </div>
 
             <!-- Right Sidebar: Accessories -->
-            <div class="builder-sidebar">
+            <div class="builder-sidebar" tabindex="0" aria-label="Accessories">
                 <div class="section-title">3. Add Accessories</div>
                 <div class="asset-grid" id="accessory-grid"></div>
 
@@ -477,7 +483,7 @@
                 <button class="btn btn-primary" onclick="nextStep()">Next Step →</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Loading container -->
     <div id="loading-container"></div>
@@ -589,6 +595,7 @@
                 card.dataset.id = body.id;
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
+                imgEl.alt = ''; // the visible name below is the label
                 const name = document.createElement('div');
                 name.className = 'name';
                 name.textContent = body.name;
@@ -674,6 +681,7 @@
                 card.dataset.id = accessory.id;
                 const imgEl = document.createElement('img');
                 imgEl.src = img.src;
+                imgEl.alt = ''; // the visible name below is the label
                 const name = document.createElement('div');
                 name.className = 'name';
                 name.textContent = accessory.name;
@@ -774,7 +782,7 @@
             sessionStorage.setItem('character-data', JSON.stringify(characterData));
 
             // Navigate to scene builder
-            window.location.href = '/scene-builder.php';
+            window.location.href = '/scene-builder';
         }
 
         // Initialize on page load

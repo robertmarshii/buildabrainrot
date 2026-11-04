@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const makeButton = document.getElementById('makeButton');
     makeButton.addEventListener('click', () => {
         // Redirect to character builder
-        window.location.href = '/character-builder.php';
+        window.location.href = '/character-builder';
         console.log('User clicked: Make My Brainrot!');
     });
 

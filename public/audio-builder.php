@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Mixer - Build a Brainrot</title>
+    <meta name="description" content="Add music and sound effects to your brainrot, then share it with friends. Free, no sign-up, for ages 7+.">
+    <link rel="canonical" href="https://buildabrainrot.com/audio-builder">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
@@ -638,7 +644,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container" style="margin-top: 0;">
         <header>
             <h1 style="text-align: center; color: #667eea;">🎵 Audio Mixer</h1>
             <p style="text-align: center;">Add music and sound effects!</p>
@@ -681,7 +687,7 @@
                 <button class="btn btn-primary" onclick="finishBrainrot()">🎉 Finish & Share!</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Loading container -->
     <div id="loading-container"></div>
@@ -925,7 +931,7 @@
         // Go back
         function goBack() {
             if (confirm('Go back to scene builder? (Audio will be lost)')) {
-                window.location.href = '/scene-builder.php';
+                window.location.href = '/scene-builder';
             }
         }
 

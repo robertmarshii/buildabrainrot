@@ -27,6 +27,9 @@ $isCrawler = preg_match('/bot|crawler|spider|facebook|twitter|linkedin|pinterest
 // Fixed site address: never build share links from the client-supplied Host header
 const SITE_URL = 'https://buildabrainrot.com';
 
+// Shared creations are endless and user-made: keep them out of search results (link previews still work)
+header('X-Robots-Tag: noindex');
+
 // Default preview image
 $previewUrl = SITE_URL . "/assets/images/ui/og-image.png";
 
@@ -39,6 +42,7 @@ $fullUrl = SITE_URL . "/b/" . htmlspecialchars($encoded);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check out my brainrot! - buildabrainrot</title>
+    <meta name="robots" content="noindex">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">

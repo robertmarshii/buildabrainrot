@@ -15,9 +15,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     && printf 'expose_php = Off\n' > "$PHP_INI_DIR/conf.d/zz-security.ini"
 
-# Enable Apache mod_rewrite and mod_headers (the .htaccess security headers need it),
+# Enable Apache mod_rewrite, mod_headers (the .htaccess security headers need it),
+# mod_expires (static asset caching) and mod_deflate (compression),
 # and hide the Apache version
-RUN a2enmod rewrite headers \
+RUN a2enmod rewrite headers expires deflate \
     && printf 'ServerTokens Prod\nServerSignature Off\n' > /etc/apache2/conf-available/zz-security.conf \
     && a2enconf zz-security
 

@@ -6,31 +6,57 @@
     <title>Build a Brainrot - Create & Share Your Own Brainrot Characters!</title>
     <meta name="description" content="Create silly brainrot characters with sounds and share them with friends! Free, fun, and kid-friendly. For ages 7+.">
 
+    <link rel="canonical" href="https://buildabrainrot.com/">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Build a Brainrot">
-    <meta property="og:description" content="Create and share your own brainrot characters! Free and kid-friendly.">
-    <meta property="og:image" content="/assets/images/ui/og-image.png">
-    <meta property="og:url" content="https://buildabrainrot.com">
+    <meta property="og:site_name" content="Build a Brainrot">
+    <meta property="og:title" content="Build a Brainrot: make your own brainrot character">
+    <meta property="og:description" content="Create silly brainrot characters with sounds and share them with friends. Free, no sign-up, for ages 7+.">
+    <meta property="og:url" content="https://buildabrainrot.com/">
+    <meta property="og:image" content="https://buildabrainrot.com/assets/images/ui/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Build a Brainrot">
-    <meta name="twitter:description" content="Create silly brainrot characters!">
-    <meta name="twitter:image" content="/assets/images/ui/og-image.png">
+    <meta name="twitter:title" content="Build a Brainrot: make your own brainrot character">
+    <meta name="twitter:description" content="Create silly brainrot characters with sounds and share them with friends. Free, no sign-up, for ages 7+.">
+    <meta name="twitter:image" content="https://buildabrainrot.com/assets/images/ui/og-image.png">
 
-    <!-- Favicon -->
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preload" as="image" href="/assets/images/build-a-brainrot-logo.webp" fetchpriority="high">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Build a Brainrot",
+      "url": "https://buildabrainrot.com/",
+      "description": "Free web app for kids aged 7+ to make and share silly brainrot characters with sounds. No sign-up.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 7 },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+    }
+    </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
+    <main>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="logo-container">
-                <img src="/assets/images/build-a-brainrot-logo.png" alt="Build a Brainrot" class="main-logo">
+                <img src="/assets/images/build-a-brainrot-logo.webp" width="800" height="533" alt="Build a Brainrot" class="main-logo" fetchpriority="high">
             </div>
 
             <h1 class="hero-title">
@@ -42,7 +68,7 @@
                 Create wild characters, add silly sounds, and share with your friends!
             </p>
 
-            <a href="/character-builder.php" class="btn-cta" id="main-cta">
+            <a href="/character-builder" class="btn-cta" id="main-cta">
                 🎨 Make My Brainrot!
             </a>
 
@@ -86,7 +112,7 @@
     </section>
 
     <!-- Examples Section -->
-    <section class="examples">
+    <section class="examples" id="examples">
         <h2 class="section-title">Check Out These Examples!</h2>
 
         <div class="examples-grid">
@@ -113,7 +139,7 @@
         </div>
 
         <div class="examples-cta">
-            <a href="/character-builder.php" class="btn-secondary">
+            <a href="/character-builder" class="btn-secondary">
                 ✨ Make Your Own!
             </a>
         </div>
@@ -152,10 +178,11 @@
         <div class="safety-cta">
             <p class="safety-note">
                 <strong>Parents:</strong> Learn more on our
-                <a href="/parents.php">Parent Information Page</a>
+                <a href="/parents">Parent Information Page</a>
             </p>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -169,18 +196,16 @@
             <div class="footer-section">
                 <h3>Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/about.php">About</a></li>
-                    <li><a href="/privacy.php">Privacy Policy</a></li>
-                    <li><a href="/parents.php">For Parents</a></li>
-                    <li><a href="/contact.php">Contact</a></li>
+                    <li><a href="/parents">About</a></li>
+                    <li><a href="/parents">For Parents</a></li>
+                    <li><a href="mailto:parents@buildabrainrot.com">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Get Started</h3>
                 <ul class="footer-links">
-                    <li><a href="/character-builder.php">Character Builder</a></li>
-                    <li><a href="/faq.php">FAQ</a></li>
+                    <li><a href="/character-builder">Character Builder</a></li>
                     <li><a href="#examples">Examples</a></li>
                 </ul>
             </div>

@@ -151,5 +151,6 @@
             <a href="/" class="btn">🏠 Back to Homepage</a>
         </div>
     </div>
+    <?php include __DIR__ . '/includes/legal-footer.php'; ?>
 </body>
 </html>

@@ -688,6 +688,7 @@
             </div>
         </div>
     </main>
+    <?php include __DIR__ . '/includes/legal-footer.php'; ?>
 
     <!-- Loading container -->
     <div id="loading-container"></div>

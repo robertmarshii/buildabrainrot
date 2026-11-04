@@ -15,5 +15,6 @@
         <p>This page doesn't exist.</p>
         <p><a href="/" class="btn">🏠 Back to Homepage</a> <a href="/character-builder" class="btn">🎨 Make My Brainrot!</a></p>
     </main>
+    <?php include __DIR__ . '/includes/legal-footer.php'; ?>
 </body>
 </html>

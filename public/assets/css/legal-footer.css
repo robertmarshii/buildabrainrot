@@ -1,0 +1,84 @@
+/* Small footer with the legal links (includes/legal-footer.php). Same colours as the home page footer. */
+.legal-footer {
+    position: relative;
+    z-index: 1;
+    margin: 3rem 0 0;
+    padding: 1.25rem 1rem;
+    background: #2d3748;
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-shadow: none;
+}
+.legal-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.75rem;
+}
+.legal-footer a {
+    color: #e2e8f0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    display: inline-block;
+    padding: 0.35rem 0.25rem;
+}
+.legal-footer a:hover,
+.legal-footer a:focus-visible {
+    color: #FFD700;
+}
+/* Creation viewer: the page is a fixed full screen, so the links sit in the top-right corner */
+.legal-footer--overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    z-index: 100;
+}
+.legal-footer--overlay ul {
+    gap: 6px;
+}
+.legal-footer--overlay a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.legal-footer--overlay a:hover,
+.legal-footer--overlay a:focus-visible {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.65);
+}
+.legal-footer--overlay li:first-child {
+    display: none;
+}
+/* Phones: match the smaller "Made with" badge in the opposite corner */
+@media (max-width: 768px) {
+    .legal-footer--overlay {
+        top: 10px;
+        right: 10px;
+        z-index: 150;
+    }
+    .legal-footer--overlay ul {
+        gap: 4px;
+    }
+    .legal-footer--overlay a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+/* Builders show a fixed "Next Step" bar on phones: keep the footer clear of it */
+@media (max-width: 768px) {
+    body.has-bottom-bar .legal-footer:not(.legal-footer--overlay) {
+        padding-bottom: 100px;
+    }
+}

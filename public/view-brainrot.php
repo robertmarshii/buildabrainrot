@@ -65,6 +65,9 @@ $fullUrl = SITE_URL . "/b/" . htmlspecialchars($encoded);
     <link rel="stylesheet" href="/assets/css/view.css">
 </head>
 <body>
+    <main>
+    <h1 class="visually-hidden">A creation made with Build a Brainrot</h1>
+
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
@@ -116,6 +119,9 @@ $fullUrl = SITE_URL . "/b/" . htmlspecialchars($encoded);
             <a href="/" title="Make your own brainrot">Made with buildabrainrot.com</a>
         </div>
     </div>
+    </main>
+
+    <?php $legalFooterOverlay = true; include __DIR__ . '/includes/legal-footer.php'; ?>
 
     <!-- Scripts -->
     <!-- Compression library for decoding -->

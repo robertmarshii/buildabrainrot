@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Notice - Build a Brainrot</title>
-    <meta name="description" content="Privacy notice for Build a Brainrot: no accounts, no ads, no analytics. What our server logs, what is stored in your browser, how share links and is.gd short links work, and your rights.">
+    <title>Privacy and Cookies - Build a Brainrot</title>
+    <meta name="description" content="Privacy and cookie notice for Build a Brainrot: no accounts, no ads, no analytics, no cookies. What our server logs, what is stored in your browser, how share links and is.gd short links work, and your rights.">
     <link rel="canonical" href="https://buildabrainrot.com/privacy">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/assets/images/ui/favicon.png" type="image/png">
@@ -93,7 +93,7 @@
 <body>
     <div class="content-page" role="main">
         <div class="content-box">
-            <h1>🔒 Privacy Notice</h1>
+            <h1>🔒 Privacy and Cookies</h1>
             <p><strong>Last updated:</strong> 4 November 2026</p>
 
             <div class="highlight-box">
@@ -101,8 +101,8 @@
             </div>
 
             <h2>Who runs this site</h2>
-            <p>Build a Brainrot (&ldquo;Brainrot Labs&rdquo;) is a small independent project run by Robert Marsh II in Manchester, UK. He is responsible for the data described here (the &ldquo;data controller&rdquo;).</p>
-            <p>Contact for anything on this page: <a href="mailto:parents@buildabrainrot.com">parents@buildabrainrot.com</a></p>
+            <p>Build a Brainrot (&ldquo;Brainrot Labs&rdquo;) is a small independent project based in the UK. The people who run it are responsible for the data described here (the &ldquo;data controller&rdquo;).</p>
+            <p>Contact for anything on this page: <a href="mailto:support@buildabrainrot.com">support@buildabrainrot.com</a></p>
 
             <h2>Children</h2>
             <p>Build a Brainrot is made for children aged 7 and up. We designed it so that children never need to give us any personal information: there is no sign-up, no email, no password and no chat.</p>
@@ -115,7 +115,7 @@
             <p><strong>Share preview pictures.</strong> When a share link is posted on a social network, our server makes a preview picture. The picture is the same for every creation (&ldquo;Check out my brainrot!&rdquo;) and contains nothing from the creation. It is kept on the server for up to a day before it is made again.</p>
             <p>We do not collect names, email addresses or payment details, we do not sell data, and we do not use data for marketing.</p>
 
-            <h2>Cookies and browser storage</h2>
+            <h2 id="cookies">Cookies and browser storage</h2>
             <p>The site sets no cookies. It uses your browser&rsquo;s storage only to make the builder work:</p>
             <div class="table-wrap" tabindex="0" role="region" aria-label="Browser storage used by Build a Brainrot">
             <table class="storage-table">
@@ -126,7 +126,7 @@
                 </tbody>
             </table>
             </div>
-            <p>This storage is strictly necessary for the builder you are using, so under the Privacy and Electronic Communications Regulations (PECR) it does not need a consent banner.</p>
+            <p>The session storage is strictly necessary for the builder you are using. The local storage is a copy of the site&rsquo;s own list of pictures and sounds, kept so the builder loads quickly; it holds nothing about you and is never sent to anyone. There are no advertising, analytics or social media cookies, so the site does not show a cookie banner. The Privacy and Electronic Communications Regulations (PECR) and UK GDPR set the rules for this.</p>
 
             <h2>Outside services</h2>
             <ul>
@@ -137,7 +137,7 @@
             <p>The site does not use Google Analytics, advertising tags, social media trackers or outside fonts.</p>
 
             <h2>Your rights</h2>
-            <p>Under UK data protection law you (or a parent or guardian on a child&rsquo;s behalf) can ask for a copy of personal data we hold, ask us to correct or delete it, and object to or restrict how we use it. Email <a href="mailto:parents@buildabrainrot.com">parents@buildabrainrot.com</a> and we will reply within one month.</p>
+            <p>Under UK data protection law you (or a parent or guardian on a child&rsquo;s behalf) can ask for a copy of personal data we hold, ask us to correct or delete it, and object to or restrict how we use it. Email <a href="mailto:support@buildabrainrot.com">support@buildabrainrot.com</a> and we will reply within one month.</p>
             <p>Because a creation lives inside its own link, we cannot delete a link that has already been shared. You can stop sharing it, and if a short is.gd link needs taking down, contact us and we will help, including asking is.gd to disable it. You can clear the browser storage yourself at any time by clearing this site&rsquo;s data in your browser.</p>
 
             <h2>Complaints</h2>
@@ -146,9 +146,12 @@
             <h2>Changes</h2>
             <p>If we change what the site collects, we will update this page and the date at the top.</p>
 
+            <p>The rules for using the site are in our <a href="/terms">terms of use</a>.</p>
+
             <a href="/" class="btn">🏠 Back to Homepage</a>
             <a href="/parents" class="btn">🛡️ For Parents</a>
         </div>
     </div>
+    <?php include __DIR__ . '/includes/legal-footer.php'; ?>
 </body>
 </html>

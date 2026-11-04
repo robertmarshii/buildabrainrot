@@ -521,7 +521,7 @@
         }
     </style>
 </head>
-<body>
+<body class="has-bottom-bar">
     <main class="container" style="margin-top: 0;">
         <header>
             <h1 style="text-align: center; color: #667eea;">🎬 Scene Builder</h1>
@@ -709,6 +709,7 @@
             </div>
         </div>
     </main>
+    <?php include __DIR__ . '/includes/legal-footer.php'; ?>
 
     <!-- Loading container -->
     <div id="loading-container"></div>
